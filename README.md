@@ -30,11 +30,11 @@ messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 ### Keeping up with master
 
 Pull in new changes on master frequently to avoid major conflicts. There are two
-ways to do this. If you're working alone `rebase` is fine, otherwise, you'll
-have to `merge`. 
+ways to do this. If you're working alone, you can `rebase` as often as you
+want. Otherwise, you'll have to use `merge`.
 
-In either case, note that the direction is master --> yourbranch and not the
-other way around.
+In either case, note the direction is master --> yourbranch and not the other
+way around.
 
 1. `rebase` your branch onto the latest node in master (i.e. rewrite history).
 Easier and cleaner, BUT INAPPROPRIATE IF THERE'S SOMEONE ELSE WORKING ON YOUR
@@ -46,10 +46,10 @@ BRANCH.
   $ git rebase origin/master
   ```
 
-2. `merge` master back into your branch. Choose this option if your branch has
-other people working on it. Those new commits from master will make your
-branch's history a little more confusing, but you can deal with this by
-squashing, which you'll have to do anyway once your feature is done.
+2. `merge` latest master back into your branch. Choose this option if your
+branch has others working on it. Those new commits from master will clutter
+your branch's history, but this is usually better than potentially having to
+deal with significant merge conflicts later.
 
   ```bash
   $ git checkout githubusername-feature-name
@@ -68,12 +68,12 @@ Push to Github
     $ git push origin githubusername-feature-name
 
 Then using the github website, find your branch and create a pull request. Label
-it with `NEEDS REVIEW`. Then discuss it with at least one other pair of
+it with `needs review`. Then discuss it with at least one other pair of
 eyeballs.
 
 ### Squash, then merge back in
 
-After you get a :+1: or a "good to merge" comment, merge the changes into
+After you get a :+1: or a "good to merge", merge the changes into
 master.
 
 First, rebase. Pick only commits that are necessary. Squash others. The
@@ -101,7 +101,6 @@ Clean up remote and local branches.
 
     $ git push origin --delete githubusername-feature-name
     $ git branch -d githubusername-feature-name
-
 
 ## Related Repos
 
