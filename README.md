@@ -111,4 +111,4 @@ Prune local repo so that it only shows remote branches that still exist:
 
 ## Related Repos
 
-- [LSU3380groupRVDE/Proposal](https://github.com/LSU3380groupRVDE/Proposal)
+- [rodomvp/Project_Formalities](https://github.com/rodomvp/Project_Formalities)
