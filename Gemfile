@@ -31,3 +31,5 @@ group :staging, :production do
   gem 'rails_stdout_logging'
   gem 'rails_12factor', '>= 0.0.2'
 end
+
+gem 'faker', group: [:development, :staging]
