@@ -112,7 +112,7 @@ deal with significant merge conflicts later.
 
 When the feature is complete, make sure the tests pass.
 
-    $ ## TODO We haven't picked a testing tool yet
+    $ rake test
 
 Push to Github
 
