@@ -1,14 +1,63 @@
 # RVDE-LSU-3380 
 
-Main repo for project work.
+Main repo for project work. 
 
-## Getting Started
+This README is specific to the experimental Rails branch. Right now, only two
+URIs are sort of working:
 
-STUB: Keep this section up to date. This will have info and
-instructions for
+- http://localhost:3000/owners
+- http://localhost:3000/patients
 
-- setting up / installing / running /compiling the program locally; and
-- if applicable, deploying the program.
+## Getting Started: Prerequisites
+
+This is best done in Linux (Ubuntu or Debian) or OS X. On Windows, you'll
+have to do some Googling; but the best bets are probably Cygwin, git-scm, or
+Ubuntu inside VirtualBox. Or, you can use [Cloud9](https://c9.io/).
+
+The following need to be installed and configured (there's a 30-minute guide 
+at [Go Rails](https://gorails.com/setup/)).
+
+- Ruby 2.2.3 (using rbenv, ruby-build, bundler)
+- node.js, npm
+- PostgreSQL
+
+## Installing the App
+
+First, clone this repo (if you haven't already done so)
+
+    $ git clone git@github.com:rodomvp/RVDE-LSU-3380.git
+    $ cd RVDE-LSU-3380/
+
+Then check out the experimental Rails branch
+
+    $ git fetch --all
+    $ git checkout rgulle4-xp-rails
+
+Now create a PostgreSQL user for this project
+
+    $ sudo service postgresql restart # this is probably Ubuntu-specific
+    $ sudo -u postgres createuser RVDE-LSU-3380 -s
+
+Run the setup script:
+
+    $ ./bin/setup
+
+Update the bundle if necessary:
+
+    $ bundle update
+
+Reset the database
+
+    $ rake db:drop && rake db:create && rake db:migrate
+    $ rake db:seed
+
+## Running the App
+
+Launch the server:
+
+    $ rails server
+
+By default, the app runs at `http://localhost:3000/`.
 
 ## Writing a Feature
 
