@@ -60,9 +60,9 @@ By default, the app runs at `http://localhost:3000/`.
 
 Always create a feature branch for any new code. Use the following naming
 scheme: `githubusername-feature-name` (so who owns the branch and what purpose
-it serves can quickly be determined). Start with a branch based on master.
+it serves can quickly be determined). Start with a branch based on rgulle4-xp-rails.
 
-    $ git checkout master
+    $ git checkout rgulle4-xp-rails
     $ git pull
     $ git checkout -b githubusername-feature-name
 
@@ -75,34 +75,34 @@ make sense if you begin it with 'Please')).
     $ git status
     $ git commit -v
 
-### Keeping up with master
+### Keeping up with rgulle4-xp-rails
 
-Pull in new changes on master frequently to avoid major conflicts. There are two
+Pull in new changes on rgulle4-xp-rails frequently to avoid major conflicts. There are two
 ways to do this. If you're working alone, you can `rebase` as often as you
 want. Otherwise, you'll have to use `merge`.
 
-In either case, note the direction is master --> yourbranch and not the other
+In either case, note the direction is rgulle4-xp-rails --> yourbranch and not the other
 way around.
 
-1. `rebase` your branch onto the latest node in master (i.e. rewrite history).
+1. `rebase` your branch onto the latest node in rgulle4-xp-rails (i.e. rewrite history).
 Easier and cleaner, BUT INAPPROPRIATE IF THERE'S SOMEONE ELSE WORKING ON YOUR
 BRANCH.
 
   ```bash
   $ git checkout githubusername-feature-name
   $ git fetch origin
-  $ git rebase origin/master
+  $ git rebase origin/rgulle4-xp-rails
   ```
 
-2. `merge` latest master back into your branch. Choose this option if your
-branch has others working on it. Those new commits from master will clutter
+2. `merge` latest rgulle4-xp-rails back into your branch. Choose this option if your
+branch has others working on it. Those new commits from rgulle4-xp-rails will clutter
 your branch's history, but this is usually better than potentially having to
 deal with significant merge conflicts later.
 
   ```bash
   $ git checkout githubusername-feature-name
   $ git fetch origin
-  $ git merge master githubusername-feature-name
+  $ git merge rgulle4-xp-rails githubusername-feature-name
   ```
 
 ### Finishing your feature, and code review
@@ -115,14 +115,17 @@ Push to Github
 
     $ git push origin githubusername-feature-name
 
-Then using the github website, find your branch and create a pull request. Label
-it with `needs review`. Then discuss it with at least one other pair of
+Then using the github website, find your branch and create a pull request. __NB
+By default, Gh Pull Requests are for `yourbrach --> master`__, so be sure to
+specify that your PR's intention as `yourbranch --> rgulle4-xp-rails`.
+
+Label it with `needs review`. Then discuss it with at least one other pair of
 eyeballs.
 
 ### Squash, then merge back in
 
 After you get a :+1: or a "good to merge", merge the changes into
-master.
+rgulle4-xp-rails.
 
 First, rebase. Pick only commits that are necessary. Squash others. The
 goal is to condense your history into a comprehensible series of
@@ -132,16 +135,16 @@ and include refs to the motivating issue(s) as appropriate.
 
     $ git checkout githubusername-feature-name
     $ git fetch origin 
-    $ git rebase -i origin/master
+    $ git rebase -i origin/rgulle4-xp-rails
 
 View the changelog to see if it looks good.
 
-    $ git log origin/master..githubusername-feature-name
-    $ git diff --stat origin/master
+    $ git log origin/rgulle4-xp-rails..githubusername-feature-name
+    $ git diff --stat origin/rgulle4-xp-rails
 
 Finally, merge and push.
 
-    $ git checkout master
+    $ git checkout rgulle4-xp-rails
     $ git merge githubusername-feature-name --ff-only
     $ git push
 
