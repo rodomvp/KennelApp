@@ -17,6 +17,7 @@ group :development, :test do
   gem 'spring',      '>= 1.1.3'
   gem 'awesome_print'
   gem 'better_errors'
+  gem 'pry-rails'
 end
 
 group :test do
