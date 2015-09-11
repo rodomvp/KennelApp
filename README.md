@@ -2,11 +2,8 @@
 
 Main repo for project work. 
 
-This README is specific to the experimental Rails branch. Right now, only two
-URIs are sort of working:
-
-- http://localhost:3000/owners
-- http://localhost:3000/patients
+This README is specific to the experimental Rails branch. Right now, the
+app is completely empty.
 
 ## Getting Started: Prerequisites
 
