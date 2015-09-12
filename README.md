@@ -14,6 +14,8 @@ at [Go Rails](https://gorails.com/setup/)).
 - Ruby 2.2.3 (using rbenv, ruby-build, bundler)
 - node.js, npm
 - PostgreSQL
+- [heroku toolbelt](https://toolbelt.heroku.com/) (not described in the
+  Go Rails link above, but pretty simple)
 
 ## Installing the App
 
