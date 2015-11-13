@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_current: false
+  check_in_dt: 2015-11-13 14:41:01
+  check_out_dt: 2015-11-13 14:41:01
+  sch_check_in_dt: 2015-11-13 14:41:01
+  sch_check_out_dt: 2015-11-13 14:41:01
+  patient_id: 
+  runn_id: 
+  remarks: MyText
+
+two:
+  is_current: false
+  check_in_dt: 2015-11-13 14:41:01
+  check_out_dt: 2015-11-13 14:41:01
+  sch_check_in_dt: 2015-11-13 14:41:01
+  sch_check_out_dt: 2015-11-13 14:41:01
+  patient_id: 
+  runn_id: 
+  remarks: MyText

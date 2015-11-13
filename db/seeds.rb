@@ -39,3 +39,6 @@ create_user('John', 'Adams')
 
 # TODO: seed some Runns and Wards, preferably hardcoded with typical
 # data... change the model if necessary.
+
+# TODO: seed some Stays, preferably with typical data... change the
+# model if necessary.
