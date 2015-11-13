@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :owners
   resources :patients
 
-  get 'static_pages/home'
-  get 'static_pages/documentation'
+  get 'home' => 'static_pages#home'
+  get 'docs' => 'static_pages#documentation'
 
-  root 'static_pages#home'
+  root 'patients#index'
 end
