@@ -15,6 +15,11 @@ Working routes are shown by:
 Which means that the only working route is `GET` to `/`, which is
 dispatched to the `reddy` action in <tt>[application_controller.rb]</tt>.
 
+A diagram of the models is in <tt>[diagrams-models.png]</tt> (shown below).
+
+![class diagram][diagrams-models.png]
+
+[diagrams-models.png]: doc/diagrams-models.png
 [application_controller.rb]: app/controllers/application_controller.rb
 
 ## Getting Started: Prerequisites
