@@ -1,7 +1,3 @@
-# We'll make 50 owners, each with either 1, 2, or 3 pets.
-# Also make 2 users
-# (Use the Faker gem to make random names, etc.)
-
 Random.srand(1337) # seed the random number generator, for same results every time
 
 # Make owners and their pets
@@ -41,3 +37,5 @@ end
 create_user('George', 'Washignton')
 create_user('John', 'Adams')
 
+# TODO: seed some Runns and Wards, preferably hardcoded with typical
+# data... change the model if necessary.
