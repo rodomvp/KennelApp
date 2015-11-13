@@ -2,6 +2,21 @@
 
 Main repo for project work. 
 
+Master branch is staged at <https://sonar-x99-rico.herokuapp.com/>.
+Working routes are shown by:
+
+    ```
+    $ rake routes
+    
+    Prefix Verb URI Pattern Controller#Action
+      root GET  /           application#reddy
+    ```
+
+Which means that the only working route is `GET` to `/`, which is
+dispatched to the `reddy` action in <tt>[application_controller.rb]</tt>.
+
+[application_controller.rb]: app/controllers/application_controller.rb
+
 ## Getting Started: Prerequisites
 
 This is best done in Linux (Ubuntu or Debian) or OS X. On Windows, you'll
