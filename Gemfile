@@ -27,6 +27,17 @@ group :development, :test do
   gem 'spring',      '>= 1.1.3'
   gem 'awesome_print'
   gem 'better_errors'
+
+  # Diagramming gems
+
+  # https://github.com/preston/railroady
+  #   rake diagram:all
+  #   rake diagram:all_with_engine
+  gem 'railroady'
+
+  # https://github.com/voormedia/rails-erd
+  #   bundle exec erd
+  gem 'rails-erd'
 end
 
 group :test do
