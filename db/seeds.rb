@@ -4,6 +4,30 @@ Random.srand(1337) # seed the random number generator, for same results every ti
 patients_per_owner_distribution = [1,1,1,1,1,1,1,2,2,3] # most ppl have 1 pet
 species_list = %w[Cat, Dog, Hamster]
 belongings_list = %w[Bone, Treat, Toy]
+breeds_list = [
+  'Labrador Retriever',
+  'German Shepherds',
+  'Golden Retriever',
+  'Bulldogs',
+  'Beagles',
+  'Yorkshire Terriers',
+  'Poodles',
+  'Boxers',
+  'French Bulldogs',
+  'Rottweilers',
+  'Dachshunds',
+  'Pointers (german Shorthaired',
+  'Siberian Huskies',
+  'Doberman Pinschers',
+  'Great Danes',
+  'Miniature Schnauzers',
+  'Shih Tzu',
+  'Australian Shepherds',
+  'Cavalier King Charles Spaniels',
+  'Pomeranians',
+  'Shetland Sheepdogs'
+]
+
 50.times do
   the_new_owner = Owner.create(
     first_name: Faker::Name.first_name,
@@ -20,7 +44,7 @@ belongings_list = %w[Bone, Treat, Toy]
       name: Faker::Name.first_name,
       weight: Faker::Name.first_name,
       species: species_list.sample,
-      breed: Faker::Lorem.sentence(3),
+      breed: breeds_list.sample,
       owner_id: the_new_owner.id,
       belongings: belongings_list.sample
     )
