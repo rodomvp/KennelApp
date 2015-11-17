@@ -1,0 +1,6 @@
+<li>
+  <%= link_to patient.id, patient %>
+  <%= link_to patient.name, patient %>
+  <%= link_to patient.breed, patient %>
+  (Owned by <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %>)
+</li>

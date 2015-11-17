@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'
 
-  root 'patients#index'
+  # root 'patients#index'
+  root 'static_pages#home'
 end
