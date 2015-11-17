@@ -2,7 +2,6 @@ Random.srand(1337) # seed the random number generator, for same results every ti
 
 # Make owners and their pets
 patients_per_owner_distribution = [1,1,1,1,1,1,1,2,2,3] # most ppl have 1 pet
-species_list = %w[Cat Dog Hamster]
 belongings_list = %w[Bone Treat Toy]
 diet_list = ["Mature", "Hypo-Allergenic Salmon", "Rabbit & Venison", "Owner's Food"]
 stay_year = 2015
@@ -24,8 +23,7 @@ remarks_list = ["Stresses immensely upon arrival, use muzzle", "No legs",
   num_patients.times do
   the_new_patient = Patient.create(
       name: Faker::Name.first_name,
-      weight: Faker::Name.first_name,
-      species: species_list.sample,
+      weight: Faker::Name.first_name,      
       breed: Faker::Lorem.sentence(3),
       owner_id: the_new_owner.id,
       belongings: belongings_list.sample,
