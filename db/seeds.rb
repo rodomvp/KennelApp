@@ -2,8 +2,8 @@ Random.srand(1337) # seed the random number generator, for same results every ti
 
 # Make owners and their pets
 patients_per_owner_distribution = [1,1,1,1,1,1,1,2,2,3] # most ppl have 1 pet
-species_list = %w[Cat, Dog, Hamster]
-belongings_list = %w[Bone, Treat, Toy]
+species_list = %w[Cat Dog Hamster]
+belongings_list = %w[Bone Treat Toy]
 diet_list = ["Mature", "Hypo-Allergenic Salmon", "Rabbit & Venison", "Owner's Food"]
 stay_year = 2015
 stay_minute = [0, 15, 30, 45]
