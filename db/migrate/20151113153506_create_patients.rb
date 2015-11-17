@@ -5,6 +5,7 @@ class CreatePatients < ActiveRecord::Migration
       t.string :species
       t.string :breed
       t.float :weight
+      t.string :belongings
 
       t.timestamps null: false
     end
