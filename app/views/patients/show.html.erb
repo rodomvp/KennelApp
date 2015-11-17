@@ -1,2 +1,8 @@
-<h1>Patients#show</h1>
-<p>Find me in app/views/patients/show.html.erb</p>
+<% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
+
+<h1><%= "#{@patient.name} the #{@patient.breed}" %></h1>
+<% for attribute in @patient.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @patient.attributes[attribute].to_s %></p>
+<% end %>
+
+<p>Belongs to <%= "#{@patient.owner.first_name} #{@patient.owner.last_name}" %></p>

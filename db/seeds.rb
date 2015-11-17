@@ -11,6 +11,29 @@ remarks_list = ["Stresses immensely upon arrival, use muzzle", "No legs",
 "Only eats from owner's bowl", "Use holy water 2x per day on head"]
 species_list = %w[Cat, Dog, Hamster]
 belongings_list = %w[Bone, Treat, Toy]
+breeds_list = [
+  'Labrador Retriever',
+  'German Shepherd',
+  'Golden Retriever',
+  'Bulldog',
+  'Beagle',
+  'Yorkshire Terrier',
+  'Poodle',
+  'Boxer',
+  'French Bulldog',
+  'Rottweiler',
+  'Dachshund',
+  'German Shorthaired Pointer',
+  'Siberian Huskie',
+  'Doberman Pinscher',
+  'Great Dane',
+  'Miniature Schnauzer',
+  'Shih Tzu',
+  'Australian Shepherd',
+  'Cavalier King Charles Spaniel',
+  'Pomeranian',
+  'Shetland Sheepdog'
+]
 
 50.times do
   the_new_owner = Owner.create(
@@ -27,7 +50,7 @@ belongings_list = %w[Bone, Treat, Toy]
   the_new_patient = Patient.create(
       name: Faker::Name.first_name,
       weight: Faker::Name.first_name,      
-      breed: Faker::Lorem.sentence(3),
+      breed: breeds_list.sample,
       owner_id: the_new_owner.id,
       belongings: belongings_list.sample,
       diet: diet_list.sample

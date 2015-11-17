@@ -1,0 +1,13 @@
+<header class="navbar navbar-fixed-top navbar-inverse"> <!-- Bootstrap classes -->
+  <div class="container"> <!-- generic div, given Bootstrap class "container" class -->
+    <%= link_to 'Search++', '#', id: 'search-link' %>    
+    <nav>
+      <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
+        <li><%= link_to 'Owners',    owners_path %></li>
+        <li><%= link_to 'Patients',  patients_path %></li>
+        <li><%= link_to 'Admin',     '#' %></li>
+        <li><%= link_to 'Ward View', '#', id: 'ward-view-link' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
