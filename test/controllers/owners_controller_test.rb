@@ -6,6 +6,7 @@ class OwnersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  # TODO: find out why this test fails
   # test "should get show" do
   #   get :show
   #   assert_response :success
