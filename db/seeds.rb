@@ -3,12 +3,14 @@ Random.srand(1337) # seed the random number generator, for same results every ti
 # Make owners and their pets
 patients_per_owner_distribution = [1,1,1,1,1,1,1,2,2,3] # most ppl have 1 pet
 species_list = %w[Cat, Dog, Hamster]
+belongings_list = %w[Big Bone, Owner's Treat, Stuffed Toy]
 50.times do
   the_new_owner = Owner.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     phone_number: Faker::PhoneNumber.phone_number,
     email: "placeholder@fornow.com"
+    belongings: belongings_list.sample
   )
   the_new_owner.email = "owner_#{the_new_owner.id}@internet.com"
   the_new_owner.save
