@@ -44,7 +44,7 @@ belongings_list = %w[Bone, Treat, Toy]
       random_day, random_month, random_minute),
     sch_check_out_dt: check_in + stay_length.days,
     patient_id: the_new_patient.id,
-    remarks: remarks_list.sample,
+    remarks: remarks_list.sample
     )
   end
 end
@@ -67,6 +67,3 @@ create_user('John', 'Adams')
 
 # TODO: seed some Runns and Wards, preferably hardcoded with typical
 # data... change the model if necessary.
-
-# TODO: seed some Stays, preferably with typical data... change the
-# model if necessary.

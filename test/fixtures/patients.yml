@@ -5,9 +5,11 @@ one:
   breed: MyString
   weight: 1.5
   belongings: MyString
+  diet: MyString
 
 two:
   name: MyString
   breed: MyString
   weight: 1.5
   belongings: MyString
+  diet: MyString
