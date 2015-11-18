@@ -1,8 +1,11 @@
-<% provide(:title, 'All owners') %>
-<%= will_paginate %>
+<%= link_to "Add Owner", new_owner_path, class: "btn btn-lg btn-primary"%>
 
-<ul class="owners">
-  <%= render @owners %>
-</ul>
+<p>
+  <% provide(:title, 'All owners') %>
+  <%= will_paginate %>
 
-<%= will_paginate %>
+  <ul class="owners">
+    <%= render @owners %>
+  </ul>
+  <%= will_paginate %>
+</p>

@@ -1,2 +1,22 @@
-<h1>Owners#new</h1>
-<p>Find me in app/views/owners/new.html.erb</p>
+<% provide(:title, 'NewOwner') %>
+<h1>Register New Owner</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@owner) do |f| %>
+      <%= f.label :first_name, "First Name" %>
+      <%= f.text_field :first_name %>
+
+	  <%= f.label :last_name, "Last Name" %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :phone_number %>
+      <%= f.telephone_field :phone_number %>
+      
+      <%= f.submit "Create owner account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
