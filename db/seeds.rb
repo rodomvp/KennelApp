@@ -92,10 +92,13 @@ end
 
 # Make 2 users
 def create_user (a_first_name, a_last_name)
+  a_good_password = "password"
   user_n = User.create(
     email: "#{a_first_name}@internet.com",
     first_name: a_first_name,
-    last_name: a_last_name
+    last_name: a_last_name, 
+    password: a_good_password, 
+    password_confirmation: a_good_password
   )
 end
 

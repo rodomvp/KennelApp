@@ -3,11 +3,9 @@
 one:
   ident: MyString
   size: MyString
-  animal_type: MyString
   amenities: MyString
 
 two:
   ident: MyString
   size: MyString
-  animal_type: MyString
   amenities: MyString
