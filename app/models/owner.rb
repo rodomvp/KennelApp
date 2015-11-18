@@ -6,4 +6,8 @@ class Owner < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
