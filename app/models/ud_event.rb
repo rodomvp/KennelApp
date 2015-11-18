@@ -1,0 +1,2 @@
+class UdEvent < StayEvent
+end
