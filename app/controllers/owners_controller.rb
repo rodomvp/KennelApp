@@ -13,18 +13,20 @@ class OwnersController < ApplicationController
     @owners = Owner.paginate(page: params[:page])
   end
 
-  def create 
+  def create
     @owner = Owner.new(owner_params)
     if @owner.save
-      # Handle a successful save.
+      redirect_to @owner
     else
-      render 'new_owner'
+      render 'new'
     end
   end
 
+
+
   private
 
-    def user_params
-      params.require(:owner).permit(:first_name, :last_name, :email)
+    def owner_params
+      params.require(:owner).permit(:first_name, :last_name, :email, :phone_number)
     end   
 end
