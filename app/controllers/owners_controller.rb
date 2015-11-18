@@ -1,5 +1,6 @@
 class OwnersController < ApplicationController
   def new
+    @owner = Owner.new
   end
 
   def show
@@ -11,4 +12,19 @@ class OwnersController < ApplicationController
     #@owners = Owner.all
     @owners = Owner.paginate(page: params[:page])
   end
+
+  def create 
+    @owner = Owner.new(owner_params)
+    if @owner.save
+      # Handle a successful save.
+    else
+      render 'new_owner'
+    end
+  end
+
+  private
+
+    def user_params
+      params.require(:owner).permit(:first_name, :last_name, :email)
+    end   
 end
