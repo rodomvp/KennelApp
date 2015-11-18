@@ -2,22 +2,34 @@
 
 Main repo for project work. 
 
-Master branch is staged at <https://sonar-x99-rico.herokuapp.com/>.
-Working routes are shown by:
+Master branch is staged at <http://kms3380.herokuapp.com/>.
 
-    ```
-    $ rake routes
-    
-    Prefix Verb URI Pattern Controller#Action
-      root GET  /           application#reddy
-    ```
-
-Which means that the only working route is `GET` to `/`, which is
-dispatched to the `reddy` action in <tt>[application_controller.rb]</tt>.
-
-Entity relationship diagram of the models are shown below: <tt>[diagrams-erd.png]</tt>.
+Entity relationship diagram of the models is shown below:
+<tt>[diagrams-erd.png]</tt> [^1]. 
 
 ![entity relationship diagram][diagrams-erd.png]
+
+[^1]: Caveat: for some reason it doesn't show the
+fields for any of the StayEvent subclasses. These fields are:
+
+```
+------------------------
+FeedingEvent < StayEvent
+------------------------
++ did_eat : boolean
++ food_description : text
+
+------------------------
+MiscStayEvent < StayEvent
+------------------------
+(no fields of its own)
+
+------------------------
+UdEvent < StayEvent
+------------------------
++ did_urinate : boolean
++ did_defecate : boolean
+```
 
 [diagrams-erd.png]: doc/diagrams-erd.png
 [application_controller.rb]: app/controllers/application_controller.rb
