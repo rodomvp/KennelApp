@@ -1,0 +1,2 @@
+class FeedingEvent < StayEvent
+end
