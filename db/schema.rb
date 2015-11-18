@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118143225) do
+ActiveRecord::Schema.define(version: 20151118144158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20151118143225) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.text     "remark"
+    t.string   "type"
   end
 
   add_index "stay_events", ["stay_id"], name: "index_stay_events_on_stay_id", using: :btree
