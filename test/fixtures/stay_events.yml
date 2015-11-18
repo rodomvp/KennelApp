@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stay_id: 
+  scheduled_time_stamp: 2015-11-18 06:34:10
+  actual_time_stamp: 2015-11-18 06:34:10
+
+two:
+  stay_id: 
+  scheduled_time_stamp: 2015-11-18 06:34:10
+  actual_time_stamp: 2015-11-18 06:34:10

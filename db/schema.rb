@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118051037) do
+ActiveRecord::Schema.define(version: 20151118123410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 20151118051037) do
 
   add_index "runns", ["ward_id"], name: "index_runns_on_ward_id", using: :btree
 
+  create_table "stay_events", force: :cascade do |t|
+    t.integer  "stay_id"
+    t.datetime "scheduled_time_stamp"
+    t.datetime "actual_time_stamp"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "stay_events", ["stay_id"], name: "index_stay_events_on_stay_id", using: :btree
+
   create_table "stays", force: :cascade do |t|
     t.boolean  "is_current"
     t.datetime "check_in_dt"
@@ -80,6 +90,7 @@ ActiveRecord::Schema.define(version: 20151118051037) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "stay_events", "stays"
   add_foreign_key "stays", "patients"
   add_foreign_key "stays", "runns"
 end
