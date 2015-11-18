@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  species: MyString
   breed: MyString
   weight: 1.5
   belongings: MyString
+  diet: MyString
 
 two:
   name: MyString
-  species: MyString
   breed: MyString
   weight: 1.5
   belongings: MyString
+  diet: MyString
