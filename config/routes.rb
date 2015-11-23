@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'
-  get 'new'  => 'users#new'
-  get 'new_owner' => 'owners#new'
-  # root 'patients#index'
+
   root 'static_pages#home'
 end
