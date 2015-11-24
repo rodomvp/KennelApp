@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :owners do
-  	member do
+    member do
       resources :patients
     end
   end
