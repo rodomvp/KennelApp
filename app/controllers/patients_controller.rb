@@ -19,11 +19,11 @@ class PatientsController < ApplicationController
   	else
   		render 'new_patient'
   	end
+  end
 
-  	private
+  private
 
-  		def patient_params
-  			params.require(:patient).permit(:name, :breed)
-  		end
-  	end
+  def patient_params
+  	params.require(:patient)
+  end
 end
