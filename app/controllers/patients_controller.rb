@@ -1,19 +1,39 @@
 class PatientsController < ApplicationController
   def new
-  	@patient = Patient.new
+    if params[:id].present?
+      @owner = Owner.find(params[:id])
+      @patient = @owner.patients.new
+    else
+      @patient = Patient.new
+    end
   end
 
   def show
-    @patient = Patient.find(params[:id])
-    @owner = @patient.owner
+    if params[:id].present?
+      @patient = Patient.find(params[:id])
+      @owner = @patient.owner
+    else
+      @patient = Patient.find(params[:id])
+      @owner = @patient.owner
+    end
   end
 
   def index
-    @patients = Patient.paginate(page: params[:page])
+    if params[:id].present?
+      @owner = Owner.find(params[:id])
+      @patients = @owner.patients.paginate(page: params[:page])
+    else
+      @patients = Patient.paginate(page: params[:page])
+    end
   end
 
   def create
-  	@patient = Patient.new(patient_params)
+    if params[:id].present?
+      @owner = Owner.find(params[:id])
+      @patient = @owner.patients.build(patient_params)
+    else
+      @patient = Patient.new(patient_params)
+    end
   	if @patient.save
   		redirect_to @patient
   	else
