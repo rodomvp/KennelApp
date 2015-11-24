@@ -1,2 +1,25 @@
-<h1>Patients#new</h1>
-<p>Find me in app/views/patients/new.html.erb</p>
+<% provide(:title, 'NewPatient') %>
+<h1>Register New Patient</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@patient) do |f| %>
+      <%= f.label :name, "First Name" %>
+      <%= f.text_field :name %>
+
+	    <%= f.label :breed, "Breed" %>
+      <%= f.text_field :breed %>
+
+      <%= f.label :weight %>
+      <%= f.text_field :weight %>
+
+      <%= f.label :belongings %>
+      <%= f.text_field :belongings %>
+
+      <%= f.label :diet %>
+      <%= f.text_field :diet %>
+      
+      <%= f.submit "Create patient account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

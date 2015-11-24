@@ -18,15 +18,13 @@ class OwnersController < ApplicationController
     if @owner.save
       redirect_to @owner
     else
-      render 'new'
+      render 'new_owner'
     end
   end
-
-
 
   private
 
     def owner_params
       params.require(:owner).permit(:first_name, :last_name, :email, :phone_number)
-    end   
+    end 
 end

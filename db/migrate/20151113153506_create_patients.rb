@@ -6,6 +6,7 @@ class CreatePatients < ActiveRecord::Migration
       t.string :breed
       t.float :weight
       t.string :belongings
+      t.references :owner, index: true, foreign_key: true
 
       t.timestamps null: false
     end

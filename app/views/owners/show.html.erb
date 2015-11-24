@@ -1,5 +1,7 @@
 <% provide(:title, "OWNER: " + @owner.first_name + " " + @owner.last_name)  %>
 
+<%= link_to "Add Patient", new_patient_path, class: "btn btn-lg btn-primary"%>
+
 <h1><%= "#{@owner.first_name} #{@owner.last_name}" %></h1>
 <% for attribute in @owner.attributes.keys %>
   <p><%= attribute.humanize %> <%= @owner.attributes[attribute].to_s %></p>
