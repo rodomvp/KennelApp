@@ -34,17 +34,17 @@ class PatientsController < ApplicationController
     else
       @patient = Patient.new(patient_params)
     end
-  	if @patient.save
-  		redirect_to @patient
-  	else
-  		render 'new_patient'
-  	end
+    if @patient.save
+      redirect_to @patient
+    else
+      render 'new_patient'
+    end
   end
 
   private
 
   def patient_params
-  	params.require(:patient).permit(
+    params.require(:patient).permit(
       :name, :breed,
       :weight, :belongings, :diet,
     )
