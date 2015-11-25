@@ -2,12 +2,18 @@
   <div class="container"> <!-- generic div, given Bootstrap class "container" class -->
     <%= link_to 'Search++', '#', id: 'search-link' %>    
     <nav>
-      <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
+      <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->     
+        
+        <% if logged_in? %> 
         <li><%= link_to 'Owners',    owners_path %></li>
         <li><%= link_to 'Patients',  all_patients_path %></li>
         <li><%= link_to 'Users',     users_path %></li>
         <li><%= link_to 'Admin',     '#' %></li>
-        <li><%= link_to 'Ward View', '#', id: 'ward-view-link' %></li>
+        <li><%= link_to 'Ward View', '#', id: 'ward-view-link' %></li> 
+        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+        <% else %>
+        <li><%= link_to "Log in", login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

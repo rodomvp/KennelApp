@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20151118151402) do
     t.integer  "owner_id"
     t.string   "belongings"
     t.string   "diet"
+    t.string   "last_name"
   end
 
   add_index "patients", ["owner_id"], name: "index_patients_on_owner_id", using: :btree
