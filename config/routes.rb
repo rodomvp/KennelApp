@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # get 'new_patient' => 'patients#new'
   get 'login'=> 'sessions#new'
   post 'login'=> 'sessions#create'
-  delete 'logout'=> 'sessions#destroy'n
+  delete 'logout'=> 'sessions#destroy'
   # root 'patients#index'
   root 'static_pages#home'
 
