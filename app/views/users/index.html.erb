@@ -1,8 +1,14 @@
-<%= link_to "Add User", new_path, class: "btn btn-lg btn-primary"%>
+<div class="form_action_add">
+  <%= link_to "Add User", new_path, class: "btn btn-lg btn-primary"%>
+</div>
 
-<% provide(:title, 'All users') %>
-<%= will_paginate @users %>
-<ul class="users">
-  <%= render @users %>
-</ul>
-<%= will_paginate %>
+<div style="position: relative">
+  <p>
+    <% provide(:title, 'All users') %>
+    <%= will_paginate @users %>
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+    <%= will_paginate %>
+  </p>
+</div>

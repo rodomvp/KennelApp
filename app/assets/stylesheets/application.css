@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+body div.form_action_add {
+  position: absolute;
+  top: 80px;
+  right: 35px;
+}

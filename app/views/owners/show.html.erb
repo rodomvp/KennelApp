@@ -1,13 +1,17 @@
 <% provide(:title, "OWNER: " + @owner.first_name + " " + @owner.last_name)  %>
 
-<%= link_to "Add Patient", new_patient_path, class: "btn btn-lg btn-primary"%>
+<div class="form_action_add">
+	<%= link_to "Add Patient", new_patient_path, class: "btn btn-lg btn-primary"%>
+</div>
 
-<h1><%= "#{@owner.first_name} #{@owner.last_name}" %></h1>
-<% for attribute in @owner.attributes.keys %>
-  <p><%= attribute.humanize %> <%= @owner.attributes[attribute].to_s %></p>
-<% end %>
+<div style="position: relative">
+	<h1><%= "#{@owner.first_name} #{@owner.last_name}" %></h1>
+	<% for attribute in @owner.attributes.keys %>
+	  <p><%= attribute.humanize %> <%= @owner.attributes[attribute].to_s %></p>
+	<% end %>
 
-<p>Has <%= pluralize(@owner.patients.count, "Pet") %>:</p>
-<ul class="patients">
-  <%= render @owner.patients %>
-</ul>
+	<p>Has <%= pluralize(@owner.patients.count, "Pet") %>:</p>
+	<ul class="patients">
+	  <%= render @owner.patients %>
+	</ul>
+</div>
