@@ -69,7 +69,8 @@ end
         breed: breeds_list.sample,
         owner_id: the_new_owner.id,
         belongings: belongings_list.sample,
-        diet: diet_list.sample
+        diet: diet_list.sample,
+        feeds_per_day: 2
     )
 
     # Make stays
