@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20151126110014) do
     t.integer  "owner_id"
     t.string   "belongings"
     t.string   "diet"
-    t.string   "last_name"
     t.string   "feeds_per_day"
     t.string   "int"
   end
