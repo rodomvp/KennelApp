@@ -32,9 +32,6 @@ class StaysController < ApplicationController
     else
       @stay = Stays.new(stay_params)
     end
-    @stay.patient_id = @patient.id
-    @stay.check_in_dt = Time.new
-    @stay.is_current = true
     if @stay.save
       redirect_to @patient
     end

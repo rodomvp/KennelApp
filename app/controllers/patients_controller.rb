@@ -46,7 +46,7 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(
       :name, :breed,
-      :weight, :belongings, :diet,
+      :weight, :belongings, :diet, :feeds_per_day, :int
     )
   end
 end

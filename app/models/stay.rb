@@ -5,6 +5,7 @@ class Stay < ActiveRecord::Base
   after_create :update
   private
   	def update
-  		self.check_in_dt = Time.new  		
+  		self.check_in_dt = Time.new  
+    	self.is_current = true		
   	end
 end
