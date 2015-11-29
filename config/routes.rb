@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :users
+  resources :feed_lists
 
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'

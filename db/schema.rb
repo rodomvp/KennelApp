@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126110014) do
+ActiveRecord::Schema.define(version: 20151129023049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feed_lists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "date"
+    t.string   "integer"
+  end
 
   create_table "owners", force: :cascade do |t|
     t.string   "first_name"
@@ -29,14 +36,16 @@ ActiveRecord::Schema.define(version: 20151126110014) do
     t.string   "name"
     t.string   "breed"
     t.float    "weight"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.integer  "owner_id"
     t.string   "belongings"
     t.string   "diet"
     t.string   "last_name"
-    t.string   "feeds_per_day"
     t.string   "int"
+    t.boolean  "NPO"
+    t.string   "feed_time"
+    t.integer  "feed_list_id"
   end
 
   add_index "patients", ["owner_id"], name: "index_patients_on_owner_id", using: :btree

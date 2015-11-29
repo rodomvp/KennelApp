@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
     end
   end
 
+
   def index
     if params[:id].present?
       @owner = Owner.find(params[:id])
@@ -30,7 +31,8 @@ class PatientsController < ApplicationController
   def create
     if params[:id].present?
       @owner = Owner.find(params[:id])
-      @patient = @owner.patients.build(patient_params)
+      @patient = @owner.patients.build(patient_params)      
+      params[:last_name] = @owner.last_name
     else
       @patient = Patient.new(patient_params)
     end
@@ -46,7 +48,8 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(
       :name, :breed,
-      :weight, :belongings, :diet,
+      :weight, :belongings,
+      :diet, :feed_time
     )
   end
 end
