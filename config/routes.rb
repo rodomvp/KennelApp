@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :patients
   resources :users
   resources :stays
+  resources :feed_lists
 
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   get 'all_patients' => 'patients#index'
   get 'new_patient' => 'patients#new'
   get 'new_stay' => 'stays#new'
-  post 'new_stay' => 'stays#create' 
+  post 'new_stay' => 'stays#create'
   get 'login'=> 'sessions#new'
   post 'login'=> 'sessions#create'
   delete 'logout'=> 'sessions#destroy'
