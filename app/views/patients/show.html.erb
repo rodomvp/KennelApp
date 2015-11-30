@@ -1,5 +1,9 @@
 <% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
 
+<div class="form_action_add">
+	<%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary"%>
+</div>
+
 <h1><%= "#{@patient.name} the #{@patient.breed}" %></h1>
 <% for attribute in @patient.attributes.keys %>
   <p><%= attribute.humanize %> <%= @patient.attributes[attribute].to_s %></p>
