@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20151129023049) do
     t.integer  "owner_id"
     t.string   "belongings"
     t.string   "diet"
+    t.string   "feeds_per_day"
     t.string   "int"
     t.boolean  "NPO"
     t.string   "feed_time"
