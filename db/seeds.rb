@@ -71,7 +71,7 @@ end
         belongings: belongings_list.sample,
         diet: diet_list.sample,
         feed_time: "BID",
-        NPO: true
+        NPO: [true, false].sample
     )
 
     # Make stays
