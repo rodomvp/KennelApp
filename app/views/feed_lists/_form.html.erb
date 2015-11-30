@@ -1,0 +1,17 @@
+<%= form_for(@feed_list) do |f| %>
+  <% if @feed_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feed_list.errors.count, "error") %> prohibited this feed_list from being saved:</h2>
+
+      <ul>
+      <% @feed_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

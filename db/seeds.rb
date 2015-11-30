@@ -70,7 +70,8 @@ end
         owner_id: the_new_owner.id,
         belongings: belongings_list.sample,
         diet: diet_list.sample,
-        feeds_per_day: 2
+        feed_time: "BID",
+        NPO: [true, false].sample
     )
 
     # Make stays
@@ -160,3 +161,11 @@ end
 
 create_user('George', 'Washington')
 create_user('John', 'Adams')
+Patient.create(name: Faker::Name.first_name,
+               weight: Faker::Name.first_name,      
+               breed: breeds_list.sample,
+               owner_id: 1,
+               belongings: belongings_list.sample,
+               diet: diet_list.sample,
+               feed_time: "BID",
+               NPO: false)
