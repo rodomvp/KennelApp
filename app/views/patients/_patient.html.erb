@@ -1,9 +1,5 @@
 <li>
-  <%= link_to patient.id, patient %>
-  <%= link_to patient.name, patient %>
-  <%= link_to patient.breed, patient %>
-  <%= link_to patient.weight, patient %>
-  <%= link_to patient.belongings, patient %>
-  <%= link_to patient.diet, patient %>
-  (Owned by <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %>)
+  <%= link_to patient.name + " #{patient.owner.last_name} ", patient %>
+  <%= link_to patient.diet, patient, style: "color:red;" %>  
 </li>
+
