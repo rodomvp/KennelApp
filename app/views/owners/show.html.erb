@@ -6,12 +6,14 @@
 
 <div style="position: relative">
 	<h1><%= "#{@owner.first_name} #{@owner.last_name}" %></h1>
-	<% for attribute in @owner.attributes.keys %>
-	  <p><%= attribute.humanize %> <%= @owner.attributes[attribute].to_s %></p>
-	<% end %>
+	<p><%= "Id : " "#{@owner.id}" %></p>
+    <p><%= "Email : " "#{@owner.email}" %></p>
+    <p><%= "Phone Number : " "#{@owner.phone_number}" %></p>
+    <p><%= "Created at " "#{@owner.created_at}" %></p>
+    <p><%= "Updated at " "#{@owner.updated_at}" %></p>
 
 	<p>Has <%= pluralize(@owner.patients.count, "Pet") %>:</p>
-	<ul class="patients">
+	<ul>
 	  <%= render @owner.patients %>
 	</ul>
 </div>
