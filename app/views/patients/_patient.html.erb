@@ -4,5 +4,6 @@
   <% if patient.stays.length > 0 %>
       <%= Runn.find_by_id(patient.stays.last.runn_id).ident %> 
   <% end %> 
+  (Owned by <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %>)
 </li>
 

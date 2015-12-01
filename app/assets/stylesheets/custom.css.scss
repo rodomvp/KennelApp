@@ -52,7 +52,7 @@ textarea {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1;
+    line-height: .90;
     
 }
 
@@ -68,7 +68,7 @@ h2 {
     font-size: 1.2em;
     letter-spacing: -1px;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: left;
     font-weight: normal;
     color: $gray-light;
     
@@ -95,7 +95,7 @@ p {
     font-size: 1.5em;
     float: left;
     margin-right: 10px;
-    padding-top: 10px;
+    padding-top: 16px;
     &:hover {
         color: red;
         text-decoration: none;
