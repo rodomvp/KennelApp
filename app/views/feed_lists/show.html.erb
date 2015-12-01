@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_feed_list_path(@feed_list) %> |
+<%= link_to 'Back', feed_lists_path %>
+
+
+<div style="position: relative">
+	<p>Has <%= pluralize(@feed_list.patients.count, "Pet") %>:</p>
+	<ul class="patients">
+	  <%= render @feed_list.patients %>
+	</ul>
+</div>
+
