@@ -1,0 +1,2 @@
+module WardViewsHelper
+end

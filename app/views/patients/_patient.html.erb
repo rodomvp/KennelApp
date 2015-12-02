@@ -1,5 +1,8 @@
 <li>
   <%= link_to patient.name + " #{patient.owner.last_name} ", patient %>
-  <%= link_to patient.diet, patient, style: "color:red;" %>  
+  <%= link_to patient.diet, patient, style: "color:red;" %>
+  <% if patient.stays.length > 0 %>
+      <%= Runn.find_by_id(patient.stays.last.runn_id).ident %> 
+  <% end %> 
 </li>
 

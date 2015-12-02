@@ -1,4 +1,4 @@
 class Runn < ActiveRecord::Base
   belongs_to :ward
-  has_many :stays
+  belongs_to :stay
 end

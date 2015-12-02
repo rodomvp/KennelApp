@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :ward_views
   resources :owners do
     member do
       resources :patients

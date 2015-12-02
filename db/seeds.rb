@@ -43,7 +43,7 @@ breeds_list = [
   ward_size = %w[Small, Medium, Large]
   (i+2).times do |j|
     Runn.create(
-      ident: ("Run %{i}.%{j}"),
+      ident: ("Run #{i}.#{j}"),
       size: ward_size.sample)
   end
 end
@@ -91,6 +91,8 @@ end
         runn_id: Runn.all.sample.id, 
         remarks: remarks_list.sample
       )
+
+
 
       sch_check_in_dt = the_new_stay.sch_check_in_dt
       sch_check_out_dt = the_new_stay.sch_check_out_dt

@@ -1,6 +1,7 @@
 class Stay < ActiveRecord::Base
   belongs_to :patient
-  belongs_to :runn
+  has_one :runn
+  has_one :ward
 
   after_create :update
   private
