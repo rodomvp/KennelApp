@@ -16,16 +16,6 @@ accomplished. This view also provides ways to arrive at secondary views.
 
 The major secondary interfaces (not shown) include:
 
-- The **Search Bar**, which can be accessed from the top of the _[Ward View]_.
-
-    + The search bar searches everything in the database and shows results as
-      you type.
-
-    + In addition, it also takes commands if the input begins with a
-      '`\`' character. 
-
-    + E.g. typing `\new patient` will open the dialog to create a new patient
-      profile.
 
 - The **Calendar View** 
 
@@ -126,23 +116,17 @@ record by first choosing the record then clicking 'edit'.
 
 ## Managing clients' and patients' profiles
 
-Client and patient profiles can be administered from the _Search Bar_ at the
+Client and patient profiles can be administered from navigatoin bar at the
 top of the _[Ward View]_ (patient profiles can also be accessed from within
 their runs in the ward view).
 
 ### Viewing client profile
 
-1. Enter the client's name into the search bar, if an account is present the
-   name will be listed visually.
-
-2. Click on the name and the profile will be brought to center screen
+1. Click on the name and the profile will be brought to center screen
 
 ### Viewing patient profile
 
-1. Enter the patient's name into the search bar, if an account is present the
-   name will be listed visually.
-
-2. Click on the name and the profile will be brought to center screen
+1. Click on the name and the profile will be brought to center screen
 
 ### Adding a new client
 

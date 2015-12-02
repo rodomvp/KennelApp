@@ -9,7 +9,7 @@ $gray-medium-light: #eaeaea;
     -moz-box-sizing:    border-box;
     -webkit-box-sizing: border-box;
     box-sizing:         border-box;
-    
+
 }
 
 /* miscellaneous */
@@ -20,40 +20,40 @@ $gray-medium-light: #eaeaea;
     width: 100%;
     margin-top: 45px;
     @include box_sizing;
-    
+
 }
 
 /* universal */
 
 body {
     padding-top: 60px;
-    
+
 }
 
 section {
     overflow: auto;
-    
+
 }
 
 textarea {
     resize: vertical;
-    
+
 }
 
 .center {
     text-align: center;
     h1 {
         margin-bottom: 10px;
-          
+
     }
-    
+
 }
 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
     line-height: .90;
-    
+
 }
 
 h1 {
@@ -61,7 +61,7 @@ h1 {
     letter-spacing: -2px;
     margin-bottom: 30px;
     text-align: center;
-    
+
 }
 
 h2 {
@@ -71,25 +71,18 @@ h2 {
     text-align: left;
     font-weight: normal;
     color: $gray-light;
-    
+
 }
 
 p {
     font-size: 1.1em;
     line-height: 1.7em;
-    
+
 }
 
 /* header */
 
 #ward-view-link {
-    &:hover {
-        color: red;
-        text-decoration: none;
-    }
-}
-
-#search-link {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.5em;
@@ -113,13 +106,13 @@ footer {
         color: $gray;
         &:hover {
             color: $gray-darker;
-                
+
         }
-          
+
     }
     small {
         float: left;
-          
+
     }
     ul {
         float: right;
@@ -127,11 +120,11 @@ footer {
         li {
             float: left;
             margin-left: 15px;
-                
+
         }
-          
+
     }
-    
+
 }
 
 /* forms */
