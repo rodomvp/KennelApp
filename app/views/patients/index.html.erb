@@ -4,8 +4,8 @@
 </div>
 
 <% provide(:title, 'All patients') %>
-<%= will_paginate %>
-<ul class="patients">
-  <%= render @patients %>
-</ul>
-<%= will_paginate %>
+<table class='patients'>
+  <tbody>
+     <%= render @patients %>
+  </tbody>
+</table>

@@ -10,15 +10,15 @@
   <tr>
     <th>Name</th>
     <th>Diet</th>
-	<th>Ward</th>
-    <th>Run</th>
+    <th>Ward</th>
+	  <th>Run</th>
   </tr>
  
 <% @feed_list.patients.each do |patient| %>
   <tr>
-    <td><%= patient.name %></td>
+    <td><%= patient.name + " " + patient.owner.last_name %></td>
     <td><%= patient.diet %></td>
-	<td></td>
+	  <td></td>
     <td></td> 
   </tr> 
 <% end %>
