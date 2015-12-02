@@ -7,7 +7,7 @@ belongings_list = %w[Bone Treat Toy]
 diet_list = ["Mature", "Hypo-Allergenic Salmon", "Rabbit & Venison", "Owner's Food"]
 stay_year = 2015
 stay_minute = [0, 15, 30, 45]
-remarks_list = ["Stresses immensely upon arrival, use muzzle", "No legs", 
+remarks_list = ["Stresses immensely upon arrival, use muzzle", "No legs",
 "Only eats from owner's bowl", "Use holy water 2x per day on head"]
 species_list = %w[Cat, Dog, Hamster]
 belongings_list = %w[Bone, Treat, Toy]
@@ -42,7 +42,7 @@ breeds_list = [
 
   ward_size = %w[Small, Medium, Large]
   (i+2).times do |j|
-    Runn.create(
+    r = the_new_ward.runns.create(
       ident: ("Run #{i}.#{j}"),
       size: ward_size.sample)
   end
@@ -55,7 +55,7 @@ end
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     phone_number: Faker::PhoneNumber.phone_number,
-    email: "placeholder@fornow.com"    
+    email: "placeholder@fornow.com"
   )
   the_new_owner.email = "owner_#{the_new_owner.id}@internet.com"
   the_new_owner.save
@@ -65,7 +65,7 @@ end
   num_patients.times do
     the_new_patient = Patient.create(
         name: Faker::Name.first_name,
-        weight: Faker::Name.first_name,      
+        weight: Faker::Name.first_name,
         breed: breeds_list.sample,
         owner_id: the_new_owner.id,
         belongings: belongings_list.sample,
@@ -76,7 +76,7 @@ end
 
     # Make stays
     has_stay = [true, false].sample
-    if has_stay 
+    if has_stay
       random_month = rand(1..12)
       random_day = rand(1..28)
       random_minute = stay_minute.sample
@@ -84,11 +84,11 @@ end
 
       the_new_stay = Stay.create(
         is_current: [true, false].sample,
-        sch_check_in_dt: check_in = DateTime.new(stay_year, random_month, 
+        sch_check_in_dt: check_in = DateTime.new(stay_year, random_month,
           random_day, random_month, random_minute),
         sch_check_out_dt: check_in + stay_length.days,
         patient_id: the_new_patient.id,
-        runn_id: Runn.all.sample.id, 
+        runn_id: Runn.all.sample.id,
         remarks: remarks_list.sample
       )
 
@@ -106,14 +106,14 @@ end
       if [true, false].sample
 
       end
-      
+
       # make feeding_events < StayEvent
       #some_time = sch_check_in_dt + 12.hours
       #while some_time < sch_check_out_dt
-      some_time = sch_check_in_dt  
+      some_time = sch_check_in_dt
       4.times do
         some_time = some_time + 12.hours
-        feeding_event = FeedingEvent.create(
+        fe = the_new_stay.feeding_events.create(
           food_description: diet_list.sample,
           did_eat: [true, false].sample,
           remark: Faker::Lorem.sentence,
@@ -124,9 +124,9 @@ end
 
       # make ud_events < StayEvent
       some_time = sch_check_in_dt
-      4.times do 
+      4.times do
         some_time = some_time + 6.hours
-        ud_event = UdEvent.create(
+        ud_event = the_new_stay.ud_events.create(
           did_urinate: [true, true, true, true, true, false].sample,
           did_defecate: [true, true, true, false].sample,
           remark: Faker::Lorem.sentence,
@@ -134,12 +134,12 @@ end
           actual_time_stamp: some_time
         )
       end
-      
+
       # make misc_stay_event < StayEvent
       some_time = sch_check_in_dt
       (1..3).to_a.sample.times do
         some_time = some_time + (1..8).to_a.sample
-        misc_stay_event = MiscStayEvent.create(
+        misc_stay_event = the_new_stay.misc_stay_events.create(
           remark: Faker::Lorem.sentence,
           scheduled_time_stamp: some_time,
           actual_time_stamp: some_time,
@@ -155,8 +155,8 @@ def create_user (a_first_name, a_last_name)
   user_n = User.create(
     email: "#{a_first_name}@internet.com",
     first_name: a_first_name,
-    last_name: a_last_name, 
-    password: a_good_password, 
+    last_name: a_last_name,
+    password: a_good_password,
     password_confirmation: a_good_password
   )
 end
@@ -164,7 +164,7 @@ end
 create_user('George', 'Washington')
 create_user('John', 'Adams')
 Patient.create(name: Faker::Name.first_name,
-               weight: Faker::Name.first_name,      
+               weight: Faker::Name.first_name,
                breed: breeds_list.sample,
                owner_id: 1,
                belongings: belongings_list.sample,
