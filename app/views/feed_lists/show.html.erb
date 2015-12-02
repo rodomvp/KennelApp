@@ -10,7 +10,6 @@
   <tr>
     <th>Name</th>
     <th>Diet</th>
-    <th>Ward</th>
 	  <th>Run</th>
   </tr>
  
@@ -18,8 +17,7 @@
   <tr>
     <td><%= patient.name + " " + patient.owner.last_name %></td>
     <td><%= patient.diet %></td>
-	  <td></td>
-    <td></td> 
+    <td><%= Runn.find_by_id(patient.stays.last.runn_id).ident %></td> 
   </tr> 
 <% end %>
 

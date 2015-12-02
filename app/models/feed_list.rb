@@ -5,7 +5,7 @@ class FeedList < ActiveRecord::Base
   private
     def add_patients
         Patient.all.each do |p|
-          if p.NPO == false
+          if p.NPO == false && p.stays.length > 0
         	self.patients << p
           end
       	end
