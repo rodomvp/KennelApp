@@ -13,8 +13,34 @@
  *= require_tree .
  *= require_self
  */
+body div.show {
+  position: absolute;
+  top: 155px;
+  right: 60px;
+}
+
 body div.form_action_add {
   position: absolute;
-  top: 180px;
-  right: 35px;
+  top: 85px;
+  left: 118px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px;
+}
+th, td {
+    padding: 10px;
+}
+
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    color: white;
+    background-color: #4682B4;
 }
