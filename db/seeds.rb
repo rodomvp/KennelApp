@@ -46,8 +46,7 @@ ward_sizes = %w[Small, Medium, Large]
   num_runs.times do |j|
     r = the_new_ward.runns.create(
       ident: ("Run #{i}.#{j}"),
-      size: ward_sizes.sample,
-      occupied: false)
+      size: ward_sizes.sample)
   end
 end
 
