@@ -1,0 +1,15 @@
+<div style="position: relative">
+<table border="1" style="width:100%" id="t01">
+
+<% @wards.each do |ward| %>
+  <tr>
+    <td><%= ward.id %>.
+      <%= link_to "#{ward.first_name} #{ward.last_name}", ward%>
+    </td>
+  </tr>
+<% end %>
+
+</table>
+</div>
+
+

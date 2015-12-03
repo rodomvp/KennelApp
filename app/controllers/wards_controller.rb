@@ -1,6 +1,12 @@
 class WardsController < ApplicationController
   before_action :set_ward, only: [:show, :edit, :update, :destroy]
 
+  def next
+  end
+
+  def previous
+  end
+
   # GET /wards
   # GET /wards.json
   def index
