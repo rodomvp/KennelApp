@@ -5,7 +5,6 @@ function make_fancy_diagram {
   rake erd orientation=vertical \
            title=false \
            disconnected=false \
-           exclude="FeedList" \
            inheritance=true \
            indirect=true \
            polymorphism=false \
