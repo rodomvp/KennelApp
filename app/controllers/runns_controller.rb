@@ -4,7 +4,7 @@ class RunnsController < ApplicationController
   # GET /runns
   # GET /runns.json
   def index
-    @runns = Runn.all
+    @runns = Runn.order(:ward_id, :ident)
   end
 
   # GET /runns/1
