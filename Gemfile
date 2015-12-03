@@ -18,7 +18,9 @@ gem 'turbolinks',   '>= 2.3.0'
 gem 'jbuilder',     '>= 2.2.3'
 gem 'sdoc',         '>= 0.4.0', group: :doc
 gem 'markdown-rails'
-gem 'table_print'
+gem 'table_print' ## TODO: what's this for?
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary' ## TODO: this might not be needed
 
 gem 'pg',           '>= 0.17.1'
 gem 'pry-rails'
