@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Ident</th>
       <th colspan="3"></th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @wards.each do |ward| %>
       <tr>
+        <td><%= ward.id %></td>
         <td><%= ward.ident %></td>
         <td><%= link_to 'Show', ward %></td>
         <td><%= link_to 'Edit', edit_ward_path(ward) %></td>

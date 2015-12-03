@@ -5,11 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Amenities</th>
       <th>Ident</th>
       <th>Occupied</th>
       <th>Size</th>
-      <th>Ward</th>
+      <th>Ward Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,14 +18,15 @@
   <tbody>
     <% @runns.each do |runn| %>
       <tr>
+        <td><%= runn.id %></td>
         <td><%= runn.amenities %></td>
         <td><%= runn.ident %></td>
         <td><%= runn.occupied %></td>
         <td><%= runn.size %></td>
-        <td><%= runn.ward %></td>
-        <td><%= link_to 'Show', runn %></td>
-        <td><%= link_to 'Edit', edit_runn_path(runn) %></td>
-        <td><%= link_to 'Destroy', runn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= runn.ward.id %></td>
+        <td><%= link_to 'Show', '#runn' %></td>
+        <td><%= link_to 'Edit', '#edit_runn_path(runn)' %></td>
+        <td><%= link_to 'Destroy', '#runn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Runn', new_runn_path %>
+<%= link_to 'New Runn', '#new_runn_path' %>
