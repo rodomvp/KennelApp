@@ -1,3 +1,3 @@
-json.array!(@runn) do |runn|
+json.array!(@runns) do |runn|
   json.partial! "runn", runn: runn
 end
