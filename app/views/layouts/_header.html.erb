@@ -2,6 +2,10 @@
   <div class="container"> <!-- generic div, given Bootstrap class "container" class -->
     <%= link_to 'Ward View', ward_view_path, id: 'ward-view-link' %>
     <nav>
+      <ul class="nav navbar-nav navbar-left"> <!-- ul given Bootstrap classes -->
+        <li><%= link_to '(Runs Index)',    runns_path %></li>
+      </ul>
+    </nav>
       <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
 
         <% if logged_in? %>
