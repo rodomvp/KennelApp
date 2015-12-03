@@ -24,9 +24,9 @@
         <td><%= runn.occupied %></td>
         <td><%= runn.size %></td>
         <td><%= runn.ward.id %></td>
-        <td><%= link_to 'Show', '#runn' %></td>
-        <td><%= link_to 'Edit', '#edit_runn_path(runn)' %></td>
-        <td><%= link_to 'Destroy', '#runn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', runn %></td>
+        <td><%= link_to 'Edit', edit_runn_path(runn) %></td>
+        <td><%= link_to '#Destroy', '#runn', method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
