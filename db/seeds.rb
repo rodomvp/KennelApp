@@ -36,7 +36,7 @@ breeds_list = [
 ]
 
 # Creates Wards with Runns
-8.times do |i|
+(1..8).to_a.each do |i|
   the_new_ward = Ward.create(
     ident: ("Ward #{i}"))
 

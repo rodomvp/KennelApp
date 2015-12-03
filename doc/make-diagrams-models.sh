@@ -3,9 +3,12 @@
 #railroady --hide-magic -a -i -M | dot -Tpng > doc/diagrams-models.png
 function make_fancy_diagram {
   rake erd orientation=vertical \
+           title=false \
+           disconnected=false \
            inheritance=true \
            indirect=true \
-           polymorphism=true\
+           polymorphism=false \
+           notation=bachman \
            filename=doc/diagrams-erd filetype=$1
 }
 

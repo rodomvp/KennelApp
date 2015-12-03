@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amenities:</strong>
+  <%= @runn.amenities %>
+</p>
+
+<p>
+  <strong>Ident:</strong>
+  <%= @runn.ident %>
+</p>
+
+<p>
+  <strong>Occupied:</strong>
+  <%= @runn.occupied %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @runn.size %>
+</p>
+
+<p>
+  <strong>Ward:</strong>
+  <%= "id: #{@runn.ward.id}, ident: #{@runn.ward.ident}" %>
+</p>
+
+<p>
+  <strong>Num Sibling Runs:</strong>
+  <%= "#{@runn.ward.runns.count}" %>
+</p>
+
+<p>
+  <strong>List of Sibling Runs:</strong>
+  <%= "#{@runn.ward.runns.ids}" %>
+</p>
+
+<%= link_to 'Edit', edit_runn_path(@runn) %> |
+<%= link_to 'Back', runns_path %>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ident:</strong>
+  <%= @ward.ident %>
+</p>
+<p>
+  <strong>Number of Runs:</strong>
+  <%= @ward.runns.count %>
+</p>
+<p>
+  <strong>List of Runns (ids)</strong>
+  <%= @ward.runns.ids %>
+</p>
+
+<%= link_to 'Edit', edit_ward_path(@ward) %> |
+<%= link_to 'Back', wards_path %>

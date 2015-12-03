@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :ward_views
   resources :owners do
     member do
       resources :patients
@@ -18,12 +17,17 @@ Rails.application.routes.draw do
 
   resources :patients
   resources :users
+  resources :wards do
+    resources :runns
+  end
+  resources :runns
   resources :stays
   resources :feed_lists
 
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'
   get 'new'  => 'users#new'
+  get 'ward_view' => 'wards#index'
   get 'new_owner' => 'owners#new'
   get 'all_patients' => 'patients#index'
   get 'new_patient' => 'patients#new'
