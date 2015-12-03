@@ -44,7 +44,8 @@ breeds_list = [
   (i+2).times do |j|
     r = the_new_ward.runns.create(
       ident: ("Run #{i}.#{j}"),
-      size: ward_size.sample)
+      size: ward_size.sample,
+      occupied: false)
   end
 end
 

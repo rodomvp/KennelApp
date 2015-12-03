@@ -8,6 +8,7 @@ class Stay < ActiveRecord::Base
   after_create :update
   private
   	def update
+      Runn.find_by_id(self.runn_id).update_attribute(:occupied, true)
   		self.check_in_dt = Time.new
     	self.is_current = true
   	end
