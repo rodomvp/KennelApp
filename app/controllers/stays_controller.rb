@@ -37,4 +37,11 @@ class StaysController < ApplicationController
     end
   end
 
+  private
+
+  def stay_params
+    params.require(:stay).permit(
+      :belongings, :remarks)
+  end
+
 end

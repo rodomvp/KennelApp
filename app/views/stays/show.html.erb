@@ -1,4 +1,4 @@
-<% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
+<% provide(:title, "Stay: #{@stay.id} for patient #{patient.find_by_id(@stay.patient_id)}")  %>
 
 <div class="show">
 	<%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary"%>
@@ -12,9 +12,8 @@
   <p><%= "Created at " "#{@patient.created_at}" %></p>
   <p><%= "Updated at " "#{@patient.updated_at}" %></p>
   <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}" %></p>
-<% if @patient.stays.length > 0 %>
+
 <h3> Stays </h3>
   <ul>
-  	<%= render @patient.stays %>
+  	<%= render @patient.stays.last %>
   </ul>
-<% end %>
