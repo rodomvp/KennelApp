@@ -5,10 +5,11 @@
       <ul class="nav navbar-nav navbar-left"> <!-- ul given Bootstrap classes -->
         <li><%= link_to '(Runs Index)',    runns_path %></li>
       </ul>
-    </nav>
+      <%= "(this url: #{request.original_url})" %>
       <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
 
         <% if logged_in? %>
+        <li><%= link_to "(THIS.JSON)", "#{request.original_url}.json" %></li>
         <li><%= link_to 'Owners',    owners_path %></li>
         <li><%= link_to 'Patients',  all_patients_path %></li>
         <li><%= link_to 'Users',     users_path %></li>
