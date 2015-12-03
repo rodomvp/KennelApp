@@ -22,7 +22,17 @@
 
 <p>
   <strong>Ward:</strong>
-  <%= @runn.ward %>
+  <%= "id: #{@runn.ward.id}, ident: #{@runn.ward.ident}" %>
+</p>
+
+<p>
+  <strong>Num Sibling Runs:</strong>
+  <%= "#{@runn.ward.runns.count}" %>
+</p>
+
+<p>
+  <strong>List of Sibling Runs:</strong>
+  <%= "#{@runn.ward.runns.ids}" %>
 </p>
 
 <%= link_to 'Edit', edit_runn_path(@runn) %> |

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   resources :wards do
     resources :runns
   end
-
+  resources :runns
   resources :stays
   resources :feed_lists
 
