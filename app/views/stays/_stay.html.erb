@@ -1,3 +1,9 @@
+<% if stay.is_current %>
+<li style="color:green">
+	<%= stay.created_at %>
+</li>
+<% else %>
 <li>
   <%=  stay.created_at %>
 </li>
+<% end %>
