@@ -1,17 +1,6 @@
 
 <tr>
   <td>
-     <%= link_to patient.name + " #{patient.owner.last_name} ", patient %>
-  </td>
-  <td>
-    <%= link_to patient.diet, patient, style: "color:red;" %>
-  </td>
-  <td>
-    <% if patient.stays.length > 0 %>
-      <%= Runn.find_by_id(patient.stays.last.runn_id).ident %> 
-    <% end %>
-  </td>
-  <td>
-    (Owned by <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %>)
+     <%= link_to patient.name + " #{patient.owner.last_name}, ", patient %>
   </td>
 </tr>

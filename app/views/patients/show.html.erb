@@ -11,8 +11,9 @@
   <p><%= "Diet : " "#{@patient.diet}" %></p>
   <p><%= "Created at " "#{@patient.created_at}" %></p>
   <p><%= "Updated at " "#{@patient.updated_at}" %></p>
-  <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}" %></p>
+  <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %></p>
 <% if @patient.stays.length > 0 %>
+
 <h3> Stays </h3>
   <ul>
   	<%= render @patient.stays %>
