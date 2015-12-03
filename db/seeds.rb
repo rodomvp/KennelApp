@@ -36,15 +36,17 @@ breeds_list = [
 ]
 
 # Creates Wards with Runns
+MEDIAN_RUNNS = 6
+ward_sizes = %w[Small, Medium, Large]
 (1..8).to_a.each do |i|
   the_new_ward = Ward.create(
     ident: ("Ward #{i}"))
 
-  ward_size = %w[Small, Medium, Large]
-  (i+2).times do |j|
+  num_runs = MEDIAN_RUNNS + (-1..1).to_a.sample
+  num_runs.times do |j|
     r = the_new_ward.runns.create(
       ident: ("Run #{i}.#{j}"),
-      size: ward_size.sample,
+      size: ward_sizes.sample,
       occupied: false)
   end
 end
