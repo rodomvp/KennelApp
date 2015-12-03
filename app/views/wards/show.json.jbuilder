@@ -1,1 +1,4 @@
-json.extract! @ward, :id, :ident, :created_at, :updated_at
+json.partial! "ward", ward: @ward
+json.runns @ward.runns.each do |runn|
+  json.partial! "runns/runn", runn: runn
+end

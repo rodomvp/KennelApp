@@ -18,9 +18,7 @@ Rails.application.routes.draw do
   resources :patients
   resources :users
   resources :wards do
-    member do
-      resources :runns
-    end
+    resources :runns
   end
 
   resources :stays
