@@ -339,6 +339,7 @@ GEM
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
     will_paginate (3.0.7)
+    wkhtmltopdf-heroku (2.12.2.4)
     xml-simple (1.1.5)
 
 PLATFORMS
@@ -381,6 +382,7 @@ DEPENDENCIES
   uglifier (>= 2.5.3)
   web-console (>= 2.0.0.beta3)
   will_paginate
+  wkhtmltopdf-heroku
 
 BUNDLED WITH
    1.10.6
