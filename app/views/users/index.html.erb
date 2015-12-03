@@ -3,14 +3,17 @@
 <div >
   <%= link_to "Add User", new_path, class: "btn btn-lg btn-primary"%>
 </div>
-
+<br>
 <div style="position: relative">
-  <p>
-    <% provide(:title, 'All users') %>
-    <%= will_paginate @users %>
-    <ul class="users">
-      <%= render @users %>
-    </ul>
-    <%= will_paginate %>
-  </p>
+<table border="1" style="width:100%" id="t01">
+	
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %>.
+    	<%= link_to "#{user.first_name} #{user.last_name}", user%>
+    </td>
+  </tr>
+<% end %>
+
+</table>
 </div>

@@ -3,11 +3,17 @@
 <div>
 	<%= link_to "Add Owner", new_owner_path, class: "btn btn-lg btn-primary"%>
 </div>
+ <br>
 
-<% provide(:title, 'All owners') %>
-<table class='owners' id="t01">
-  <tbody>
-     <%= render @owners %>
-  </tbody>
+<div style="position: relative">
+<table border="1" style="width:100%" id="t01">
+<% @owners.each do |owner| %>
+  <tr>
+    <td><%= owner.id %>.
+    <%= link_to "#{owner.first_name} #{owner.last_name}", owner%>
+<% end %>
+
 </table>
+</div>
+
 <%= will_paginate %>

@@ -1,5 +1,15 @@
-<li>
-  <%= link_to user.id, user %> 
-  <%= link_to user.first_name, user %> 
-  <%= link_to user.last_name, user %> 
-</li>
+<div style="position: relative">
+<table border="1" style="width:100%" id="t01">
+	
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %>.
+    	<%= link_to "#{user.first_name} #{user.last_name}", user%>
+    </td>
+  </tr>
+<% end %>
+
+</table>
+</div>
+
+

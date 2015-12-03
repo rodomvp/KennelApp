@@ -1,6 +1,6 @@
 <% provide(:title, 'Check In') %>
 <h1>Check In New Stay</h1>
-<h2><%= "for patient #{@patient.name}" %></h2>
+<h2><center><%= "for patient #{@patient.name}" %></center></h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -10,9 +10,9 @@
       <%= f.text_field :belongings %>
 
       <%= f.label :remarks %>
-      <%= f.text_field :remarks %>`
+      <%= f.text_field :remarks %>
 
-      <%= f.label "Run" %>
+      <%= f.label :runn_id, "Run"%>
       <%= f.text_field :runn_id %>	
       
       <%= f.submit "Create stay", class: "btn btn-primary" %>

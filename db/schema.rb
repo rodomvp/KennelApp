@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20151203035740) do
   create_table "feed_lists", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "date"
-    t.string   "integer"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -36,12 +34,12 @@ ActiveRecord::Schema.define(version: 20151203035740) do
     t.string   "name"
     t.string   "breed"
     t.float    "weight"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "owner_id"
     t.string   "belongings"
     t.string   "diet"
-    t.string   "last_name"
+    t.string   "feeds_per_day"
     t.string   "int"
     t.boolean  "NPO"
     t.string   "feed_time"
