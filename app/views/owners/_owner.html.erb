@@ -1,7 +1,14 @@
-<li>
-  <%= owner.id %>.
-<!--  <%= link_to owner.email, owner %> -->
-  <%= link_to owner.first_name, owner %> 
-  <%= link_to owner.last_name, owner %> 
-<!--   <%= link_to owner.phone_number, owner %> -->
-</li>
+<tr>
+
+  <td>
+    <%= link_to owner.id, owner %>
+  </td>
+
+  <td>
+     <%= link_to owner.first_name + " #{owner.last_name} ", owner %>
+  </td>
+
+  <td> 
+  	 <%= owner.patients.length %>
+  
+ </tr>
