@@ -38,7 +38,7 @@ breeds_list = [
 # Creates Wards with Runns
 8.times do |i|
   the_new_ward = Ward.create(
-    ident: ("Ward %{i}"))
+    ident: ("Ward #{i}"))
 
   ward_size = %w[Small, Medium, Large]
   (i+2).times do |j|
