@@ -1,6 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse"> <!-- Bootstrap classes -->
   <div class="container"> <!-- generic div, given Bootstrap class "container" class -->
+  <% if logged_in? %>
     <%= link_to 'Ward View', ward_view_path, id: 'ward-view-link' %>
+  <% end %>
     <nav>
       <ul class="nav navbar-nav navbar-left"> <!-- ul given Bootstrap classes -->
         <li><%= link_to '(Runs Index)',    runns_path %></li>
@@ -17,8 +19,9 @@
         <li><%= link_to "Log out", logout_path, method: "delete" %></li>
         <% else %>
         <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+       
       </ul>
     </nav>
+
   </div>
 </header>

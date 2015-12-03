@@ -38,8 +38,6 @@ class PatientsController < ApplicationController
     end
     if @patient.save
       redirect_to @patient
-    else
-      render 'new_patient'
     end
   end
 
