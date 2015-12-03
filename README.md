@@ -48,6 +48,10 @@ at [Go Rails](https://gorails.com/setup/)).
 - PostgreSQL
 - [heroku toolbelt](https://toolbelt.heroku.com/) (not described in the
   Go Rails link above, but pretty simple)
+- wkhtmltopdf (best done with `sudo apt-get install wkhtmltopdf`, 
+  per [this][])
+
+[this]: https://github.com/pdfkit/pdfkit/wiki/Installing-WKHTMLTOPDF
 
 ## Installing the App
 
