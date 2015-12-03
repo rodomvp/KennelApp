@@ -30,7 +30,7 @@ class StaysController < ApplicationController
       @patient = Patient.find(params[:id])
       @stay = @patient.stays.build(stay_params)
       @stay.is_current = true
-      Runn.find_by_id(@stay.runn_id).occupied = true
+      Runn.find_by_id(@stay.runn_id).update_attribute(:occupied, true)
     else
       @stay = Stays.new(stay_params)
     end
