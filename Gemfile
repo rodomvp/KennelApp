@@ -18,8 +18,10 @@ gem 'turbolinks',   '>= 2.3.0'
 gem 'jbuilder',     '>= 2.2.3'
 gem 'sdoc',         '>= 0.4.0', group: :doc
 gem 'markdown-rails'
-gem 'table_print'
-
+gem 'table_print' ## TODO: what's this for?
+gem 'pdfkit'
+gem 'wkhtmltopdf-heroku'
+gem 'puma'
 gem 'pg',           '>= 0.17.1'
 gem 'pry-rails'
 
@@ -29,6 +31,7 @@ group :development, :test do
   gem 'spring',      '>= 1.1.3'
   gem 'awesome_print'
   gem 'better_errors'
+  gem 'dotenv-rails'
 
   # Diagramming gems
 
@@ -52,6 +55,5 @@ end
 group :staging, :production do
   gem 'rails_stdout_logging'
   gem 'rails_12factor', '>= 0.0.2'
-  gem 'puma'
 end
 
