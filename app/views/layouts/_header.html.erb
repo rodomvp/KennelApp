@@ -4,6 +4,8 @@
     <nav>
       <ul class="nav navbar-nav navbar-left"> <!-- ul given Bootstrap classes -->
         <li><%= link_to '-Runs Index-',    runns_path %></li>
+        <li><%= link_to '-Stays-',    '/stays#' %></li>
+        <li><%= link_to '-StayEvents-',    '#' %></li>
         <li>
         <%= link_to "#{request.original_url}.pdf", class: "btn" do %>
             <i class="glyphicon glyphicon-print"></i>
