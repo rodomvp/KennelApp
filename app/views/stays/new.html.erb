@@ -13,7 +13,7 @@
       <%= f.text_field :remarks %>
 
       <%= f.label :runn_id, "Run"%>
-      <%= f.text_field :runn_id %>	
+      <%= f.select :runn_id, Runn.ids %>	
       
       <%= f.submit "Create stay", class: "btn btn-primary" %>
     <% end %>
