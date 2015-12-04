@@ -5,7 +5,7 @@ class FeedList < ActiveRecord::Base
   private
     def add_patients
         Patient.all.each do |p|
-          if p.NPO == false && p.stays.length > 0
+          if p.stays.last.is_current?
         	self.patients << p
           end
       	end
