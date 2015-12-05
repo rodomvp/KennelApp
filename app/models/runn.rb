@@ -3,16 +3,16 @@ class Runn < ActiveRecord::Base
   belongs_to :ward
   has_many :stays
 
-  def self.getEmptyRunns
-  	emptyRuns = [] 
-  	Runn.all.each do |f|
-  		if f.occupied == true
+  def self.get_empty_runns
+  	empty_runns = [] 
+  	Runn.all.each do |runn|
+  		if runn.occupied == true
   			next
   		else
-  			emptyRuns.push(f.id)
+  			empty_runns.push(runn)
   		end
   	end
-  	return emptyRuns
+  	return empty_runns
   end
 
 end
