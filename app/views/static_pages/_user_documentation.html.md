@@ -1,6 +1,6 @@
 # User Documentation for Kennel Management Software
 
-revised: October 30, 2015
+revised: Dec 4, 2015 
 
 <!-- TODO: add table of contents, or navigation of some sort -->
 <!-- TODO: replace the mockup images with real images -->

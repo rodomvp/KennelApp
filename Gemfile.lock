@@ -301,6 +301,7 @@ GEM
       ffi (>= 0.5.0)
     rdiscount (1.6.8)
     rdoc (4.2.0)
+    redcarpet (3.3.3)
     ruby-graphviz (1.2.2)
     ruby-progressbar (1.7.5)
     sass (3.4.19)
@@ -374,6 +375,7 @@ DEPENDENCIES
   rails-erd
   rails_12factor (>= 0.0.2)
   rails_stdout_logging
+  redcarpet
   sass-rails (>= 5.0.2)
   sdoc (>= 0.4.0)
   spring (>= 1.1.3)
