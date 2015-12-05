@@ -27,6 +27,12 @@ $gray-medium-light: #eaeaea;
 
 body {
     padding-top: 60px;
+    a:link {
+      /*color: white;*/
+    }
+    a:visited {
+      all: inherit;
+    }
 
 }
 
@@ -89,6 +95,7 @@ p {
     float: left;
     margin-right: 10px;
     padding-top: 16px;
+    color: white;
     &:hover {
         color: red;
         text-decoration: none;
