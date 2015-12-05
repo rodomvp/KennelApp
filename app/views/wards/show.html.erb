@@ -1,12 +1,13 @@
 <% provide(:title, @ward.ident) %>
 <h1>
 
-  <%= link_to Ward.first, class: "btn" do %>
+  <%= link_to @ward.previous, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
+
   <%= @ward.ident %>
 
-  <%= link_to Ward.last, class: "btn" do %>
+  <%= link_to @ward.next, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
   <% end %>
 </h1>
