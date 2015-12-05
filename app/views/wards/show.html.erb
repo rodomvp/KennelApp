@@ -1,43 +1,29 @@
 <% provide(:title, @ward.ident) %>
 <h1>
 
-  <%= link_to Ward.first, class: "btn" do %>
+  <%= link_to @ward.previous, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
+
   <%= @ward.ident %>
 
-  <%= link_to Ward.last, class: "btn" do %>
+  <%= link_to @ward.next, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
   <% end %>
 </h1>
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Ident:</strong>
-  <%= @ward.ident %>
-</p>
-<p>
-  <strong>Number of Runs:</strong>
-  <%= @ward.runns.count %>
-</p>
-<p>
-  <strong>List of Runns (ids)</strong>
-  <% @ward.runns.each do |r| %>
-    <span style="color: <%= r.occupied? ? 'green' : 'black' %>">
-      <%= r.id %>
-    </span>
-  <% end %>
-</p>
 <%= link_to 'Edit', edit_ward_path(@ward) %> |
 <%= link_to 'Back', wards_path %>
 
 <h3> Runs </h3>
 
-<% @ward.runns.each do |runn| %>
-<div class="panel panel-default">
-
-    <%= render runn %>
-
+<div class="row">
+    <% @ward.runns.each do |runn| %>
+      <div class="col-md-4" id="ward-view-runn">
+        <%= render runn %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<% end %>

@@ -1,10 +1,15 @@
-<div class="panel-heading">
-  <%= "#{runn.ident}"  %>
-</div>
-<div class="panel-body">
-  <p><b>occupied?: </b><%= runn.occupied? %></p>
-  <ul class="list-group">
-    <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
-    <li class="list-group-item"><b>amenities</b><%= ": #{runn.amenities}"  %></li>
-  </ul>
+<div class="panel panel-<%= runn.occupied? ? 'primary' : 'default' %>">
+  <div class="panel-heading" >
+    <%= link_to "#{runn.ident}", runn  %>
+  </div>
+  <div class="panel-body">
+    <p>
+      <%= runn.occupied? ? "OCCUPIED by" : "VACANT" %> 
+      <%= runn.current_patient_name %>
+    </p>
+    <ul class="list-group">
+      <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
+      <li class="list-group-item"><b>amenities</b><%= ": #{runn.amenities}"  %></li>
+    </ul>
+  </div>
 </div>

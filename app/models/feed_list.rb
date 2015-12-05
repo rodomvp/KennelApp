@@ -4,11 +4,8 @@ class FeedList < ActiveRecord::Base
   after_create :add_patients
   private
     def add_patients
-        Patient.all.each do |p|
-          if p.stays.last.is_current?
-        	self.patients << p
-          end
-      	end
+      Patient.all.each do |p|
+        self.patients << p if p.has_current_stay?
+      end
     end
-
 end
