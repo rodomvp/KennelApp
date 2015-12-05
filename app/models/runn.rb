@@ -2,6 +2,7 @@ class Runn < ActiveRecord::Base
 
   belongs_to :ward
   has_many :stays
+  default_scope { order('ident ASC') }
 
   def current_stay
     stays = Stay.where(runn: self) 

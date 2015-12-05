@@ -20,9 +20,10 @@
 <h3> Runs </h3>
 
 <div class="row">
-  <% @ward.runns.each do |runn| %>
-    <div class="col-md-4">
-      <%= render runn %>
-    </div>
-  <% end %>
+    <% @ward.runns.each do |runn| %>
+      <div class="col-md-4" id="ward-view-runn">
+        <%= render runn %>
+      </div>
+    <% end %>
+  </div>
 </div>

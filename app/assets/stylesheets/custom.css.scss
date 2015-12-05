@@ -139,3 +139,15 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+/* ward view */
+
+#ward-view-runn {
+
+  a:link {
+    /*color: white;*/
+  }
+  a:visited {
+    all: inherit;
+  }
+}
