@@ -1,6 +1,6 @@
 <div class="panel panel-<%= runn.occupied? ? 'primary' : 'default' %>">
-  <div class="panel-heading">
-    <%= "#{runn.ident}"  %>
+  <div class="panel-heading" >
+    <%= link_to "#{runn.ident}", runn  %>
   </div>
   <div class="panel-body">
     <p><%= runn.occupied? ? "OCCUPIED" : "VACANT" %></p>
