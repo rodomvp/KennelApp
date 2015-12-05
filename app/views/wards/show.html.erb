@@ -19,10 +19,10 @@
 
 <h3> Runs </h3>
 
-<% @ward.runns.each do |runn| %>
-  <div class="row">
+<div class="row">
+  <% @ward.runns.each do |runn| %>
     <div class="col-md-4">
       <%= render runn %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
