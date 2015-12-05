@@ -1,8 +1,24 @@
 # RVDE-LSU-3380 
 
-Main repo for project work. 
+Main repo for project work. This README is intended for developers.
 
 Master branch is staged at <http://kms3380.herokuapp.com/>.
+
+## Where to find user documentation
+
+User documentation is located within this repository at:
+
+    app/views/static_pages/_user_documentation.html.md
+
+which renders to the URI:
+
+    https://kms3380.herokuapp.com/docs
+
+or, more generally, at
+
+    http://{$root}/docs
+
+## Object model
 
 Entity relationship diagram of the models is shown below:
 <tt>[diagrams-erd.png]</tt> [^1]. 
