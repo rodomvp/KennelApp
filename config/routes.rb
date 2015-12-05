@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'
   get 'new'  => 'users#new'
-  get 'ward_view' => 'wards#index'
+  get 'ward_view' => 'wards#show'
   get 'new_owner' => 'owners#new'
   get 'all_patients' => 'patients#index'
   get 'new_patient' => 'patients#new'
