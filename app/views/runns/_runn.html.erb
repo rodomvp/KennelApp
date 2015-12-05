@@ -1,10 +1,10 @@
-<div class="panel-heading"><%= "#{runn.ident}"  %></div>
-  <div class="panel-body">
-    <p><b>occupied</b><%= ": #{runn.occupied?}"  %></p>
-<ul class="list-group">
-  <li class="list-group-item"><b>num_stays</b><%= ": #{runn.stays.count}"  %></li>
-  <li class="list-group-item"><b>stay_ids</b><%= ": #{runn.stay_ids}"  %></li>
-  <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
-  <li class="list-group-item"><b>amenities</b><%= ": #{runn.amenities}"  %></li>
-</ul>
-  </div>
+<div class="panel-heading">
+  <%= "#{runn.ident}"  %>
+</div>
+<div class="panel-body">
+  <p><b>occupied?: </b><%= runn.occupied? %></p>
+  <ul class="list-group">
+    <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
+    <li class="list-group-item"><b>amenities</b><%= ": #{runn.amenities}"  %></li>
+  </ul>
+</div>
