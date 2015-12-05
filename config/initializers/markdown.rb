@@ -1,6 +1,8 @@
 MarkdownRails.configure do |config|
   markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-    :fenced_code_blocks => true,
+    :fenced_code_blocks => false,
+    disable_indented_code_blocks: true,
+    footnotes: true,
     :autolink => true,
   )
 
