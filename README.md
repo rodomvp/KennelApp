@@ -1,4 +1,4 @@
-# RVDE-LSU-3380 
+# KennelApp 
 
 Main repo for project work. This README is intended for developers.
 
@@ -52,12 +52,14 @@ UdEvent < StayEvent
 
 ## Getting Started: Prerequisites
 
-This is best done in Linux (Ubuntu or Debian) or OS X. On Windows, you'll
-have to do some Googling; but the best bets are probably Cygwin, git-scm, or
-Ubuntu inside VirtualBox. Or, you can use [Cloud9](https://c9.io/).
+This is best done in Linux (Ubuntu or Debian) or OS X. 
+
+On Windows, a good option is to use Vagrant to set up Ubuntu Server
+inside VirtualBox (it's "pretty rad", per [this short GoRails
+guide](https://gorails.com/guides/using-vagrant-for-rails-development)).
 
 The following need to be installed and configured (there's a 30-minute guide 
-at [Go Rails](https://gorails.com/setup/)).
+at [GoRails](https://gorails.com/setup/)).
 
 - Ruby 2.2.3 (using rbenv, ruby-build, bundler)
 - node.js, npm
@@ -73,13 +75,13 @@ at [Go Rails](https://gorails.com/setup/)).
 
 First, clone this repo (if you haven't already done so)
 
-    $ git clone git@github.com:rodomvp/RVDE-LSU-3380.git
-    $ cd RVDE-LSU-3380/
+    $ git clone git@github.com:rodomvp/KennelApp.git
+    $ cd KennelApp/
 
 Now create a PostgreSQL user for this project
 
     $ sudo service postgresql restart # this is probably Ubuntu-specific
-    $ sudo -u postgres createuser RVDE-LSU-3380 -s
+    $ sudo -u postgres createuser KennelApp -s
 
 Run the setup script:
 
