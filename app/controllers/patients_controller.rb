@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+
+  # Show a new patient form (Using views/patients/new.html.erb)
   def new
     if params[:id].present?
       @owner = Owner.find(params[:id])
@@ -8,6 +10,7 @@ class PatientsController < ApplicationController
     end
   end
 
+  # Show a patient profile by id (Using views/patients/show.html.erb)
   def show
     if params[:id].present?
       @patient = Patient.find(params[:id])
@@ -18,7 +21,7 @@ class PatientsController < ApplicationController
     end
   end
 
-
+  # Return a listing of all patients (Using views/patients/index.html.erb)
   def index
     if params[:id].present?
       @owner = Owner.find(params[:id])
@@ -28,6 +31,7 @@ class PatientsController < ApplicationController
     end
   end
 
+  # Use patient_params to create a new patient
   def create
     if params[:id].present?
       @owner = Owner.find(params[:id])
@@ -37,6 +41,7 @@ class PatientsController < ApplicationController
       @patient = Patient.new(patient_params)
     end
     if @patient.save
+      # Redirect to new patient profile
       redirect_to @patient
     end
   end
