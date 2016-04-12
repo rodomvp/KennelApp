@@ -5,6 +5,7 @@ Main repo for project work. This README is intended for developers.
 Master branch is staged at <http://kennelapp.herokuapp.com/>. To push to heroku, make sure you have the remote set up:
 
 ```
+heroku login
 git remote -v
 ```
 
