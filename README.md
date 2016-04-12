@@ -2,7 +2,23 @@
 
 Main repo for project work. This README is intended for developers.
 
-Master branch is staged at <http://kms3380.herokuapp.com/>.
+Master branch is staged at <http://kennelapp.herokuapp.com/>. To push to heroku, make sure you have the remote set up:
+
+```
+git remote -v
+```
+
+You should see `heroku  https://git.heroku.com/kennelapp.git (push)` in the output. If not, you need to add it:
+
+```
+heroku git:remote -a kennelapp
+```
+
+Now you can push to heroku (always pushes local `[master]`):
+
+```
+git push heroku
+```
 
 ## Where to find user documentation
 
@@ -12,7 +28,7 @@ User documentation is located within this repository at:
 
 which renders to the URI:
 
-    https://kms3380.herokuapp.com/docs
+    https://kennelapp.herokuapp.com/docs
 
 or, more generally, at
 
