@@ -1,5 +1,6 @@
 <h1>Patients</h1>
 
+<!-- Search form pagination done by: Vincent Rodomsita -->
 <%= form_tag '/patients', :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
@@ -9,24 +10,16 @@
 <br>
 <% provide(:title, 'All patients') %>
 
-
-<div style="position: relative">
-<table border="1" style="width:100%" id="t01">
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-	<th>Owner</th>
-  </tr>
- 
+<!--Patient list pagination done by: Emily Ribando-Gros -->
 <% @patients.each do |patient| %>
-  <tr>
-    <td><%= patient.id %>.</td>
-    <td><%= link_to "#{patient.name}", patient%>
-    	<%= patient.owner.last_name %></td>
-    <td><%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %></td> 
-  </tr> 
-<% end %>
-
-</table>
+<div class=thumblist>
+  <ul>
+    <li style="list-style-type:none" class=thumblist>
+      <img class=thumblist src="https://s-media-cache-ak0.pinimg.com/236x/43/68/ba/4368bac227be42d243029c276a9a73f8.jpg" height="70px" width="70px">
+      <h3><a><%= patient.id %>. </a><%= link_to "#{patient.name}", patient%></h3>
+      <p>Owner: <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %></p> 
+    </li>
+  </ul>
 </div>
+<% end %>
 <%= will_paginate %>
