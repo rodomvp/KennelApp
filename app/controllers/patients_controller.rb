@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-
+  before_filter :login_required, :only => [:show, :new, :index, :create]
   # Show a new patient form (Using views/patients/new.html.erb)
   def new
     if params[:id].present?

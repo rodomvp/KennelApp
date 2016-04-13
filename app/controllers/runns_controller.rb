@@ -1,5 +1,6 @@
 class RunnsController < ApplicationController
   before_action :set_runn, only: [:show, :edit, :update, :destroy]
+  before_filter :login_required, :only => [:show, :index, :new, :create, :update]
 
   # GET /runns
   # GET /runns.json
