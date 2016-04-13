@@ -6,21 +6,6 @@
   <% end %>
 
   <%= @ward.ident %>
-<<<<<<< HEAD
-</p>
-<p>
-  <strong>Number of Runs:</strong>
-  <%= @ward.runns.count %>
-</p>
-<p>
-  <strong>List of Runns (ids)</strong>
-  <% @ward.runns.each do |r| %>
-    <span style="color: <%= r.occupied? ? 'green' : 'black' %>">
-      <%= r.id %>
-    </span>
-  <% end %>
-</p>
-=======
 
   <%= link_to @ward.next, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
@@ -28,7 +13,6 @@
 </h1>
 
 <p id="notice"><%= notice %></p>
->>>>>>> c2274665d2d2775ad8c493a00ec17297c4c72f8d
 
 <%= link_to 'Edit', edit_ward_path(@ward) %> |
 <%= link_to 'Back', wards_path %>
