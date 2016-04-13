@@ -1,6 +1,6 @@
 class WardsController < ApplicationController
   before_action :set_ward, only: [:show, :edit, :update, :destroy]
-  before_filter :login_required, :only => [:index, :show, :create, :update, :destroy]
+  before_filter :login_required, :only => [:index, :update, :destroy]
 
   # GET /wards
   # GET /wards.json
@@ -13,7 +13,7 @@ class WardsController < ApplicationController
   def show
   end
 
-  # GET /wards/new
+  # GET /wards/new  
   def new
     @ward = Ward.new
   end
