@@ -1,5 +1,11 @@
 <h1>Patients</h1>
 
+<%= form_tag '/patients', :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
 <br>
 <% provide(:title, 'All patients') %>
 

@@ -23,12 +23,7 @@ class PatientsController < ApplicationController
 
   # Return a listing of all patients (Using views/patients/index.html.erb)
   def index
-    if params[:id].present?
-      @owner = Owner.find(params[:id])
-      @patients = @owner.patients.paginate(page: params[:page])
-    else
-      @patients = Patient.paginate(page: params[:page])
-    end
+      @patients = Patient.search(params[:search]).order(:name).paginate(page: params[:page])
   end
 
   # Use patient_params to create a new patient
