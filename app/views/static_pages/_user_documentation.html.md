@@ -1,6 +1,6 @@
 # User Documentation for Kennel Management Software
 
-revised: October 30, 2015
+revised: Dec 4, 2015 
 
 <!-- TODO: add table of contents, or navigation of some sort -->
 <!-- TODO: replace the mockup images with real images -->
@@ -9,7 +9,7 @@ revised: October 30, 2015
 
 This document is an end user's guide to the Kennel Management Software.
 
-![The *Ward View* is the primary interface.](images/ward-view.png)
+![The *Ward View* is the primary interface.](ward-view.png)
 
 The **[Ward View]** is the primary interface from which most tasks can be
 accomplished. This view also provides ways to arrive at secondary views.
@@ -30,7 +30,7 @@ The major secondary interfaces (not shown) include:
 
 ## Ward View
 
-![The *Ward View* mockup.\label{ward-view}](images/ward-view.png)
+![The *Ward View* mockup.\label{ward-view}](ward-view.png)
 
 Most tasks can be accomplished from the **Ward View** (figure \ref{ward-view}). 
 Several features immediately worth noting are described below.
@@ -67,7 +67,7 @@ list of every dog's diet, separated by ward (figure \ref{feeding-list}). Dogs
 that are currently NPO (Nil per os) will be indicated as such on the feeding
 list.
 
-![The *Feeding List* mockup.\label{feeding-list}](images/feeding-list.png)
+![The *Feeding List* mockup.\label{feeding-list}](feeding-list.png)
 
 ### Patient's log and medical records
 

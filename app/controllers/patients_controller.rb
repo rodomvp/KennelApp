@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+  before_filter :login_required, :only => [:show, :new, :index, :create]
+  # Show a new patient form (Using views/patients/new.html.erb)
   def new
     if params[:id].present?
       @owner = Owner.find(params[:id])
@@ -8,6 +10,7 @@ class PatientsController < ApplicationController
     end
   end
 
+  # Show a patient profile by id (Using views/patients/show.html.erb)
   def show
     if params[:id].present?
       @patient = Patient.find(params[:id])
@@ -18,16 +21,12 @@ class PatientsController < ApplicationController
     end
   end
 
-
+  # Return a listing of all patients (Using views/patients/index.html.erb)
   def index
-    if params[:id].present?
-      @owner = Owner.find(params[:id])
-      @patients = @owner.patients.paginate(page: params[:page])
-    else
-      @patients = Patient.paginate(page: params[:page])
-    end
+      @patients = Patient.search(params[:search]).order(:name).paginate(page: params[:page])
   end
 
+  # Use patient_params to create a new patient
   def create
     if params[:id].present?
       @owner = Owner.find(params[:id])
@@ -37,6 +36,7 @@ class PatientsController < ApplicationController
       @patient = Patient.new(patient_params)
     end
     if @patient.save
+      # Redirect to new patient profile
       redirect_to @patient
     end
   end
@@ -46,7 +46,7 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(
       :name, :breed,
-      :weight, :belongings, :diet, :feeds_per_day, :int, :feed_time
+      :weight, :diet, :feeds_per_day, :int, :feed_time
     )
   end
 end

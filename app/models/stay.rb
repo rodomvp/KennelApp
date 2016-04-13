@@ -5,6 +5,10 @@ class Stay < ActiveRecord::Base
   has_many :ud_events
   has_many :misc_stay_events
 
+  def is_current?
+    return is_current
+  end
+
   after_create :update
   private
   	def update

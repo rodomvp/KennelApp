@@ -37,7 +37,7 @@ breeds_list = [
 
 # Creates Wards with Runns
 MEDIAN_RUNNS = 6
-ward_sizes = %w[Small, Medium, Large]
+ward_sizes = %w[Small Medium Large]
 (1..8).to_a.each do |i|
   the_new_ward = Ward.create(
     ident: ("Ward #{i}"))
@@ -46,8 +46,7 @@ ward_sizes = %w[Small, Medium, Large]
   num_runs.times do |j|
     r = the_new_ward.runns.create(
       ident: ("Run #{i}.#{j}"),
-      size: ward_sizes.sample,
-      occupied: false)
+      size: ward_sizes.sample)
   end
 end
 
@@ -74,7 +73,7 @@ end
         belongings: belongings_list.sample,
         diet: diet_list.sample,
         feed_time: "BID",
-        NPO: [true, false].sample
+        NPO: false
     )
 
     # Make stays

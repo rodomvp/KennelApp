@@ -4,7 +4,8 @@ class FeedListsController < ApplicationController
   # GET /feed_lists
   # GET /feed_lists.json
   def index
-    @feed_lists = FeedList.all
+    #@feed_lists = FeedList.all
+    create
   end
 
   # GET /feed_lists/1

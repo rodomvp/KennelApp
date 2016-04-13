@@ -21,6 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+
 development:
   <<: *default
   database: RVDE-LSU-3380_development
@@ -80,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  host: localhost
   database: RVDE-LSU-3380_production
   username: RVDE-LSU-3380
   password: <%= ENV['RVDE-LSU-3380_DATABASE_PASSWORD'] %>

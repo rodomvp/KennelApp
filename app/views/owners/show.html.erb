@@ -1,5 +1,6 @@
 <% provide(:title, "OWNER: " + @owner.first_name + " " + @owner.last_name)  %>
 
+<!-- Add Patient button -->
 <div class="show">
 	<%= link_to "Add Patient", new_patient_path, class: "btn btn-lg btn-primary"%>
 </div>
@@ -12,8 +13,15 @@
     <p><%= "Created at " "#{@owner.created_at}" %></p>
     <p><%= "Updated at " "#{@owner.updated_at}" %></p>
 
-	<p>Has <%= pluralize(@owner.patients.count, "Pet") %>:</p>
-	<ul>
-	  <%= render @owner.patients %>
-	</ul>
+ <div class="panel panel-default">
+ 	<div class="panel-body">
+	  <p>Has <%= pluralize(@owner.patients.count, "Pets") %>:</p>
+	  <table class='owners' id="t01">
+  	    <tbody>
+          <%= render @patients %>
+        </tbody>
+      </table>
+	</div>
+</div>
+
 </div>
