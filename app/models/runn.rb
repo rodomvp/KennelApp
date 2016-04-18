@@ -35,4 +35,16 @@ class Runn < ActiveRecord::Base
   	return empty_runns
   end
 
+  def self.get_occupied_runns
+    occupied_runns = []
+    Runn.all.each do |runn|
+      if runn.occupied == true
+        occupied_runns.push(runn)
+      else
+        next
+      end
+    end
+    return occupied_runns
+  end
+
 end

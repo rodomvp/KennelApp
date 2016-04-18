@@ -11,6 +11,7 @@ class FeedListsController < ApplicationController
   # GET /feed_lists/1
   # GET /feed_lists/1.json
   def show
+    @feed_list_runn_ordering = Runn.get_occupied_runns
   end
 
   # GET /feed_lists/new
