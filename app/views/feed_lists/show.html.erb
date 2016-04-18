@@ -12,14 +12,14 @@
     <th>Diet</th>
 	  <th>Run</th>
   </tr>
- 
-<% @feed_list.patients.each do |patient| %>
-  <tr>
-    <td><%= patient.name + " " + patient.owner.last_name %></td>
-    <td><%= patient.diet %></td>
-    <td><%= Runn.find_by_id(patient.stays.last.runn_id).ident %></td> 
-  </tr> 
-<% end %>
+
+  <% @feed_list_runn_ordering.each do |runn| %>
+      <tr>
+        <td><%= runn.current_patient_name + " " + runn.current_patient.owner.last_name %></td>
+        <td><%= runn.current_patient.diet %></td>
+        <td><%= Runn.find_by_id(runn).ident %></td>
+      </tr>
+  <% end %>
 
 </table>
 </div>
