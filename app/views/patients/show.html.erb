@@ -16,7 +16,9 @@
   <p><%= "Created at " "#{@patient.created_at}" %></p>
   <p><%= "Updated at " "#{@patient.updated_at}" %></p>
   <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %></p>
+  <p>has_current_stay?: <%= @patient.has_current_stay? %></p>
 <% if @patient.stays.length > 0 %>
+
 
 <h3> Stays </h3>
   <ul>
