@@ -7,11 +7,6 @@ class Patient < ActiveRecord::Base
     length: { maximum: 50 }, 
     uniqueness: {case_sensitive: false}
 
-  def has_current_stay?
-    return false if stays.empty?
-    return stays.last.is_current?
-  end
-
   def current_stay
     return stays.last if has_current_stay? 
   end
@@ -27,5 +22,7 @@ class Patient < ActiveRecord::Base
       all
     end
   end
+
+
 
 end

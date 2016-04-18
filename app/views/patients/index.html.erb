@@ -2,10 +2,10 @@
 
 <!-- Search form pagination done by: Vincent Rodomsita -->
 <%= form_tag '/patients', :method => 'get' do %>
-  <p>
+  <p><center>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
-  </p>
+  </center></p>
 <% end %>
 <br>
 <% provide(:title, 'All patients') %>
@@ -16,10 +16,10 @@
   <ul>
     <li style="list-style-type:none" class=thumblist>
       <img class=thumblist src="https://s-media-cache-ak0.pinimg.com/236x/43/68/ba/4368bac227be42d243029c276a9a73f8.jpg" height="70px" width="70px">
-      <h3><a><%= patient.id %>. </a><%= link_to "#{patient.name}", patient%></h3>
+      <h3><%= link_to "#{patient.name}", patient%></h3>
       <p>Owner: <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %></p> 
     </li>
   </ul>
 </div>
 <% end %>
-<%= will_paginate %>
+

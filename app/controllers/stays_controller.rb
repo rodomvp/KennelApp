@@ -29,7 +29,9 @@ class StaysController < ApplicationController
     if params[:id].present?
       @patient = Patient.find(params[:id])
       @stay = @patient.stays.build(stay_params)
-      @stay.is_current = true      
+      @stay.is_current = true 
+      @patient.has_current_stay = true   
+      @patient.save
     else
       @stay = Stays.new(stay_params)
     end
