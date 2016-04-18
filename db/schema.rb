@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207163623) do
+ActiveRecord::Schema.define(version: 20160418211000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,16 +53,17 @@ ActiveRecord::Schema.define(version: 20160207163623) do
     t.string   "name"
     t.string   "breed"
     t.float    "weight"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "owner_id"
     t.string   "belongings"
     t.string   "diet"
     t.string   "feeds_per_day"
     t.string   "int"
-    t.boolean  "NPO"
+    t.boolean  "npo"
     t.string   "feed_time"
     t.integer  "feed_list_id"
+    t.boolean  "has_current_stay"
   end
 
   add_index "patients", ["owner_id"], name: "index_patients_on_owner_id", using: :btree

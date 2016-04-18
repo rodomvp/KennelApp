@@ -73,81 +73,81 @@ end
         belongings: belongings_list.sample,
         diet: diet_list.sample,
         feed_time: "BID",
-        NPO: false
+        npo: false
     )
 
     # Make stays
-    has_stay = [true, false].sample
-    if has_stay
-      random_month = rand(1..12)
-      random_day = rand(1..28)
-      random_minute = stay_minute.sample
-      stay_length = rand(1..7)
+#    has_stay = [true, false].sample
+#    if has_stay
+#      random_month = rand(1..12)
+#      random_day = rand(1..28)
+#      random_minute = stay_minute.sample
+#      stay_length = rand(1..7)
 
-      the_new_stay = Stay.create(
-        is_current: [true, false].sample,
-        sch_check_in_dt: check_in = DateTime.new(stay_year, random_month,
-          random_day, random_month, random_minute),
-        sch_check_out_dt: check_in + stay_length.days,
-        patient_id: the_new_patient.id,
-        runn_id: Runn.all.sample.id,
-        remarks: remarks_list.sample
-      )
-
-
-
-      sch_check_in_dt = the_new_stay.sch_check_in_dt
-      sch_check_out_dt = the_new_stay.sch_check_out_dt
-      if [true, false].sample
-        the_new_stay.check_out_dt = sch_check_out_dt
-      end
-      the_new_stay.save
+#      the_new_stay = Stay.create(
+#        is_current: [true, false].sample,
+#        sch_check_in_dt: check_in = DateTime.new(stay_year, random_month,
+#          random_day, random_month, random_minute),
+#        sch_check_out_dt: check_in + stay_length.days,
+#        patient_id: the_new_patient.id,
+#        runn_id: Runn.all.sample.id,
+#        remarks: remarks_list.sample
+#      )
+#
+#
+#
+#      sch_check_in_dt = the_new_stay.sch_check_in_dt
+#      sch_check_out_dt = the_new_stay.sch_check_out_dt
+#      if [true, false].sample
+#        the_new_stay.check_out_dt = sch_check_out_dt
+#      end
+#      the_new_stay.save
 
       # TODO: some stays have been checked in; this has to make sense
       # against Time.current...
-      if [true, false].sample
+#      if [true, false].sample
 
-      end
+#      end
 
       # make feeding_events < StayEvent
       #some_time = sch_check_in_dt + 12.hours
       #while some_time < sch_check_out_dt
-      some_time = sch_check_in_dt
-      4.times do
-        some_time = some_time + 12.hours
-        fe = the_new_stay.feeding_events.create(
-          food_description: diet_list.sample,
-          did_eat: [true, false].sample,
-          remark: Faker::Lorem.sentence,
-          scheduled_time_stamp: some_time,
-          actual_time_stamp: some_time
-        )
-      end
+#      some_time = sch_check_in_dt
+#      4.times do
+#        some_time = some_time + 12.hours
+#        fe = the_new_stay.feeding_events.create(
+#          food_description: diet_list.sample,
+#          did_eat: [true, false].sample,
+#          remark: Faker::Lorem.sentence,
+#          scheduled_time_stamp: some_time,
+#          actual_time_stamp: some_time
+#        )
+#      end
 
       # make ud_events < StayEvent
-      some_time = sch_check_in_dt
-      4.times do
-        some_time = some_time + 6.hours
-        ud_event = the_new_stay.ud_events.create(
-          did_urinate: [true, true, true, true, true, false].sample,
-          did_defecate: [true, true, true, false].sample,
-          remark: Faker::Lorem.sentence,
-          scheduled_time_stamp: some_time,
-          actual_time_stamp: some_time
-        )
-      end
+#      some_time = sch_check_in_dt
+#      4.times do
+#        some_time = some_time + 6.hours
+#        ud_event = the_new_stay.ud_events.create(
+#          did_urinate: [true, true, true, true, true, false].sample,
+#          did_defecate: [true, true, true, false].sample,
+#          remark: Faker::Lorem.sentence,
+#          scheduled_time_stamp: some_time,
+#          actual_time_stamp: some_time
+#        )
+#      end
 
       # make misc_stay_event < StayEvent
-      some_time = sch_check_in_dt
-      (1..3).to_a.sample.times do
-        some_time = some_time + (1..8).to_a.sample
-        misc_stay_event = the_new_stay.misc_stay_events.create(
-          remark: Faker::Lorem.sentence,
-          scheduled_time_stamp: some_time,
-          actual_time_stamp: some_time,
-        )
-      end
-    end
+#      some_time = sch_check_in_dt
+#      (1..3).to_a.sample.times do
+#        some_time = some_time + (1..8).to_a.sample
+#        misc_stay_event = the_new_stay.misc_stay_events.create(
+#          remark: Faker::Lorem.sentence,
+#          scheduled_time_stamp: some_time,
+#          actual_time_stamp: some_time,
+#        )
+#      end
+#    end
   end
 end
 
@@ -172,4 +172,4 @@ Patient.create(name: Faker::Name.first_name,
                belongings: belongings_list.sample,
                diet: diet_list.sample,
                feed_time: "BID",
-               NPO: false)
+               npo: false)
