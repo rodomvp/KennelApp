@@ -2,7 +2,11 @@
 
 <!-- Check In button -->
 <div class="show">
-	<%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary"%>
+  <% if @patient.has_current_stay? %>
+	  <%= link_to "Check Out", '#todo-make-checkout-page', class: "btn btn-lg btn-danger"%>
+  <% else %>
+	  <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 
 <h1><%= "#{@patient.name} the #{@patient.breed}" %></h1>
