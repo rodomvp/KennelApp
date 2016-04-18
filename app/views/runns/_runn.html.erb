@@ -5,7 +5,7 @@
   <div class="panel-body">
     <p>
       <%= runn.occupied? ? "OCCUPIED by" : "VACANT" %> 
-      <%= runn.current_patient_name %>
+      <%= link_to "#{runn.current_patient_name}", runn.current_patient %>
     </p>
     <ul class="list-group">
       <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
