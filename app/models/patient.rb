@@ -12,6 +12,14 @@ class Patient < ActiveRecord::Base
     return stays.last.is_current?
   end
 
+  def current_stay
+    return stays.last if has_current_stay? 
+  end
+
+  def current_runn
+    return current_stay.runn if has_current_stay? 
+  end
+
   def self.search(search)
     if search
       where('name ILIKE ?', "%#{search}%")
