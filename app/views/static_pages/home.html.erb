@@ -1,5 +1,10 @@
+<% n = ((1..5).to_a).sample %>
 <video autoplay loop muted poster="ronsnap.png" id="video-background">
+<% if n == 1 then %>
+  <source src="such-perspective.mp4" type="video/mp4">
+<% else %>
   <source src="ron.mp4" type="video/mp4">
+<% end %>
 </video>
 
 <% provide(:title, 'Home') %>
