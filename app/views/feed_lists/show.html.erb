@@ -11,11 +11,11 @@
 	  <th>Run</th>
   </tr>
 
-  <% @feed_list_runn_ordering.each do |runn| %>
+  <% @occupied_runns_for_feed_list.each do |runn| %>
       <tr>
         <td><%= link_to runn.current_patient_name + " " + runn.current_patient.owner.last_name, runn.current_patient %></td>
         <td><%= runn.current_patient.diet %></td>
-        <td><%= link_to Runn.find_by_id(runn).ident, Runn.find_by_id(runn) %></td>
+        <td><%= link_to runn.ident, runn %></td>
       </tr>
   <% end %>
 
