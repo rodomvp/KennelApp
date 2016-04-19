@@ -15,9 +15,9 @@
 
   <% @feed_list_runn_ordering.each do |runn| %>
       <tr>
-        <td><%= runn.current_patient_name + " " + runn.current_patient.owner.last_name %></td>
+        <td><%= link_to runn.current_patient_name + " " + runn.current_patient.owner.last_name, runn.current_patient %></td>
         <td><%= runn.current_patient.diet %></td>
-        <td><%= Runn.find_by_id(runn).ident %></td>
+        <td><%= link_to Runn.find_by_id(runn).ident, Runn.find_by_id(runn) %></td>
       </tr>
   <% end %>
 
