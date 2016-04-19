@@ -38,6 +38,13 @@ li.thumblist {
   margin: 5px;
 }
 
+li.thumblist-staying {
+  padding: 10px;
+  overflow: auto;
+  background: #bcf;
+  margin: 5px;
+}
+
 li:hover {
   background: #4682B4;
   cursor: pointer;

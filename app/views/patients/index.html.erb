@@ -14,10 +14,15 @@
 <% @patients.each do |patient| %>
 <div class=thumblist>
   <ul>
+    <% if patient.has_current_stay? %>
+    <li style="list-style-type:none" class=thumblist-staying>
+    <% else %>
     <li style="list-style-type:none" class=thumblist>
+    <% end %>
       <img class=thumblist src="https://s-media-cache-ak0.pinimg.com/236x/43/68/ba/4368bac227be42d243029c276a9a73f8.jpg" height="70px" width="70px">
       <h3><%= link_to "#{patient.name}", patient%></h3>
       <p>Owner: <%= link_to "#{patient.owner.first_name} #{patient.owner.last_name}", patient.owner %></p> 
+      <p><tt>Staying in</tt> : [<%= patient.current_stay.inspect %>]</p>
     </li>
   </ul>
 </div>
