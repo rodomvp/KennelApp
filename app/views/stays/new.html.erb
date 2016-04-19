@@ -7,12 +7,15 @@
     <%= form_for(@stay) do |f| %>
     
       <%= f.label :belongings %>
+      <br>
       <%= f.text_field :belongings %>
-
+      <br>
       <%= f.label :remarks %>
+      <br>
       <%= f.text_field :remarks %>
-
+      <br>
       <%= f.label :runn_id, "Run"%>
+      <br>
       <%= f.select :runn_id, Runn.get_empty_runns.collect { |r| [ r.ident, r.id  ] } %>	
       
       <%= f.submit "Create stay", class: "btn btn-primary" %>
