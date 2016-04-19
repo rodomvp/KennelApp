@@ -1,20 +1,19 @@
 <% provide(:title, "OWNER: " + @owner.first_name + " " + @owner.last_name)  %>
 
 <!-- Add Patient button -->
-<div class="show">
-	<%= link_to "Add Patient", new_patient_path, class: "btn btn-lg btn-primary"%>
-</div>
 
-<div style="position: relative">
+<div>
 	<h1><%= "#{@owner.first_name} #{@owner.last_name}" %></h1>
 	<p><%= "Id : " "#{@owner.id}" %></p>
     <p><%= "Email : " "#{@owner.email}" %></p>
     <p><%= "Phone Number : " "#{@owner.phone_number}" %></p>
     <p><%= "Created at " "#{@owner.created_at}" %></p>
     <p><%= "Updated at " "#{@owner.updated_at}" %></p>
-
  <div class="panel panel-default">
  	<div class="panel-body">
+    <div class="show">
+    <%= link_to "Register New Patient", new_patient_path, class: "btn btn-lg btn-primary"%>
+    </div>
 	  <p>Has <%= pluralize(@owner.patients.count, "Pets") %>:</p>
 	  <table class='owners' id="t01">
   	    <tbody>

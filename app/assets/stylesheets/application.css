@@ -14,9 +14,7 @@
  *= require_self
  */
 body div.show {
-  position: absolute;
-  top: 155px;
-  right: 60px;
+  float: right;
 }
 
 body div.form_action_add {

@@ -1,15 +1,14 @@
 <% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
 
-<!-- Check In button -->
-<div class="show">
-  <% if @patient.has_current_stay? %>
-	  <%= link_to "Check Out", '#todo-make-checkout-page', class: "btn btn-lg btn-danger"%>
-  <% else %>
-	  <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary" %>
-  <% end %>
-</div>
-
 <h1><%= "#{@patient.name} the #{@patient.breed}" %></h1>
+<!-- Check In button -->
+  <div style="float: right">
+    <% if @patient.has_current_stay? %>
+      <%= link_to "Check Out", '#todo-make-checkout-page', class: "btn btn-lg btn-danger"%>
+    <% else %>
+      <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary" %>
+    <% end %>
+  </div>
   <p><%= "Id : " "#{@patient.id}" %></p>
   <p><%= "Weight : " "#{@patient.weight}" %></p>
   <p><%= "Diet : " "#{@patient.diet}" %></p>
