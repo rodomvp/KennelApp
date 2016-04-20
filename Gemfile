@@ -26,6 +26,7 @@ gem 'puma'
 gem 'pg',           '>= 0.17.1'
 gem 'pry-rails'
 gem 'mousetrap-rails'
+gem 'rmagick'
 
 group :development, :test do
   gem 'byebug',      '>= 3.4.0'
