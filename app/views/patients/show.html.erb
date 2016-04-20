@@ -1,14 +1,3 @@
-<head>
-<script type='text/javascript'
-  src='http://code.jquery.com/jquery-2.0.2.js'></script>
-<link rel="stylesheet" type="text/css"
-  href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<script type='text/javascript'
-  src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css"
-  href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
-</head>
-
 <% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
 
 <h1><%= "#{@patient.name} the #{@patient.breed}" %></h1>
@@ -45,7 +34,7 @@
 <div>
   <% if @patient.has_current_stay? %>
   <h3>U/D Chart</h3>
-  <TABLE BORDER="1" style="border-collapse: collapse">
+  <TABLE BORDER="1" width="300px" style="border-collapse: collapse">
     <TR>
         <th style="visibility: hidden"></th>
         <th>1</th>
