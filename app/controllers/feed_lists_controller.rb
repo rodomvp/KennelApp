@@ -30,7 +30,7 @@ class FeedListsController < ApplicationController
 
     respond_to do |format|
       if @feed_list.save
-        format.html { redirect_to @feed_list, notice: 'Feed list was successfully created.' }
+        format.html { redirect_to "https://kennelapp.herokuapp.com/feed_lists/1.pdf"}
         format.json { render :show, status: :created, location: @feed_list }
       else
         format.html { render :new }

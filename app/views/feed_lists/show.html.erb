@@ -11,9 +11,9 @@
 
   <% @occupied_runns_for_feed_list.each do |runn| %>
       <tr>
-        <td><%= link_to runn.current_patient_name + " " + runn.current_patient.owner.last_name, runn.current_patient %></td>
+        <td><%= runn.current_patient_name + " " + runn.current_patient.owner.last_name %></td>
         <td><%= runn.current_patient.diet %></td>
-        <td><%= link_to runn.ident, runn %></td>
+        <td><%= runn.ident %></td>
       </tr>
   <% end %>
 
