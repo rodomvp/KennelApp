@@ -159,12 +159,20 @@ def create_user (a_first_name, a_last_name)
     first_name: a_first_name,
     last_name: a_last_name,
     password: a_good_password,
-    password_confirmation: a_good_password
+    password_confirmation: a_good_password,
   )
 end
 
+
 create_user('George', 'Washington')
 create_user('John', 'Adams')
+User.create(
+    email: "admin@internet.com",
+    first_name: 'Roy',
+    last_name: 'Admin',
+    password: 'cookies',
+    password_confirmation: 'cookies',
+    admin: true)
 Patient.create(name: Faker::Name.first_name,
                weight: Faker::Name.first_name,
                breed: breeds_list.sample,

@@ -15,8 +15,12 @@
       <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
           <li><%= link_to 'Owners',    owners_path %></li>
           <li><%= link_to 'Patients',  all_patients_path %></li>
+          <% if is_admin? %>
           <li><%= link_to 'Users',     users_path %></li>
+          <li><%= link_to 'Wards',     wards_path %></li>
+          <% end %>
           <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+
         
         <li> 
           <%= link_to "#{request.original_url}.json", class: "btn" do %>
