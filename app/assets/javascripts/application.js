@@ -15,3 +15,19 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(window).load(function(){<!--from w  ww.  j  a  v a 2  s  .c  o m-->
+//save the selector so you don't have to do the lookup everytime
+$dropdown = $("#contextMenu");
+	$(".actionButton").click(function() {
+	    //get row ID
+	    var id = $(this).closest("tr").children().first().html();
+	    //move dropdown menu
+	    $(this).after($dropdown);
+	    //save changes link
+	    // example $dropdown.find(".payLink").attr("href", "/transaction/pay?id="+id);
+	    $dropdown.find(".payLink").attr("href", "/patients/1");
+	    //show dropdown
+	    $(this).dropdown();
+	});
+});
