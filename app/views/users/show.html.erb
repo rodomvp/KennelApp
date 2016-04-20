@@ -1,8 +1,4 @@
 <% provide(:title, @user.first_name) %>
 <h1>
-  <% if !@user.admin? %>
-  hello
-  <% end %>
-
   <%= @user.first_name %>
 </h1>

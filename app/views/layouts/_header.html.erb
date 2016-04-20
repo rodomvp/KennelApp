@@ -20,8 +20,6 @@
           <li><%= link_to 'Wards',     wards_path %></li>
           <% end %>
           <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-
-        
         <li> 
           <%= link_to "#{request.original_url}.json", class: "btn" do %>
             <i class="glyphicon glyphicon-eye-open"></i>

@@ -1,5 +1,6 @@
 class PatientsController < ApplicationController
   before_filter :login_required, :only => [:show, :new, :index, :create]
+  before_action :admin_required, :only => [:destroy]
   # Show a new patient form (Using views/patients/new.html.erb)
   def new
     if params[:id].present?
@@ -39,6 +40,13 @@ class PatientsController < ApplicationController
       # Redirect to new patient profile
       redirect_to @patient
     end
+  end
+
+
+  def destroy
+    @patient = Patient.find(params[:id]).destroy
+    flash[:success] = "Deleted #{@patient.name}"
+    redirect_to patients_url
   end
 
   private

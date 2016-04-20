@@ -13,6 +13,8 @@
     <li style="list-style-type:none" class=thumblist>
       <img class=thumblist src="http://static1.comicvine.com/uploads/scale_super/6/66303/4469093-screen+shot+2015-03-25+at+5.13.24+pm+copy.jpg" height="70px" width="70px">
       <h3><%= link_to "#{user.first_name}", user%></h3>
+      <p style="float: right"><%= link_to "Delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %></p>
     </li>
   </ul>
 </div>

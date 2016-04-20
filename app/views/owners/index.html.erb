@@ -14,6 +14,10 @@
     <li style="list-style-type:none" class=thumblist>
       <img class=thumblist src="http://41.media.tumblr.com/168f2d300bc90d14edb79ef00e84726f/tumblr_n45cr8dmj61ty0km0o5_1280.png" height="70px" width="70px">
       <h3><%= link_to "#{owner.first_name}", owner%></h3>
+      <% if is_admin? %>
+      <p style="float: right"><%= link_to "Delete", owner, method: :delete,
+                                  data: { confirm: "You sure?" } %></p>
+                                  <% end %>
     </li>
   </ul>
 </div>

@@ -16,6 +16,12 @@ class OwnersController < ApplicationController
     @owners = Owner.paginate(page: params[:page])
   end
 
+  def destroy
+    @owner = Owner.find(params[:id]).destroy
+    flash[:success] = "Deleted #{@owner.first_name}"
+    redirect_to owners_url
+  end
+
   # Use owner_params to create a new owner
   def create
     @owner = Owner.new(owner_params)
