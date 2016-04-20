@@ -30,7 +30,11 @@ class FeedListsController < ApplicationController
 
     respond_to do |format|
       if @feed_list.save
-        format.html { redirect_to "https://kennelapp.herokuapp.com/feed_lists/1.pdf"}
+        if Rails.env.development?
+          format.html { redirect_to @feed_list }
+        else
+          format.html { redirect_to "https://kennelapp.herokuapp.com/feed_lists/1.pdf"}
+        end
         format.json { render :show, status: :created, location: @feed_list }
       else
         format.html { render :new }
