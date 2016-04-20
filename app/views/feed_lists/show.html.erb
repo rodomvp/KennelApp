@@ -1,8 +1,7 @@
 <div>
 <table border="1" style="width:100%" id="t01">
-  <% t=Time.now %>
-  <% t.in_time_zone('Central Time (US & Canada)') %>
-  <caption style="font-size:25px; color: black; opacity: 100; font-weight: bold;">Feeding List   |   <%= t.strftime("%B %d,%Y at %I:%M %p") %></caption>
+  <% t=Time.current %>
+  <caption style="font-size:25px; color: black; opacity: 100; font-weight: bold;">Feeding List   |   <%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d,%Y at %I:%M %p") %></caption>
   <tr>
     <th>Name</th>
     <th>Diet</th>
