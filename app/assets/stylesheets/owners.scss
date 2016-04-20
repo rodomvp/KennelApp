@@ -1,3 +1,55 @@
 // Place all the styles related to the Owners controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.thumblist {
+  margin: 20px;
+}
+
+ul.thumblist {
+  list-style-type: none;
+  width: 200px;
+  height: 80px;
+  background: #4682B4;
+  padding: 10px;
+}
+
+h3.thumblist {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+li img.thumblist {
+  float: left;
+  margin: 0 15px 0 0;
+}
+
+li p.thumblist {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li.thumblist {
+  padding: 10px;
+  overflow: auto;
+  background: #eee;
+  margin: 5px;
+}
+
+li.thumblist-staying {
+  padding: 10px;
+  overflow: auto;
+  background: #bcf;
+  margin: 5px;
+}
+
+li:hover {
+  background: #4682B4;
+  cursor: pointer;
+}
+
+input[type="text"] {
+    width: 400px;
+}
+
+input[type="submit"] {
+	width: 200px;
+}

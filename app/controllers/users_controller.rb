@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :index, :create, :new]
+  before_action :admin_required, only: [:edit, :update, :index, :create, :new]
   def show
     @user = User.find(params[:id])
   end
@@ -21,6 +22,12 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id]).destroy
+    flash[:success] = "Deleted #{@user.first_name}"
+    redirect_to users_url
   end
   
   private

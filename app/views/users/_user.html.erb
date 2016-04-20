@@ -1,15 +1,10 @@
-<div style="position: relative">
-<table border="1" style="width:100%" id="t01">
-	
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.id %>.
-    	<%= link_to "#{user.first_name} #{user.last_name}", user%>
-    </td>
-  </tr>
-<% end %>
 
-</table>
-</div>
+<li>	
+<% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+
+</li>
 
 
