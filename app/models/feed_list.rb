@@ -9,3 +9,5 @@ class FeedList < ActiveRecord::Base
       end
     end
 end
+
+#lol

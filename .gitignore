@@ -15,3 +15,6 @@
 # files from editor(s) and IDE(s)
 *.swp
 *.swo
+
+# Ignore application configuration
+/config/application.yml

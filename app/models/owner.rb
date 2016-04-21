@@ -13,7 +13,7 @@ class Owner < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('first_name ILIKE ? OR last_name ILIKE ?', "%#{search}%")
+      where('first_name ILIKE :search OR last_name ILIKE :search', search: "%#{search}%")
     else
       all
     end
