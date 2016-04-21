@@ -19,7 +19,7 @@
 $(window).load(function(){<!--from w  ww.  j  a  v a 2  s  .c  o m-->
 //save the selector so you don't have to do the lookup everytime
 $dropdown = $("#contextMenu");
-	$(".actionButton").click(function() {
+	$(".actionButton").mouseover(function() {
 	    //get row ID
 	    var id = $(this).closest("tr").children().first().html();
 	    //move dropdown menu
