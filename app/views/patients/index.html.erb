@@ -3,8 +3,8 @@
 <!-- Search form pagination done by: Vincent Rodomsita -->
 <%= form_tag '/patients', :method => 'get' do %>
   <p><center>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= text_field_tag :search, params[:search], class: 'form-control', data: { keybinding: '/' } %>
+    <%= submit_tag "Search", :name => nil, class: 'btn btn-info' %>
   </center></p>
 <% end %>
 <br>
