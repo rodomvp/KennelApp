@@ -31,28 +31,10 @@
   </ul>
 <% end %>
 
-<script>
-$(window).load(function(){
-//save the selector so you don't have to do the lookup everytime
-$dropdown = $("#contextMenu");
-  $(".actionButton").mouseover(function() {
-      //get row ID
-      var id = $(this).closest("tr").children().first().html();
-      //move dropdown menu
-      $(this).after($dropdown);
-      //save changes link
-      // example $dropdown.find(".payLink").attr("href", "/transaction/pay?id="+id);
-      $dropdown.find(".payLink").attr("href", "/patients/1");
-      //show dropdown
-      $(this).dropdown();
-  });
-});
-</script type='text/javascript'>
-
 <div>
   <% if @patient.has_current_stay? %>
   <h3>U/D Chart</h3>
-  <TABLE BORDER="1" width="300px" style="border-collapse: collapse" id="main-nav">
+  <TABLE  id="main-nav">
     <TR>
         <th style="visibility: hidden"></th>
         <th>1</th>
@@ -62,32 +44,67 @@ $dropdown = $("#contextMenu");
     </TR>
     <TR>
         <th>U</th>
-        <TD class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></TD>
-        <TD class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></TD>
-        <TD class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></TD>
-        <TD class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></TD>
+        <td><select name="U1">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="U2">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="U3">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="U4">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
     </TR>
     <TR>
         <th>D</th>
-        <td class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></td>
-        <td class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></td>
-        <td class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></td>
-        <td class="dropdown"><a class="btn btn-default actionButton"
-          data-toggle="dropdown" href="#">  </a></td>
+        <td><select name="D1">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="D2">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="D3">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="D4">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
     </TR>
   </TABLE>
-  <ul id="contextMenu" class="dropdown-menu" role="menu">
-      <li><a tabindex="-1" href="#" class="payLink">Normal</a></li>
-      <li><a tabindex="-1" href="#" class="payLink">None</a></li>
-      <li><a tabindex="-1" href="#" class="payLink">Abnormal</a></li>
-   </ul>
    <INPUT TYPE="submit" VALUE="Save Changes">
   <% end %>
 </div>
