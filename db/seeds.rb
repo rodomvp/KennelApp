@@ -50,7 +50,7 @@ ward_sizes = %w[Small Medium Large]
   end
 end
 
-50.times do
+25.times do
 
   # Make owners
   the_new_owner = Owner.create(
