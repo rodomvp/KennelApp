@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+  mount_uploader :image, ImageUploader
 
 
   # Returns the hash digest of the given string.
@@ -15,6 +16,14 @@ class User < ActiveRecord::Base
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  def self.search(search)
+    if search
+      where('name ILIKE ?', "%#{search}%")
+    else
+      all
+    end
   end
 
 end

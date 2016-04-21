@@ -73,9 +73,9 @@ end
         belongings: belongings_list.sample,
         diet: diet_list.sample,
         feed_time: "BID",
-        npo: false
-    )
-
+        npo: false,
+        image: open("https://img.buzzfeed.com/buzzfeed-static/static/2014-05/enhanced/webdr06/12/14/enhanced-29762-1399918398-1.jpg?no-auto")
+        )
     # Make stays
 #    has_stay = [true, false].sample
 #    if has_stay
@@ -173,11 +173,3 @@ User.create(
     password: 'cookies',
     password_confirmation: 'cookies',
     admin: true)
-Patient.create(name: Faker::Name.first_name,
-               weight: Faker::Name.first_name,
-               breed: breeds_list.sample,
-               owner_id: 1,
-               belongings: belongings_list.sample,
-               diet: diet_list.sample,
-               feed_time: "BID",
-               npo: false)

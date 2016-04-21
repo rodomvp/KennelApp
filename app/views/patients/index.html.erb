@@ -19,7 +19,7 @@
     <% else %>
     <li style="list-style-type:none" class=thumblist>
     <% end %>
-      <img class=thumblist src="https://s-media-cache-ak0.pinimg.com/236x/43/68/ba/4368bac227be42d243029c276a9a73f8.jpg" height="70px" width="70px">
+      <%= image_tag patient.image_url(:index_thumb).to_s %>
       <h3><%= link_to "#{patient.name}", patient%></h3>
       <% if patient.has_current_stay? %>
       <p><tt>Staying in</tt> : [<%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %>]</p>

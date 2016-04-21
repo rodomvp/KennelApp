@@ -1,5 +1,13 @@
 <h1>Owners</h1>
 
+
+<%= form_tag '/owners', :method => 'get' do %>
+  <p><center>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </center></p>
+<% end %>
+<br>
 <!-- Add Owner button -->
 <div>
 	<%= link_to "Add Owner", new_owner_path, class: "btn btn-lg btn-primary"%>
@@ -12,8 +20,7 @@
   <div class=thumblist>
   <ul>
     <li style="list-style-type:none" class=thumblist>
-      <img class=thumblist src="http://41.media.tumblr.com/168f2d300bc90d14edb79ef00e84726f/tumblr_n45cr8dmj61ty0km0o5_1280.png" height="70px" width="70px">
-      <h3><%= link_to "#{owner.first_name}", owner%></h3>
+      <h3><%= link_to "#{owner.first_name} #{owner.last_name}", owner%></h3>
       <% if is_admin? %>
       <p style="float: right"><%= link_to "Delete", owner, method: :delete,
                                   data: { confirm: "You sure?" } %></p>
