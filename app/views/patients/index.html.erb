@@ -12,25 +12,24 @@
 
 <!--Patient list pagination done by: Emily Ribando-Gros -->
 <% @patients.each do |patient| %>
-<div class=thumblist>
-  <ul>
-    <% if patient.has_current_stay? %>
-    <li style="list-style-type:none" class=thumblist-staying>
-    <% else %>
-    <li style="list-style-type:none" class=thumblist>
-    <% end %>
-      <%= image_tag patient.image_url(:index_thumb).to_s %>
-      <h3><%= link_to "#{patient.name}", patient%></h3>
+  <div class=thumblist>
+    <ul>
       <% if patient.has_current_stay? %>
-      <p><tt>Staying in</tt> : [<%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %>]</p>
+      <li style="list-style-type:none" class=thumblist-staying>
+      <% else %>
+      <li style="list-style-type:none" class=thumblist>
       <% end %>
-      <% if is_admin? %>
-       <p style="float: right"><%= link_to "Delete", patient, method: :delete,
-                                  data: { confirm: "You sure?" } %></p>
-      <% end %>
-    </li>
-  </ul>
-</div>
+        <%= image_tag patient.image_url(:index_thumb).to_s %>
+        <h3><%= link_to "#{patient.name}", patient%></h3>
+        <% if patient.has_current_stay? %>
+        <p><tt>Staying in</tt> : [<%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %>]</p>
+        <% end %>
+        <% if is_admin? %>
+         <p style="float: right"><%= link_to "Delete", patient, method: :delete,
+                                    data: { confirm: "You sure?" } %></p>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 <% end %>
-<%= will_paginate %>
 
