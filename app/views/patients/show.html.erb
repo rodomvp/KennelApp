@@ -34,3 +34,81 @@
   	<%= render @patient.stays %>
   </ul>
 <% end %>
+
+<div>
+  <% if @patient.has_current_stay? %>
+  <h3>U/D Chart</h3>
+  <TABLE  id="main-nav">
+    <TR>
+        <th style="visibility: hidden"></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+    </TR>
+    <TR>
+        <th>U</th>
+        <td><select name="U1">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="U2">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="U3">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="U4">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+    </TR>
+    <TR>
+        <th>D</th>
+        <td><select name="D1">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="D2">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="D3">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+        <td><select name="D4">
+          <option value="">      </option>
+          <option value="normal">Normal</option>
+          <option value="none">None</option>
+          <option value="abnormal">Abnormal</option>
+          </select>
+        </td>
+    </TR>
+  </TABLE>
+   <INPUT TYPE="submit" VALUE="Save Changes">
+  <% end %>
+</div>
