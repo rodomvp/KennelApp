@@ -31,6 +31,24 @@
   </ul>
 <% end %>
 
+<script>
+$(window).load(function(){
+//save the selector so you don't have to do the lookup everytime
+$dropdown = $("#contextMenu");
+  $(".actionButton").mouseover(function() {
+      //get row ID
+      var id = $(this).closest("tr").children().first().html();
+      //move dropdown menu
+      $(this).after($dropdown);
+      //save changes link
+      // example $dropdown.find(".payLink").attr("href", "/transaction/pay?id="+id);
+      $dropdown.find(".payLink").attr("href", "/patients/1");
+      //show dropdown
+      $(this).dropdown();
+  });
+});
+</script type='text/javascript'>
+
 <div>
   <% if @patient.has_current_stay? %>
   <h3>U/D Chart</h3>
