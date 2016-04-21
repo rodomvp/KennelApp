@@ -1,6 +1,7 @@
 <% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
 
 <h1><%= "#{@patient.name} the #{@patient.breed}" %></h1>
+
 <!-- Check In button -->
   <div style="float: right">
     <% if @patient.has_current_stay? %>
@@ -9,6 +10,9 @@
       <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary" %>
     <% end %>
   </div>
+
+  <%= image_tag @patient.image_url(:thumb).to_s %>
+  
   <p><%= "Id : " "#{@patient.id}" %></p>
   <p><%= "Weight : " "#{@patient.weight}" %></p>
   <p><%= "Diet : " "#{@patient.diet}" %></p>

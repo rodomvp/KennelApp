@@ -6,7 +6,7 @@ class Patient < ActiveRecord::Base
     presence: true, 
     length: { maximum: 50 }, 
     uniqueness: {case_sensitive: false}
-
+  mount_uploader :image, ImageUploader
   def current_stay
     return stays.last if has_current_stay? 
   end

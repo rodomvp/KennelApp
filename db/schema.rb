@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160419234044) do
+ActiveRecord::Schema.define(version: 20160421005706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20160419234044) do
     t.string   "feed_time"
     t.integer  "feed_list_id"
     t.boolean  "has_current_stay"
+    t.string   "image"
   end
 
   add_index "patients", ["owner_id"], name: "index_patients_on_owner_id", using: :btree
@@ -121,6 +122,7 @@ ActiveRecord::Schema.define(version: 20160419234044) do
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"
     t.boolean  "admin",           default: false
+    t.string   "image"
   end
 
   create_table "ward_views", force: :cascade do |t|

@@ -13,7 +13,7 @@ class OwnersController < ApplicationController
 
   # Return a listing of all owners (Using views/owners/index.html.erb)
   def index
-    @owners = Owner.paginate(page: params[:page])
+    @owners = Owner.search(params[:search]).paginate(:per_page => 25, :page => params[:page])
   end
 
   def destroy
