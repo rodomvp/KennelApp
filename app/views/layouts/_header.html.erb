@@ -6,7 +6,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-left"> <!-- ul given Bootstrap classes -->
         <li>
-          <%= link_to feed_lists_path, class: "btn" do %>
+          <%= link_to feed_lists_path, data: { keybinding: 'f' }, class: "btn" do %>
               <i class="glyphicon glyphicon-cutlery"></i>
               - Feeding List -
           <% end %>
@@ -27,7 +27,7 @@
           </li>
         </li>
         <li>
-          <%= link_to docs_path, class: "btn" do %>
+          <%= link_to docs_path, data: { keybinding: '?' }, class: "btn" do %>
               <i class="glyphicon glyphicon-question-sign"></i>
           <% end %>
         </li>
