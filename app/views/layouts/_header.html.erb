@@ -1,7 +1,8 @@
 <header class="navbar navbar-fixed-top navbar-inverse"> <!-- Bootstrap classes -->
   <% if logged_in? %>
   <div class="container"> <!-- generic div, given Bootstrap class "container" class -->
-    <%= link_to 'Ward View', ward_view_path, id: 'ward-view-link' %>
+    <%= link_to 'Ward View', ward_view_path, id: 'ward-view-link',
+                                             data: { keybinding: 'w' } %>
     <nav>
       <ul class="nav navbar-nav navbar-left"> <!-- ul given Bootstrap classes -->
         <li>
@@ -13,13 +14,17 @@
         <li>
       </ul>
       <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
-          <li><%= link_to 'Owners',    owners_path %></li>
-          <li><%= link_to 'Patients',  all_patients_path %></li>
+          <li><%= link_to 'Owners', owners_path, data: { keybinding: 'o' } %></li>
+          <li><%= link_to 'Patients',  all_patients_path, data: { keybinding: 'p' } %></li>
           <% if is_admin? %>
           <li><%= link_to 'Users',     users_path %></li>
           <li><%= link_to 'Wards',     wards_path %></li>
           <% end %>
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          <li>
+            <%= link_to logout_path, method: 'delete', class: 'btn' do %>
+              <i class="glyphicon glyphicon-log-out"></i>
+            <% end %>
+          </li>
         </li>
         <li>
           <%= link_to docs_path, class: "btn" do %>
