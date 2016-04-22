@@ -1,6 +1,7 @@
 <% if stay.is_current %>
 <li style="color:green">
-	<%= stay.created_at %>
+  <% t = stay.created_at %>
+	<%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y -- %l:%M %p") %>
 </li>
 <% else %>
 <li>
