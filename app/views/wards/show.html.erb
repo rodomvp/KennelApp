@@ -14,8 +14,10 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_ward_path(@ward) %> |
-<%= link_to 'Back', wards_path %>
+<% if current_user.admin? %>
+  <%= link_to 'Edit', edit_ward_path(@ward) %> |
+  <%= link_to 'Back', wards_path %>
+<% end %>
 
 <h3> Runs </h3>
 
