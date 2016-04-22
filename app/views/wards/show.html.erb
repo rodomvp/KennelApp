@@ -1,13 +1,13 @@
 <% provide(:title, @ward.ident) %>
 <h1>
 
-  <%= link_to @ward.previous, data: { keybinding: 'h' }, class: "btn" do %>
+  <%= link_to @ward.previous, data: { keybinding: '["h", "left"]' }, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
 
   <%= @ward.ident %>
 
-  <%= link_to @ward.next, data: { keybinding: 'l' }, class: "btn" do %>
+  <%= link_to @ward.next, data: { keybinding: '["l", "right"]' }, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
   <% end %>
 </h1>
