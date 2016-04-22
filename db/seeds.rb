@@ -62,6 +62,24 @@ end
   the_new_owner.email = "owner_#{the_new_owner.id}@internet.com"
   the_new_owner.save
 
+  dog_pics = ["http://animaliaz-life.com/data_images/dog/dog6.jpg", 
+    "http://www.arabwp.com/wp-content/uploads/2012/09/dog-3.jpg", 
+    "http://animaliaz-life.com/data_images/dog/dog4.jpg",
+    "https://s.graphiq.com/sites/default/files/stories/t4/15_Tiniest_Dog_Breeds_1718_3083.jpg",
+    "https://www.petfinder.com/wp-content/uploads/2012/11/147083304-dogs-home-alone-all-day-632x475.jpg",
+    "http://www.funchap.com/wp-content/uploads/2014/05/help-dog-picture.jpg",
+    "http://dreamatico.com/data_images/dog/dog-5.jpg",
+    "https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg",
+    "http://animaliaz-life.com/data_images/dog/dog2.jpg",
+    "http://static.ddmcdn.com/gif/earliest-dogs-660x433-130306-akita-660x433.jpg",
+    "http://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/dog_breed_health_issues_slideshow/getty_rm_photo_of_boxer_dog_looking_at_camera.jpg",
+    "https://img.buzzfeed.com/buzzfeed-static/static/2014-05/enhanced/webdr06/12/14/enhanced-29762-1399918398-1.jpg?no-auto",
+    "http://www.waitaki.govt.nz/services/PublishingImages/Pages/Registering-Your-Dog/Dog%20Control.png",
+    "http://cdn.playbuzz.com/cdn/88a93817-ce03-4714-9f20-41c8b6d928a2/6b3d45c5-dc7b-4b49-8c8b-30de391153e0.jpg",
+    "http://cdn1.theodysseyonline.com/files/2015/12/20/635862412743283503283987057_happy%20dog.jpg",
+    "http://www.funchap.com/wp-content/uploads/2014/05/cute-husky-picture.jpg"]
+  ]
+
   # Make patients
   num_patients = patients_per_owner_distribution.sample
   num_patients.times do
@@ -74,7 +92,7 @@ end
         diet: diet_list.sample,
         feed_time: "BID",
         npo: false,
-        image: open("https://img.buzzfeed.com/buzzfeed-static/static/2014-05/enhanced/webdr06/12/14/enhanced-29762-1399918398-1.jpg?no-auto")
+        image: open(dog_pics.sample)
         )
     # Make stays
 #    has_stay = [true, false].sample
