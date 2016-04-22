@@ -29,8 +29,3 @@ module RVDELsu3380
     # config.middleware.use "PDFKit::Middleware"
   end
 end
-
-
-AWS_ACCESS_KEY: "AKIAI5YDYDITHOTF5XQQ"
-AWS_SECRET_KEY: "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"
-AWS_BUCKET: "kennelapp"
