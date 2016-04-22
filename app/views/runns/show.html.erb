@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Amenities:</strong>
-  <%= @runn.amenities %>
-</p>
-
-<p>
-  <strong>Ident:</strong>
+<h1>
   <%= @runn.ident %>
-</p>
+</h1>
 
-<p>
-  <strong>Occupied:</strong>
-  <%= @runn.occupied %>
-</p>
+<% if @runn.occupied? %>
+  <h2>
+    <%= link_to @runn.current_patient.name, @runn.current_patient %><br>
+  </h2>
+  <p>
+    <%= link_to image_tag(@runn.current_patient.image_url(:thumb).to_s), @runn.current_patient %><br>
+  </p>
+  <p>
+    Owner: <%= link_to @runn.current_patient.owner.name, @runn.current_patient.owner %>
+  </p>
+<% end %>
 
 <p>
   <strong>Size:</strong>
@@ -22,6 +23,7 @@
 
 <p>
   <strong>Belongings:</strong>
+  <%= @runn.current_patient.belongings %>
 </p>
 
 <p>
