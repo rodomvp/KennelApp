@@ -21,10 +21,12 @@
   <%= @runn.size %>
 </p>
 
-<p>
-  <strong>Belongings:</strong>
-  <%= @runn.current_patient.belongings %>
-</p>
+<% if @runn.occupied? %>
+  <p>
+    <strong>Belongings:</strong>
+    <%= @runn.current_patient.belongings %>
+  </p>
+<% end>
 
 <p>
   <strong>Ward:</strong>
