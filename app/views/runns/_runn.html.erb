@@ -6,8 +6,6 @@
     <p>
       <%= runn.occupied? ? "OCCUPIED by" : "VACANT" %> 
       <%= link_to "#{runn.current_patient_name}", runn.current_patient %>
-      <% if runn.occupied? %>
-        <%= image_tag runn.current_patient.image_url(:index_thumb).to_s %>
     </p>
     <ul class="list-group">
       <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
