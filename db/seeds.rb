@@ -77,7 +77,7 @@ end
     "http://www.waitaki.govt.nz/services/PublishingImages/Pages/Registering-Your-Dog/Dog%20Control.png",
     "http://cdn.playbuzz.com/cdn/88a93817-ce03-4714-9f20-41c8b6d928a2/6b3d45c5-dc7b-4b49-8c8b-30de391153e0.jpg",
     "http://cdn1.theodysseyonline.com/files/2015/12/20/635862412743283503283987057_happy%20dog.jpg",
-    "http://www.funchap.com/wp-content/uploads/2014/05/cute-husky-picture.jpg"]
+    "http://www.funchap.com/wp-content/uploads/2014/05/cute-husky-picture.jpg"
   ]
 
   # Make patients
