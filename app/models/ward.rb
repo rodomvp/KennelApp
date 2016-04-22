@@ -1,5 +1,5 @@
 class Ward < ActiveRecord::Base
-  has_many :runns
+  has_many :runns, dependent: :destroy
   
   def previous
     return Ward.last if self == Ward.first
