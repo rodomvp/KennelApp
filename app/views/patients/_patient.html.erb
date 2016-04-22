@@ -1,6 +1,6 @@
 <tr>
   <td>
-    <%= image_tag patient.image_url(:index_thumb).to_s %><br>
+    <%= link_to image_tag(patient.image_url(:index_thumb).to_s), patient %>
     <%= link_to patient.name + " #{patient.owner.last_name}", patient %>
   </td>
 </tr>
