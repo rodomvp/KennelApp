@@ -1,18 +1,28 @@
-<div class="panel panel-<%= runn.occupied? ? 'primary' : 'default' %>">
+<% r = runn  %>
+<% p = r.current_patient if r.occupied? %>
+<% pfullname = "#{p.name} #{p.owner.last_name}" if r.occupied? %>
+
+<div class="panel panel-<%= r.occupied? ? 'primary' : 'default' %>">
   <div class="panel-heading" >
-    <%= link_to "#{runn.ident}", runn  %>
+    <%= link_to "#{r.ident}", r  %>
   </div>
   <div class="panel-body">
-    <p>
-      <%= runn.occupied? ? "OCCUPIED by" : "VACANT" %> 
-      <%= link_to "#{runn.current_patient_name}", runn.current_patient %>
-      <% if runn.occupied? %>
-      <%= image_tag runn.current_patient.image_url(:index_thumb).to_s %>
+    <% if r.occupied? %>
+      <p>
+        <%= link_to "#{pfullname}", p %>
+        <%= image_tag p.image_url(:index_thumb).to_s %>
+      </p>
+      <div class="rut">
+        <!-- TODO: implement run indication timer -->
+        <ul>
+          <li>3 minutes remaining</li>
+        </ul>
+      </div>
+    <% else %>
+      <ul class="list-group">
+        <li class="list-group-item"><b>size</b><%= ": #{r.size}"  %></li>
+        <!-- TODO: add check in button -->
+      </ul>
       <% end %>
-    </p>
-    <ul class="list-group">
-      <li class="list-group-item"><b>size</b><%= ": #{runn.size}"  %></li>
-      <li class="list-group-item"><b>amenities</b><%= ": #{runn.amenities}"  %></li>
-    </ul>
   </div>
 </div>
