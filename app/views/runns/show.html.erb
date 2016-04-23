@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>
+  <%= link_to @runn.previous, data: { keybinding: '["h", "left"]' }, class: "btn" do %>
+      <i class="glyphicon glyphicon-menu-left"></i>
+  <% end %>
+
   <%= @runn.ident %>
+
+  <%= link_to @runn.next, data: { keybinding: '["l", "right"]' }, class: "btn" do %>
+      <i class="glyphicon glyphicon-menu-right"></i>
+  <% end %>
 </h1>
 
 <% if @runn.occupied? %>
