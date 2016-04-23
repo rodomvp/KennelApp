@@ -14,6 +14,9 @@ class OwnersController < ApplicationController
   # Return a listing of all owners (Using views/owners/index.html.erb)
   def index
     @owners = Owner.search(params[:search]).paginate(:per_page => 25, :page => params[:page])
+    if @owners.count == 1
+      redirect_to @owners.first
+    end
   end
 
   def destroy
@@ -29,7 +32,7 @@ class OwnersController < ApplicationController
       # Redirect to new owner profile
       redirect_to @owner
     else
-      # Render a new owner form 
+      # Render a new owner form
       render 'new_owner'
     end
   end
@@ -40,5 +43,5 @@ class OwnersController < ApplicationController
     params.require(:owner).permit(
       :first_name, :last_name, :email, :phone_number
     )
-  end 
+  end
 end

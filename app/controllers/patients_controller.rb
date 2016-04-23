@@ -24,7 +24,10 @@ class PatientsController < ApplicationController
 
   # Return a listing of all patients (Using views/patients/index.html.erb)
   def index
-      @patients = Patient.search(params[:search]).order(:has_current_stay)
+    @patients = Patient.search(params[:search]).order(:has_current_stay)
+    if @patients.count == 1
+      redirect_to @patients.first
+    end
   end
 
   # Use patient_params to create a new patient
