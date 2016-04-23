@@ -8,14 +8,16 @@
   </div>
   <div class="panel-body">
     <% if r.occupied? %>
-      <p>
-        <%= link_to "#{pfullname}", p %>
-        <%= image_tag p.image_url(:index_thumb).to_s %>
-      </p>
       <div class="rut">
-        <!-- TODO: implement run indication timer -->
         <ul class="list-group">
-          <li class="list-group-item">3 minutes remaining</li>
+          <li class="list-group-item">
+            <%= link_to "#{pfullname}", p %>
+            <%= image_tag p.image_url(:index_thumb).to_s, height: '32' %>
+          </li>
+          <li class="list-group-item">
+            <!-- TODO: implement run indication timer -->
+            3 minutes remaining
+          </li>
         </ul>
       </div>
     <% else %>
