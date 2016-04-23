@@ -123,3 +123,6 @@
    <INPUT TYPE="submit" VALUE="Save Changes">
   <% end %>
 </div>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>
