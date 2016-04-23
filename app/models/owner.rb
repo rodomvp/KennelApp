@@ -18,4 +18,14 @@ class Owner < ActiveRecord::Base
       all
     end
   end
+  
+  def previous
+    return Owner.last if self == Owner.first
+    Owner.where(["id < ?", id]).last
+  end
+
+  def next
+    return Owner.first if self == Owner.last 
+    Owner.where(["id > ?", id]).first
+  end
 end

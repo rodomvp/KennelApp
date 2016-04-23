@@ -23,6 +23,14 @@ class Patient < ActiveRecord::Base
     end
   end
 
+  def previous
+    return Patient.last if self == Patient.first
+    Patient.where(["id < ?", id]).last
+  end
 
+  def next
+    return Patient.first if self == Patient.last 
+    Patient.where(["id > ?", id]).first
+  end
 
 end

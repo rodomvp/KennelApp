@@ -1,9 +1,18 @@
 <% provide(:title, "OWNER: " + @owner.first_name + " " + @owner.last_name)  %>
 
-<!-- Add Patient button -->
-
 <div>
-	<h1><%= "#{@owner.first_name} #{@owner.last_name}" %></h1>
+  <h1>
+
+    <%= link_to @owner.previous, data: { keybinding: '["h", "left"]' }, class: "btn" do %>
+        <i class="glyphicon glyphicon-menu-left"></i>
+    <% end %>
+
+    <%= "#{@owner.first_name} #{@owner.last_name}" %>
+
+    <%= link_to @owner.next, data: { keybinding: '["l", "right"]' }, class: "btn" do %>
+        <i class="glyphicon glyphicon-menu-right"></i>
+    <% end %>
+  </h1>
 	<p><%= "Id : " "#{@owner.id}" %></p>
     <p><%= "Email : " "#{@owner.email}" %></p>
     <p><%= "Phone Number : " "#{@owner.phone_number}" %></p>
