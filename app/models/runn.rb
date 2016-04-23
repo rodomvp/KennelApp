@@ -47,4 +47,18 @@ class Runn < ActiveRecord::Base
     return occupied_runns
   end
 
+  def sibling_runns
+    return ward.runns
+  end
+
+  def previous
+    return sibling_runns.last if self == sibling_runns.first
+    sibling_runns.where(["id < ?", id]).last
+  end
+
+  def next
+    return sibling_runns.first if self == sibling_runns.last 
+    sibling_runns.where(["id > ?", id]).first
+  end
+
 end

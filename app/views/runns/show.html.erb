@@ -35,12 +35,12 @@
 
 <p>
   <strong>Num Sibling Runs:</strong>
-  <%= "#{@runn.ward.runns.count}" %>
+  <%= "#{@runn.sibling_runns.count}" %>
 </p>
 
 <p>
   <strong>List of Sibling Runs:</strong>
-  <%= "#{@runn.ward.runns.ids}" %>
+  <%= "#{@runn.sibling_runns.ids}" %>
 </p>
 
 <%= link_to 'Edit', edit_runn_path(@runn) %> |
