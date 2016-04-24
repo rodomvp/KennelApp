@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def admin_required
   	if (!User.find_by_id(session[:user_id]).admin?)
   		redirect_to ward_view_url
-  		flash[:danger] = "Restricted to administrator access"
+  		flash[:danger] = "#{request.url} is restricted to administrator access"
   	end
   end
   protect_from_forgery with: :exception
