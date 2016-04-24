@@ -24,12 +24,9 @@
 
   <%= image_tag @patient.image_url(:thumb).to_s %>
   
-  <p><%= "Id : " "#{@patient.id}" %></p>
+  <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %></p>
   <p><%= "Weight : " "#{@patient.weight}" %></p>
   <p><%= "Diet : " "#{@patient.diet}" %></p>
-  <p><%= "Created at " "#{@patient.created_at}" %></p>
-  <p><%= "Updated at " "#{@patient.updated_at}" %></p>
-  <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %></p>
 
   <p><i>## -- Some debugging info below ------------- ##</i></p>
 

@@ -2,6 +2,7 @@
 <li style="color:green">
   <% t = stay.created_at %>
 	<%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y -- %l:%M %p") %>
+  -- <%= stay.inspect %>
 </li>
 <% else %>
 <li>
