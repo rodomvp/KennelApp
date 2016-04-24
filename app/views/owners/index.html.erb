@@ -1,11 +1,7 @@
 <h1>Owners</h1>
 
-
 <%= form_tag '/owners', :method => 'get' do %>
-  <p><center>
-    <%= text_field_tag :search, params[:search], class: 'form-control select_all_text_on_focus', data: { keybinding: '/' } %>
-    <%= submit_tag "Search", :name => nil, class: 'btn btn-info' %>
-  </center></p>
+  <%= render 'shared/search_an_index' %>
 <% end %>
 <br>
 <!-- Add Owner button -->
