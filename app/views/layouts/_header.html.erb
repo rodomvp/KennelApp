@@ -17,7 +17,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right"> <!-- ul given Bootstrap classes -->
           <li><%= link_to 'Owners', owners_path, data: { keybinding: 'o' } %></li>
-          <li><%= link_to 'Patients',  all_patients_path, data: { keybinding: 'p' } %></li>
+          <li><%= link_to 'Patients',  patients_path, data: { keybinding: 'p' } %></li>
           <% if is_admin? %>
           <li><%= link_to 'Users',     users_path %></li>
           <li><%= link_to 'Wards',     wards_path %></li>

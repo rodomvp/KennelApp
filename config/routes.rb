@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  # creates a route root_url/patients, which
+  # will call the index() action in patients_controller
+  get 'patients' => 'patients#index'
+
   # creates routes to access a patient profile
   # example: owners/id/patients/id
   resources :owners do
