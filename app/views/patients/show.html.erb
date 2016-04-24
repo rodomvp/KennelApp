@@ -52,6 +52,9 @@
   <% end %>
 </div>
 
+
+
+
 <!-- Checked in Patient Elements -->
 <% if @patient.has_current_stay? %>
 <br>
@@ -138,7 +141,26 @@
 <div class="patient-container" style="display: inline-block; float: right; width: 39%; margin: 1px; height: 240px;">
   <center>
   <h3 style="margin: 10px;">Medical Notes</h3>
-  <!-- TODO form_for -->
+  
+<div class="row">
+    <aside class="col-md-4">
+      <section class="note_form">
+        <%= render 'notes/note_form' %>
+      </section>
+    </aside>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <% if @patient.notes.any? %>
+      <h3>notes (<%= @patient.notes.count %>)</h3>
+      <ol class="notes">
+        <%= render @notes %>
+      </ol>
+      <%= will_paginate @notes %>
+    <% end %>
+  </div>
+</div>
 </center>
 </div>
 <% end %>
