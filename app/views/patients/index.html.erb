@@ -22,7 +22,7 @@
       <% else %>
       <li style="list-style-type:none" class=thumblist>
       <% end %>
-        <%= image_tag patient.image_url(:index_thumb).to_s %>
+        <%= link_to image_tag(patient.image_url(:index_thumb).to_s), patient %>
         <% if patient.has_current_stay? %>
           <span class="label label-pill label-info" style="float:left;"><%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %></span>
         <% end %>
