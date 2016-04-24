@@ -6,11 +6,17 @@
 <% end %>
 <br>
 <% provide(:title, 'All patients') %>
-
+<p>FIRST: <%= "#{@patients.first.id} #{@patients.first.name}" %></p>
+<p>LAST: <%= "#{@patients.last.id} #{@patients.last.name}" %></p>
 <!--Patient list pagination done by: Emily Ribando-Gros -->
 <% @patients.each do |patient| %>
   <div class=thumblist>
     <ul>
+      <%= 
+      if patient == @patients.first
+        link_to "", patient, data: { keybinding: ['j', 'h' ,'l'] }
+      end 
+      %>
       <% if patient.has_current_stay? %>
       <li style="list-style-type:none" class=thumblist-staying>
       <% else %>

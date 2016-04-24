@@ -15,6 +15,11 @@
 <% @owners.each do |owner| %>
   <div class=thumblist>
   <ul>
+    <%= 
+      if owner == @owners.first
+        link_to "", owner, data: { keybinding: ['j', 'h', 'l'] }
+      end 
+    %>
     <li style="list-style-type:none" class=thumblist>
       <h3><%= link_to "#{owner.first_name} #{owner.last_name}", owner%></h3>
       <ul class="owner_patients">
