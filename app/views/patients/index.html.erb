@@ -17,10 +17,10 @@
       <li style="list-style-type:none" class=thumblist>
       <% end %>
         <%= image_tag patient.image_url(:index_thumb).to_s %>
-        <h3><%= link_to "#{patient.name}", patient%></h3>
         <% if patient.has_current_stay? %>
-        <p><tt>Staying in</tt> : [<%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %>]</p>
+          <span class="label label-pill label-info" style="float:left;"><%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %></span>
         <% end %>
+        <h3><%= link_to "#{patient.name}", patient%></h3>
         <% if is_admin? %>
          <p style="float: right"><%= link_to "Delete", patient, method: :delete,
                                     data: { confirm: "You sure?" } %></p>
