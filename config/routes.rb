@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'docs' => 'static_pages#documentation'
   get 'new'  => 'users#new'
   get 'ward_view' => 'wards#show'
+  get 'foo/:id' => 'wards#show'
 
   # Request by the Add Owner button
   get 'new_owner' => 'owners#new'
