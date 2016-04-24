@@ -4,10 +4,7 @@
 <%= form_tag '/patients', :method => 'get' do %>
   <%= render 'shared/search_an_index' %>
 <% end %>
-<br>
 <% provide(:title, 'All patients') %>
-<p>FIRST: <%= "#{@patients.first.id} #{@patients.first.name}" %></p>
-<p>LAST: <%= "#{@patients.last.id} #{@patients.last.name}" %></p>
 <!--Patient list pagination done by: Emily Ribando-Gros -->
 
   <div class=thumblist>
