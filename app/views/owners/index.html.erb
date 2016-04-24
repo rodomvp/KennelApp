@@ -24,7 +24,7 @@
       <ul class="owner_patients">
       <% owner.patients.each do |p| %>
         <li>
-          <%= image_tag p.image_url(:index_thumb).to_s, height: '32' %>
+          <%= link_to image_tag(p.image_url(:index_thumb).to_s, height: '32'), p %>
         </li>
       <% end %>
       </ul>
