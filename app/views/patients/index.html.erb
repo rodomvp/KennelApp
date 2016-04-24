@@ -2,34 +2,39 @@
 
 <!-- Search form pagination done by: Vincent Rodomsita -->
 <%= form_tag '/patients', :method => 'get' do %>
-  <p><center>
+  <p style="display: inline"><center>
     <%= text_field_tag :search, params[:search], class: 'form-control select_all_text_on_focus', data: { keybinding: '/' } %>
-    <%= submit_tag "Search", :name => nil, class: 'btn btn-info' %>
+    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
   </center></p>
 <% end %>
 <br>
 <% provide(:title, 'All patients') %>
 
 <!--Patient list pagination done by: Emily Ribando-Gros -->
-<% @patients.each do |patient| %>
+
   <div class=thumblist>
     <ul>
+      <% @patients.each do |patient| %>
       <% if patient.has_current_stay? %>
-      <li style="list-style-type:none" class=thumblist-staying>
+      <li style="list-style-type:none" class="thumblist-staying">
       <% else %>
-      <li style="list-style-type:none" class=thumblist>
+      <li style="list-style-type:none" class="thumblist">
       <% end %>
-        <%= image_tag patient.image_url(:index_thumb).to_s %>
+        <%= link_to image_tag(patient.image_url(:index_thumb).to_s), patient %>
+        <div style="display:inline-block; position: relative; top: -10px; vertical-align: middle;">
         <h3><%= link_to "#{patient.name}", patient%></h3>
         <% if patient.has_current_stay? %>
-        <p><tt>Staying in</tt> : [<%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %>]</p>
+        <p>  <span class="label label-pill label-info" style="float:left; background: #c7d9e8"><%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %></span></p>
         <% end %>
+        </div>
+        <div style="float:right; position: relative; vertical-align: middle;">
         <% if is_admin? %>
-         <p style="float: right"><%= link_to "Delete", patient, method: :delete,
-                                    data: { confirm: "You sure?" } %></p>
+         <p><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, patient, method: :delete, data: { confirm: "You sure?" } %></p>
         <% end %>
+      </div>
       </li>
-    </ul>
+      <% end %>
+    </ul>    
   </div>
-<% end %>
+
 

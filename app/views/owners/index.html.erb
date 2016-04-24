@@ -4,7 +4,7 @@
 <%= form_tag '/owners', :method => 'get' do %>
   <p><center>
     <%= text_field_tag :search, params[:search], class: 'form-control select_all_text_on_focus', data: { keybinding: '/' } %>
-    <%= submit_tag "Search", :name => nil, class: 'btn btn-info' %>
+    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
   </center></p>
 <% end %>
 <br>
@@ -12,28 +12,29 @@
 <div>
 	<%= link_to "Add Owner", new_owner_path, class: "btn btn-lg btn-primary"%>
 </div>
- <br>
 
-<div style="position: relative">
-<table border="1" style="width:100%" id="t01">
-<% @owners.each do |owner| %>
-  <div class=thumblist>
+<div class="thumblist">
   <ul>
-    <li style="list-style-type:none" class=thumblist>
-      <h3><%= link_to "#{owner.first_name} #{owner.last_name}", owner%></h3>
+    <% @owners.each do |owner| %>
+    <li style="list-style-type:none" class="thumblist">
+      <div style="display:inline-block; position: relative;">
+      <h3 style="position: relative; top: -40;"><%= link_to "#{owner.first_name} #{owner.last_name}", owner%></h3>
       <ul class="owner_patients">
       <% owner.patients.each do |p| %>
         <li>
-          <%= image_tag p.image_url(:index_thumb).to_s, height: '32' %>
+          <%= link_to image_tag(p.image_url(:index_thumb).to_s, height: '32'), p %>
         </li>
       <% end %>
       </ul>
+      </div>
+      <div style="float:right; position: relative; vertical-align: middle;">
       <% if is_admin? %>
-      <p style="float: right"><%= link_to "Delete", owner, method: :delete,
-                                  data: { confirm: "You sure?" } %></p>
-                                  <% end %>
+      <p><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, owner, method: :delete,data: { confirm: "You sure?" } %>
+        <p> 
+      <% end %>
+    </div>
     </li>
+    <% end %>
   </ul>
 </div>
-<% end %>
 <%= will_paginate %>

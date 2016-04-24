@@ -25,14 +25,12 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
+a:visited {
+    text-decoration: none;
+}
+
 body {
     padding-top: 60px;
-    a:link {
-      /*color: white;*/
-    }
-    a:visited {
-      all: inherit;
-    }
 
 }
 
@@ -76,7 +74,6 @@ h2 {
     margin-bottom: 30px;
     text-align: left;
     font-weight: normal;
-    color: $gray-light;
 
 }
 

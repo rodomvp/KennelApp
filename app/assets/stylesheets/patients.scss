@@ -7,11 +7,13 @@
 * {margin: 0; padding: 0;}
 
 div.thumblist {
-  margin: 20px;
+  margin: 30px;
+  text-decoration: none;
 }
 
 ul.thumblist {
   list-style-type: none;
+  position: relative;
   width: 200px;
   height: 80px;
   background: #4682B4;
@@ -20,11 +22,39 @@ ul.thumblist {
 
 h3.thumblist {
   font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+  text-decoration: none;
 }
 
-li img.thumblist {
-  float: left;
+.glyphicon.glyphicon-trash {
+    font-size: 30px;
+    position: relative;
+    vertical-align: middle;
+}
+
+.thumblist-staying .glyphicon.glyphicon-trash:hover, .thumblist .glyphicon.glyphicon-trash:hover {
+    color: #eee;
+    display: block;
+    text-decoration: none;
+}
+
+a { 
+  text-decoration: none; 
+  color: #000;
+}
+
+.thumblist-staying a:hover, .thumblist a:hover {
+  color: #eee;
+  text-decoration: underline;
+}
+
+p {
+  color: #000;
+}
+
+img {
   margin: 0 15px 0 0;
+  vertical-align: middle;
+  position: relative;
 }
 
 li p.thumblist {
@@ -41,12 +71,12 @@ li.thumblist {
 li.thumblist-staying {
   padding: 10px;
   overflow: auto;
-  background: #bcf;
+  background: #a2c0d9;
   margin: 5px;
 }
 
-li:hover {
-  cursor: pointer;
+li.thumblist-staying:hover, li.thumblist:hover {
+  background: #4682b4;
 }
 
 input[type="text"] {
@@ -54,6 +84,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-	width: 200px;
+	width: 150px;
+  position: relative;
+  display: inline;
 }
-

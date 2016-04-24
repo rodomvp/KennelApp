@@ -7,15 +7,19 @@
 <div style="position: relative">
 <table border="1" style="width:100%" id="t01">
 	
-<% @users.each do |user| %>
-<div class=thumblist>
+<div class="thumblist">
   <ul>
-    <li style="list-style-type:none" class=thumblist>
+  <% @users.each do |user| %>
+    <li style="list-style-type:none" class="thumblist">
+      <div style="display:inline-block; position: relative; top: -10px; vertical-align: middle;">
       <%= image_tag user.image_url(:index_thumb).to_s %>
       <h3><%= link_to "#{user.first_name}", user%></h3>
-      <p style="float: right"><%= link_to "Delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %></p>
+      </div>
+      <div style="float:right; position: relative; vertical-align: middle;">
+      <p><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, user, method: :delete, data: { confirm: "You sure?" } %>
+      </p>
+      </div>
     </li>
+  <% end %>
   </ul>
 </div>
-<% end %>
