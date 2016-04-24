@@ -1,11 +1,7 @@
 <h1>Owners</h1>
 
-
 <%= form_tag '/owners', :method => 'get' do %>
-  <p><center>
-    <%= text_field_tag :search, params[:search], class: 'form-control select_all_text_on_focus', data: { keybinding: '/' } %>
-    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
-  </center></p>
+  <%= render 'shared/search_an_index' %>
 <% end %>
 <br>
 <!-- Add Owner button -->
@@ -19,6 +15,11 @@
     <li style="list-style-type:none" class="thumblist">
       <div style="display:inline-block; position: relative;">
       <h3 style="position: relative; top: -40;"><%= link_to "#{owner.first_name} #{owner.last_name}", owner%></h3>
+    <%= 
+      if owner == @owners.first
+        link_to "", owner, data: { keybinding: ['j', 'h', 'l'] }
+      end 
+    %>
       <ul class="owner_patients">
       <% owner.patients.each do |p| %>
         <li>

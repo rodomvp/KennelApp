@@ -23,6 +23,11 @@
 
 <div class="row">
     <% @ward.runns.each do |runn| %>
+      <%= 
+      if runn == @ward.runns.first
+        link_to "", runn, data: { keybinding: ['j', 'k'] }
+      end 
+      %>
       <div class="col-md-4" id="ward-view-runn">
         <%= render runn %>
       </div>

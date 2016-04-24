@@ -2,19 +2,22 @@
 
 <!-- Search form pagination done by: Vincent Rodomsita -->
 <%= form_tag '/patients', :method => 'get' do %>
-  <p style="display: inline"><center>
-    <%= text_field_tag :search, params[:search], class: 'form-control select_all_text_on_focus', data: { keybinding: '/' } %>
-    <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
-  </center></p>
+  <%= render 'shared/search_an_index' %>
 <% end %>
 <br>
 <% provide(:title, 'All patients') %>
-
+<p>FIRST: <%= "#{@patients.first.id} #{@patients.first.name}" %></p>
+<p>LAST: <%= "#{@patients.last.id} #{@patients.last.name}" %></p>
 <!--Patient list pagination done by: Emily Ribando-Gros -->
 
   <div class=thumblist>
     <ul>
       <% @patients.each do |patient| %>
+      <%= 
+      if patient == @patients.first
+        link_to "", patient, data: { keybinding: ['j', 'h' ,'l'] }
+      end 
+      %>
       <% if patient.has_current_stay? %>
       <li style="list-style-type:none" class="thumblist-staying">
       <% else %>
@@ -36,5 +39,4 @@
       <% end %>
     </ul>    
   </div>
-
 
