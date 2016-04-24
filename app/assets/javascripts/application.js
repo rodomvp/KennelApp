@@ -17,3 +17,11 @@
 //= require turbolinks
 //= require_tree .
 
+/**
+ * Defines a text field class 'select_all_text_on_focus'
+ */
+jQuery(document).ready(function($) {
+  $(".select_all_text_on_focus").focus(function() {
+    this.select();
+  });
+});
