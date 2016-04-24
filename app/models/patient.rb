@@ -1,6 +1,7 @@
 class Patient < ActiveRecord::Base
   belongs_to :owner
   has_many :stays
+  has_many :notes
   belongs_to :feed_list
   validates :name, 
     presence: true, 

@@ -26,6 +26,26 @@
   <p>current_stay: [<%= if @patient.current_stay then link_to "#{@patient.current_stay.id}", @patient.current_stay end %>]</p>
   <p>current_runn: [<%= if @patient.current_stay then link_to "#{@patient.current_runn.ident}", @patient.current_runn end %>]</p>
 
+<div class="row">
+    <aside class="col-md-4">
+      <section class="note_form">
+        <%= render 'notes/note_form' %>
+      </section>
+    </aside>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <% if @patient.notes.any? %>
+      <h3>notes (<%= @patient.notes.count %>)</h3>
+      <ol class="notes">
+        <%= render @notes %>
+      </ol>
+      <%= will_paginate @notes %>
+    <% end %>
+  </div>
+</div>
+
 <% if @patient.stays.length > 0 %>
 
 

@@ -50,7 +50,7 @@ ward_sizes = %w[Small Medium Large]
   end
 end
 
-25.times do
+6.times do
 
   # Make owners
   the_new_owner = Owner.create(
@@ -181,6 +181,11 @@ def create_user (a_first_name, a_last_name)
   )
 end
 
+patients = Patient.order(:created_at).take(6)
+5.times do
+  content = Faker::Lorem.sentence(5)
+  patients.each { |patient| patient.notes.create!(content: content) }
+end
 
 create_user('George', 'Washington')
 create_user('John', 'Adams')
