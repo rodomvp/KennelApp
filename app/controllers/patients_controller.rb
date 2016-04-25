@@ -49,7 +49,16 @@ class PatientsController < ApplicationController
 
 
   def destroy
+    @patient = Patient.find(params[:id])
+
+    if @patient.has_current_stay
+      @runn = @patient.current_stay.runn
+      @runn.occupied = false
+      @runn.save
+    end
+
     @patient = Patient.find(params[:id]).destroy
+
     flash[:success] = "Deleted #{@patient.name}"
     redirect_to patients_url
   end
