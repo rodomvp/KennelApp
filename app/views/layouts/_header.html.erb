@@ -20,8 +20,6 @@
           <li><%= link_to 'Patients',  all_patients_path, data: { keybinding: 'p' } %></li>
           <% if is_admin? %>
           <li><%= link_to 'Users',     users_path %></li>
-          <li><%= link_to 'Wards',     wards_path %></li>
-          <li><%= link_to 'Runs',     runns_path %></li>
           <% end %>
           <li>
             <%= link_to logout_path, method: 'delete', class: 'btn' do %>
