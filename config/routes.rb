@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :patients do
     member do
       resources :stays
+      resources :notes
     end
   end
 
@@ -23,7 +24,6 @@ Rails.application.routes.draw do
   resources :runns
   resources :stays
   resources :feed_lists
-  resources :notes,               only: [:create, :destroy]
 
   get 'home' => 'static_pages#home'
   get 'docs' => 'static_pages#documentation'
