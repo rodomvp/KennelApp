@@ -1,6 +1,8 @@
 <% r = runn  %>
-<% p = r.current_patient if r.occupied? %>
-<% pfullname = "#{p.name} #{p.owner.last_name}" if r.occupied? %>
+<% if r.occupied? %>
+  <% p = r.current_patient %>
+  <% pfullname = "#{p.name} #{p.owner.last_name}" %>
+<% end %>
 
 <div class="panel panel-<%= r.occupied? ? 'primary' : 'default' %>">
   <div class="panel-heading" >
