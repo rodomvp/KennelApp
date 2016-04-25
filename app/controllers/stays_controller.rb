@@ -30,7 +30,7 @@ class StaysController < ApplicationController
     @patient = Patient.find(@stay.patient_id)
     @patient.has_current_stay = false
     @patient.save
-    flash[:success] = "Deleted #{@patient.name}"
+    flash[:success] = "Checked out #{@patient.name}"
     redirect_to patients_url
   end
 
