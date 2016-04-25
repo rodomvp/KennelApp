@@ -24,7 +24,11 @@
       </div>
     <% else %>
       <ul class="list-group">
-        <li class="list-group-item"><b>VACANT</b></li>
+        <li class="list-group-item">
+          <b>VACANT</b>
+          <%= image_tag("spacer.gif", height: '32', width: '32') %>
+          <% # => <img alt="Icon" height="32" src="/icons/icon.gif" width="32" /> %>
+        </li>
         <li class="list-group-item"><b>size</b><%= ": #{r.size}"  %></li>
           <!-- TODO: add check in button -->
       </ul>
