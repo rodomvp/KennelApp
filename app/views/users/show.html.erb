@@ -1,7 +1,19 @@
 <% provide(:title, @user.first_name) %>
 <h1>
+  <%= link_to @user.previous, data: { keybinding: '["h", "left"]' },
+          class: "btn" do %>
+      <i class="glyphicon glyphicon-menu-left"></i>
+  <% end %>
+
   <%= @user.first_name %>
+
+  <%= link_to @user.next, data: { keybinding: '["l", "right"]' },
+          class: "btn" do %>
+      <i class="glyphicon glyphicon-menu-right"></i>
+  <% end %>
 </h1>
-
-
-<%= image_tag @user.image_url(:thumb)	.to_s %>
+<% if @user.image_url(:thumb).present?  %>
+  <%= image_tag(@user.image_url(:thumb).to_s, height: '32') %>
+<% else %>
+  <%= image_tag("genericuser.png", height: '200') %>
+<% end %>
