@@ -27,7 +27,12 @@
 
 <!-- Patient Profile Information -->
   <!-- Patient Picture -->
-  <%= image_tag @patient.image_url(:thumb).to_s,
+  <% if @patient.image_url(:thumb).present? %>
+    <% patient_image_url = @patient.image_url(:thumb).to_s %>
+  <% else %>
+   <% patient_image_url = 'genericdoghead.png' %>
+  <% end %>
+  <%= image_tag patient_image_url, height: '150',
             :style=>"margin: 10px; float: left;" %> 
   <!-- Owner Link --> 
   <h4>Belongs to 
