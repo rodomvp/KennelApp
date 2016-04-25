@@ -13,7 +13,7 @@
       <div class="rut">
         <ul class="list-group">
           <li class="list-group-item">
-            <%= image_tag p.image_url(:index_thumb).to_s, height: '32' %>
+            <%= link_to image_tag(p.image_url(:index_thumb).to_s, height: '32'), p %>
             <%= link_to "#{pfullname}", p %>
           </li>
           <li class="list-group-item">
