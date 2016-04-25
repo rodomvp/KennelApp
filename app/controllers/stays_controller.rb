@@ -26,6 +26,9 @@ class StaysController < ApplicationController
   end
 
   def destroy
+
+    @stay = Stay.find(params[:id]).destroy
+    
     @runn = Runn.find_by_id(@stay.runn_id)
     @runn.occupied = false
     @runn.save
@@ -34,7 +37,7 @@ class StaysController < ApplicationController
     @patient.has_current_stay = false
     @patient.save
 
-    @stay = Stay.find(params[:id]).destroy
+    
 
     flash[:success] = "Checked out #{@patient.name}"
     redirect_to patients_url
