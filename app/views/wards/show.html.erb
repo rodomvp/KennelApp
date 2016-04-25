@@ -5,7 +5,7 @@
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
 
-  <%= @ward.ident %>
+  <%= link_to @ward.ident, edit_ward_path(@ward) %>
 
   <%= link_to @ward.next, data: { keybinding: '["l", "right"]' }, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
