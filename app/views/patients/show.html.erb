@@ -50,11 +50,11 @@
 <!-- U/D Chart of Checked In Patient -->
 <% if @patient.has_current_stay? %>
 <br>
-<div class="patient-container" style="display: inline-block;">
+<div class="patient-container" style="display: inline-block; float: left; width: 59%; height: 240px;">
   <center>
   <h3 style="margin: 10px;">U/D Chart</h3>
-</center>
   <table style="color: #152736; margin: 10px;" >
+    <!-- TODO form_for -->
     <tr>
         <th style="visibility: hidden"></th>
         <th>1</th>
@@ -92,8 +92,8 @@
           <option value="abnormal">Abnormal</option>
           </select>
         </td>
-    </TR>
-    <TR>
+    </tr>
+    <tr>
         <th>D</th>
         <td><select name="D1">
           <option value="">      </option>
@@ -125,18 +125,26 @@
         </td>
     </tr>
   </table>
-  <center>
    <input TYPE="submit" VALUE="Save Changes">
   </center>
   <% end %>
 </div>
 
+<!-- Medical Notes -->
+<div class="patient-container" style="display: inline-block; float: right; width: 39%; margin: 1px; height: 240px;">
+  <center>
+  <h3 style="margin: 10px;">Medical Notes</h3>
+  <!-- TODO form_for -->
+</center>
+</div>
+
+
+
 <!-- Extra Keybindings -->
 <%= link_to '', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>
 
 <!-- Debug -->
-<br>
-<div style="margin: 20px">
+<div style="float: bottom;">
 <p><i>## -- Some debugging info below ------------- ##</i></p>
   <p>has_current_stay?: [<%= @patient.has_current_stay? %>]</p>
   <p>current_stay: [<%= if @patient.current_stay then link_to "#{@patient.current_stay.id}", @patient.current_stay end %>]</p>
