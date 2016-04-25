@@ -12,15 +12,6 @@
   <% end %>
 </h1>
 
-<p id="notice"><%= notice %></p>
-
-<% if current_user.admin? %>
-  <%= link_to 'Edit', edit_ward_path(@ward) %> |
-  <%= link_to 'Back', wards_path %>
-<% end %>
-
-<h3> Runs </h3>
-
 <div class="row">
     <% @ward.runns.each do |runn| %>
       <%= 
@@ -34,3 +25,9 @@
     <% end %>
   </div>
 </div>
+
+<% if current_user.admin? %>
+  <center>
+  <%= link_to ' <i class="glyphicon glyphicon-th-list"></i> Manage Ward '.html_safe, wards_path, class: "btn btn-lg btn-primary", :style=>'width: 320px;;margin:10px;' %>
+  </center>
+<% end %>
