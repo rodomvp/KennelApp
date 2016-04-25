@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160421005706) do
     t.boolean  "npo"
     t.string   "feed_time"
     t.integer  "feed_list_id"
-    t.boolean  "has_current_stay"
+    t.boolean  "has_current_stay",  null:false
     t.string   "image"
   end
 
