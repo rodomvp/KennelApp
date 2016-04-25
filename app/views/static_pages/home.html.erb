@@ -10,9 +10,30 @@
 <% provide(:title, 'Home') %>
 <div class="center jumbotron">
   <h1>Kennel Management Software</h1>
-
-  <p>He who is cruel to animals becomes hard also in his dealings with men...</p> 
-
-  <p>-- Immanuel Kant</p>
-
+  <p style="color: #588ebb">
+    An effective solution for improving animal health care
+  </p> 
 </div>
+
+<div id="container" style="z-index: 1;" class="center jumbotron">
+<h1 style="position: relative; left: -50px; top: -50px; font-size: 35pt; color: #eee;">Log in</h1>
+
+<div class="row" style="float: left; position: relative; left: -80px; top: -40px;" >
+  <div class="col-md-6 col-md-offset-3" style="color: #588ebb; z-index: 2">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email, class: "email" %>
+      <%= f.email_field :email, class: 'form-control', id: 'login' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control', id: 'login' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+ <% end %>

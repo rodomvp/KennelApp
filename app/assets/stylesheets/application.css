@@ -14,6 +14,24 @@
  *= require_tree .
  *= require_self
  */
+
+#login {
+  width: 200px;
+}
+
+.email {
+  position: relative;
+  left: -20px;
+}
+
+#container {
+    border-radius: 5px;
+    width:280px;
+    height:280px;
+    position: relative; 
+    top: -25px;
+}
+
 body div.show {
   float: right;
 }
