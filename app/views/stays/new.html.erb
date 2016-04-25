@@ -1,6 +1,6 @@
 <% provide(:title, 'Check In') %>
-<h1>Check In New Stay</h1>
-<h2><center><%= "for patient #{@patient.name}" %></center></h2>
+<h1>Check In</h1>
+<h2><center><%= "patient: #{@patient.name} #{@patient.owner.last_name}" %></center></h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
