@@ -42,6 +42,8 @@ class PatientsController < ApplicationController
     if @patient.save
       # Redirect to new patient profile
       redirect_to @patient
+    else
+      redirect_to @patient
     end
   end
 
