@@ -10,6 +10,11 @@
 <div class="thumblist">
   <ul>
   <% @users.each do |user| %>
+      <%= 
+      if user == @users.first
+        link_to "", user, data: { keybinding: ['j', 'h' ,'l'] }
+      end 
+      %>
     <li style="list-style-type:none" class="thumblist">
       <div style="display:inline-block; position: relative; top: -10px; vertical-align: middle;">
       <h3><%= link_to "#{user.first_name}", user%></h3>
