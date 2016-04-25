@@ -13,8 +13,8 @@
       <div class="rut">
         <ul class="list-group">
           <li class="list-group-item">
-            <%= link_to "#{pfullname}", p %>
             <%= image_tag p.image_url(:index_thumb).to_s, height: '32' %>
+            <%= link_to "#{pfullname}", p %>
           </li>
           <li class="list-group-item">
             <!-- TODO: implement run indication timer -->
