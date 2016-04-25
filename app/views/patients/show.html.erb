@@ -1,60 +1,68 @@
 <% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
 
+<!-- Header with Keybindings -->
 <h1>
-
-  <%= link_to @patient.previous, data: { keybinding: '["h", "left"]' }, class: "btn" do %>
+  <%= link_to @patient.previous, data: { keybinding: '["h", "left"]' },
+          class: "btn" do %>
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
-
   <%= "#{@patient.name} the #{@patient.breed}" %>
-
-  <%= link_to @patient.next, data: { keybinding: '["l", "right"]' }, class: "btn" do %>
+  <%= link_to @patient.next, data: { keybinding: '["l", "right"]' },
+          class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
   <% end %>
 </h1>
 
-<!-- Check In button -->
+<!-- Check In and Check Out Buttons -->
+<div class="patient-container">
   <div style="float: right">
     <% if @patient.has_current_stay? %>
-      <%= link_to "Check Out", @patient.current_stay, method: :delete, class: "btn btn-lg btn-danger"%>
+      <%= link_to "Check Out", @patient.current_stay, method: :delete,
+              class: "btn btn-lg btn-danger", :style=>"margin: 10px;" %>
     <% else %>
-      <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary", 
+              :style=>"margin: 10px;" %>
     <% end %>
   </div>
 
-  <%= image_tag @patient.image_url(:thumb).to_s %>
-  
-  <p>Belongs to <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %></p>
-  <p><%= "Weight : " "#{@patient.weight}" %></p>
-  <p><%= "Diet : " "#{@patient.diet}" %></p>
+<!-- Patient Profile Information -->
+  <!-- Patient Picture -->
+  <%= image_tag @patient.image_url(:thumb).to_s,
+            :style=>"margin: 10px; float: left;" %> 
+  <!-- Owner Link --> 
+  <h4>Belongs to 
+    <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %>
+  </h4>
+  <h5><%= "Weight : " "#{@patient.weight}" %></h5>
+  <h5><%= "Diet : " "#{@patient.diet}" %></h5>
+  <!-- Stay -->
+  <% if @patient.stays.length > 0 %>
+  <!-- Run Link -->
+  <h4 style="margin-top:20px;"> Stay : <span class="label label-pill label-info" style="position: relative; background: #4682b4; left: 8px;"><%= link_to "#{@patient.current_stay.runn.ident}", @patient.current_stay.runn, :style=>"color: #eee; font-size: 9pt;" %></span></h4>
+  <h5 style="margin-top: 12px;">
+    Check in Time : 
+    <% t = @patient.current_stay.created_at %>
+    <%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y at %l:%M %p") %>
+  </h5>
+  <% end %>
+</div>
 
-  <p><i>## -- Some debugging info below ------------- ##</i></p>
-
-  <p>has_current_stay?: [<%= @patient.has_current_stay? %>]</p>
-  <p>current_stay: [<%= if @patient.current_stay then link_to "#{@patient.current_stay.id}", @patient.current_stay end %>]</p>
-  <p>current_runn: [<%= if @patient.current_stay then link_to "#{@patient.current_runn.ident}", @patient.current_runn end %>]</p>
-
-<% if @patient.stays.length > 0 %>
-
-
-<h3> Stays </h3>
-  <ul>
-  	<%= render @patient.stays %>
-  </ul>
-<% end %>
-
-<div>
-  <% if @patient.has_current_stay? %>
-  <h3>U/D Chart</h3>
-  <TABLE  id="main-nav">
-    <TR>
+<!-- U/D Chart of Checked In Patient -->
+<% if @patient.has_current_stay? %>
+<br>
+<div class="patient-container" style="display: inline-block;">
+  <center>
+  <h3 style="margin: 10px;">U/D Chart</h3>
+</center>
+  <table style="color: #152736; margin: 10px;" >
+    <tr>
         <th style="visibility: hidden"></th>
         <th>1</th>
         <th>2</th>
         <th>3</th>
         <th>4</th>
-    </TR>
-    <TR>
+    </tr>
+    <tr>
         <th>U</th>
         <td><select name="U1">
           <option value="">      </option>
@@ -115,11 +123,22 @@
           <option value="abnormal">Abnormal</option>
           </select>
         </td>
-    </TR>
-  </TABLE>
-   <INPUT TYPE="submit" VALUE="Save Changes">
+    </tr>
+  </table>
+  <center>
+   <input TYPE="submit" VALUE="Save Changes">
+  </center>
   <% end %>
 </div>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>
+<!-- Extra Keybindings -->
+<%= link_to '', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>
+
+<!-- Debug -->
+<br>
+<div style="margin: 20px">
+<p><i>## -- Some debugging info below ------------- ##</i></p>
+  <p>has_current_stay?: [<%= @patient.has_current_stay? %>]</p>
+  <p>current_stay: [<%= if @patient.current_stay then link_to "#{@patient.current_stay.id}", @patient.current_stay end %>]</p>
+  <p>current_runn: [<%= if @patient.current_stay then link_to "#{@patient.current_runn.ident}", @patient.current_runn end %>]</p>
+</div>

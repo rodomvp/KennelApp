@@ -1,14 +1,17 @@
 <h1>Owners</h1>
 
+<!-- Search form pagination done by: Vincent Rodomsita -->
 <%= form_tag '/owners', :method => 'get' do %>
   <%= render 'shared/search_an_index' %>
 <% end %>
 <br>
+
 <!-- Add Owner button -->
 <div>
-	<%= link_to "Add Owner", new_owner_path, class: "btn btn-lg btn-primary"%>
+	<%= link_to "+ Add Owner", new_owner_path, class: "btn btn-lg btn-primary" %>
 </div>
 
+<!-- -->
 <div class="thumblist">
   <ul>
     <% @owners.each do |owner| %>

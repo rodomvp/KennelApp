@@ -6,6 +6,15 @@
 //Search bar styling done by: Vincent Rodomista 4/13/2016
 * {margin: 0; padding: 0;}
 
+.patient-container {
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #588ebb;
+  overflow: hidden;
+  background: #ecf2f7;
+}
+
 div.thumblist {
   margin: 30px;
   text-decoration: none;
