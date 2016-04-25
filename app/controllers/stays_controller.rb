@@ -25,6 +25,15 @@ class StaysController < ApplicationController
     end
   end
 
+  def destroy
+    @stay = Stay.find(params[:id]).destroy
+    @patient = Patient.find(@stay.patient_id)
+    @patient.has_current_stay = false
+    @patient.save
+    flash[:success] = "Deleted #{@patient.name}"
+    redirect_to patients_url
+  end
+
   def create
     if params[:id].present?
       @patient = Patient.find(params[:id])
