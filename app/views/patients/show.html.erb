@@ -47,9 +47,10 @@
   <% end %>
 </div>
 
-<!-- U/D Chart of Checked In Patient -->
+<!-- Checked in Patient Elements -->
 <% if @patient.has_current_stay? %>
 <br>
+<!-- U/D Chart -->
 <div class="patient-container" style="display: inline-block; float: left; width: 59%; height: 240px;">
   <center>
   <h3 style="margin: 10px;">U/D Chart</h3>
@@ -127,9 +128,7 @@
   </table>
    <input TYPE="submit" VALUE="Save Changes">
   </center>
-  <% end %>
 </div>
-
 <!-- Medical Notes -->
 <div class="patient-container" style="display: inline-block; float: right; width: 39%; margin: 1px; height: 240px;">
   <center>
@@ -137,8 +136,7 @@
   <!-- TODO form_for -->
 </center>
 </div>
-
-
+<% end %>
 
 <!-- Extra Keybindings -->
 <%= link_to '', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>

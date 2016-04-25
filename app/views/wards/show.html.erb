@@ -1,6 +1,10 @@
 <% provide(:title, @ward.ident) %>
-<h1>
 
+<% if current_user.admin? %>
+  <%= link_to ' <i class="glyphicon glyphicon-th-list"></i> Manage Wards'.html_safe, wards_path, class: "btn btn-lg btn-primary", :style=>'margin-left: 20px; margin-top: 20px; float: left; z-index: -1' %>
+  <%= link_to ' <i class="glyphicon glyphicon-cog"></i> Manage Runs'.html_safe, runns_path, class: "btn btn-lg btn-primary", :style=>'margin-right: 20px; margin-top: 20px; float: right; z-index: -1;' %>
+<% end %>
+<h1>
   <%= link_to @ward.previous, data: { keybinding: '["h", "left"]' }, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
@@ -26,8 +30,3 @@
   </div>
 </div>
 
-<% if current_user.admin? %>
-  <center>
-  <%= link_to ' <i class="glyphicon glyphicon-th-list"></i> Manage Wards '.html_safe, wards_path, class: "btn btn-lg btn-primary", :style=>'width: 320px;;margin:10px;' %>
-  </center>
-<% end %>
