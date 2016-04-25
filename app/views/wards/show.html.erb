@@ -15,8 +15,8 @@
 <p id="notice"><%= notice %></p>
 
 <center>
-<%= link_to '[Edit this ward]', edit_ward_path(@ward) %>
 <% if current_user.admin? %>
+  <%= link_to '[Edit this ward]', edit_ward_path(@ward) %>
    |
   <%= link_to '[Show wards index]', wards_path %>
 <% end %>
