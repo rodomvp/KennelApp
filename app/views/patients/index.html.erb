@@ -29,7 +29,7 @@
         <div style="display:inline-block; position: relative; top: -10px; vertical-align: middle;">
         <h3><%= link_to "#{patient.name}", patient%></h3>
         <% if patient.has_current_stay? %>
-        <p>  <span class="label label-pill label-info" style="float:left; background: #c7d9e8"><%= link_to patient.current_stay.runn.ident, patient.current_stay.runn %></span></p>
+        <p>  <span class="label label-pill label-info" style="float:left; background: #c7d9e8"><%= link_to patient.current_stay.runn.ident, patient %></span></p>
         <% end %>
         </div>
         <div style="float:right; position: relative; vertical-align: middle;">

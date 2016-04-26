@@ -85,7 +85,7 @@ end
   num_patients.times do
     the_new_patient = Patient.create(
         name: Faker::Name.first_name,
-        weight: Faker::Name.first_name,
+        weight: rand(20..100),
         breed: breeds_list.sample,
         owner_id: the_new_owner.id,
         belongings: belongings_list.sample,
