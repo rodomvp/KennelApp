@@ -1,0 +1,2 @@
+class UdsController < ApplicationController
+end

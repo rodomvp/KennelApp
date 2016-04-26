@@ -21,7 +21,7 @@ class PatientsController < ApplicationController
 
   # Return a listing of all patients (Using views/patients/index.html.erb)
   def index
-    @patients = Patient.search(params[:search]).order(has_current_stay: :asc).
+    @patients = Patient.search(params[:search]).order(has_current_stay: :desc).
       paginate(:per_page => 16, :page => params[:page])
 
     if @patients.count == 1
