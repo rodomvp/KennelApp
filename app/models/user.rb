@@ -26,4 +26,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  def previous
+    return User.last if self == User.first
+    User.where(["id < ?", id]).last
+  end
+
+  def next
+    return User.first if self == User.last 
+    User.where(["id > ?", id]).first
+  end
 end

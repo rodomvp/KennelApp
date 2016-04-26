@@ -20,7 +20,12 @@
       <% else %>
       <li style="list-style-type:none" class="thumblist">
       <% end %>
-        <%= link_to image_tag(patient.image_url(:index_thumb).to_s), patient %>
+        <% if patient.image_url(:index_thumb).present? %>
+          <% patient_image_url = patient.image_url(:index_thumb).to_s %>
+        <% else %>
+          <% patient_image_url = 'genericdoghead.png' %>
+        <% end %>
+        <%= link_to image_tag(patient_image_url, height: '53'), patient %>
         <div style="display:inline-block; position: relative; top: -10px; vertical-align: middle;">
         <h3><%= link_to "#{patient.name}", patient%></h3>
         <% if patient.has_current_stay? %>
@@ -36,4 +41,4 @@
       <% end %>
     </ul>    
   </div>
-
+<%= will_paginate %>

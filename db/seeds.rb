@@ -92,6 +92,7 @@ end
         diet: diet_list.sample,
         feed_time: "BID",
         npo: false,
+        has_current_stay: false,
         image: open(dog_pics.sample)
         )
     # Make stays
