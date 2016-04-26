@@ -1,3 +1,5 @@
+<%= form_for @ud do |f| %>
+  
 <h3 style="margin: 10px;">U/D Chart</h3>
   <table style="color: #152736; margin: 10px;" >
     <!-- TODO form_for -->
@@ -12,12 +14,8 @@
     </tr>
     <tr>
         <th>U</th>
-        <td><select name="U1">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
+        <td>
+          <%= select(:ud, :u1, [['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']]) %>
         </td>
         <td><select name="U2">
           <option value="">      </option>
@@ -73,3 +71,6 @@
         </td>
     </tr>
   </table>
+<%= f.submit "Save Changes", class: "btn btn-primary" %>
+
+<% end %>
