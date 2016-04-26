@@ -25,6 +25,11 @@
     <% end %>
   </div>
 
+<!-- Edit Button -->
+  <div style="float: right; position: relative;">
+      <%= link_to 'Edit <i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_patient_path, class: "btn btn-lg btn-primary", :style=>"margin: 10px;" %>
+  </div>
+
 <!-- Patient Profile Information -->
   <!-- Patient Picture -->
   <% if @patient.image_url(:thumb).present? %>

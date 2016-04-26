@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
 
   # Return a listing of all patients (Using views/patients/index.html.erb)
   def index
-    @patients = Patient.search(params[:search]).order(has_current_stay: :desc).
+    @patients = Patient.search(params[:search]).order(has_current_stay: :asc).
       paginate(:per_page => 16, :page => params[:page])
 
     if @patients.count == 1
@@ -85,7 +85,7 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:patient).permit(
       :name, :breed,
-      :weight, :diet, :feeds_per_day, :int, :feed_time, :image
+      :weight, :diet, :feeds_per_day, :int, :feed_time, :image, :npo
     )
   end
 end

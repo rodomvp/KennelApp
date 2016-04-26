@@ -11,11 +11,9 @@
 </center>
 </h2>
 
-
-
 <!-- Patient Profile Information -->
   <!-- Patient Picture -->
-  <table border="0" class="patient-container" style="width: 100%; border-collapse: collapse; border-color: #ecf2f7;">
+  <table border="0" class="patient-container" style="width: 100%;">
     <td>
         <%= image_tag @patient.image_url(:thumb).to_s,
             :style=>" float: left; margin: 20px;" %> 
@@ -29,6 +27,10 @@
     <%= f.text_field :diet, class: 'form-control', style: 'width: 200px' %>
     <%= f.label :breed %>
     <%= f.text_field :breed, class: 'form-control', style: 'width: 200px' %>
+    <!-- NPO checkbox -->
+    <%= f.label :npo, "NPO" %>
+    <%= f.check_box :npo, class: 'form-control' %>
+    
     </td>
   </table>
   <!-- Stay -->
@@ -40,10 +42,6 @@
     <% t = @patient.current_stay.created_at %>
     <%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y at %l:%M %p") %>
   </h6>
-  <!-- NPO checkbox -->
-  <% if @patient.npo? %>
-    <h6 style="color: red">NPO<h6>
-  <% end %>
   <% end %>
 </div>
 
