@@ -9,11 +9,13 @@
   </tr>
 
   <% @occupied_runns_for_feed_list.each do |runn| %>
+  <% if !runn.current_patient.npo? %>
       <tr>
         <td><%= runn.current_patient_name + " " + runn.current_patient.owner.last_name %></td>
         <td><%= runn.current_patient.diet %></td>
         <td><%= runn.ident %></td>
       </tr>
+      <%end%>
   <% end %>
 
 </table>
