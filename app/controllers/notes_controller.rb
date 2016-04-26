@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
 
   def create
-    @patient = Patient.find(params[:patient_id])
+    @patient = Patient.find(params[:id])
     @note = @patient.notes.build(params[:id])
     if @note.save
       flash[:success] = "Note created!"

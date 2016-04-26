@@ -4,17 +4,20 @@ Rails.application.routes.draw do
   # example: owners/id/patients/id
   resources :owners do
     member do
-      resources :patients do
-        member do
-          resources :stays
-          resources :notes
-        end
-      end
+      resources :patients 
+    end
+  end
+
+  resources :patients do
+    member do
+      resources :stays
+      resources :notes
     end
   end
   
   get 'sessions/new'
 
+  resources :patients
   resources :users
   resources :wards do
     resources :runns
@@ -39,6 +42,8 @@ Rails.application.routes.draw do
   # Requests by the Check In button
   get 'new_stay' => 'stays#new'
   post 'new_stay' => 'stays#create'
+
+  post 'new_note' => 'notes#create'
 
   get 'login'=> 'sessions#new'
   post 'login'=> 'sessions#create'
