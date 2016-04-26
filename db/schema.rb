@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421005706) do
+ActiveRecord::Schema.define(version: 20160425221631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20160421005706) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "patient_id"
+  end
+
+  add_index "notes", ["patient_id", "created_at"], name: "index_notes_on_patient_id_and_created_at", using: :btree
+
   create_table "owners", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -63,7 +72,7 @@ ActiveRecord::Schema.define(version: 20160421005706) do
     t.boolean  "npo"
     t.string   "feed_time"
     t.integer  "feed_list_id"
-    t.boolean  "has_current_stay",  null:false
+    t.boolean  "has_current_stay"
     t.string   "image"
   end
 

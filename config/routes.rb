@@ -4,25 +4,22 @@ Rails.application.routes.draw do
   # example: owners/id/patients/id
   resources :owners do
     member do
-      resources :patients
+      resources :patients do
+        member do
+          resources :stays
+          resources :notes
+        end
+      end
     end
   end
-  resources :patients do
-    member do
-      resources :stays
-      resources :notes
-    end
-  end
-
+  
   get 'sessions/new'
 
-  resources :patients
   resources :users
   resources :wards do
     resources :runns
   end
   resources :runns
-  resources :stays
   resources :feed_lists
 
   get 'home' => 'static_pages#home'
