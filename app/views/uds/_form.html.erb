@@ -24,10 +24,12 @@
         </td>
         <td>
           <%= select(:ud, :u4, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.u4) %>
+
         </td>
     </tr>
     <tr>
         <th>D</th>
+
         <td>
           <%= select(:ud, :d1, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.d1) %>
         </td>
@@ -39,6 +41,7 @@
         </td>
         <td>
           <%= select(:ud, :d4, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.d4) %>
+
         </td>
     </tr>
   </table>
