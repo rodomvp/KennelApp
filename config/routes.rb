@@ -13,6 +13,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :patients do
+    member do
+      resources :stays
+    end
+  end
+
+  resources :patients
   
   get 'sessions/new'
 
