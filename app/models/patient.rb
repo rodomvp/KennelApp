@@ -1,6 +1,7 @@
 class Patient < ActiveRecord::Base
   belongs_to :owner
   has_many :stays, dependent: :destroy
+  has_many :notes, dependent: :destroy
   belongs_to :feed_list
   validates :name, 
     presence: true, 

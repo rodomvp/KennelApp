@@ -13,13 +13,10 @@ class PatientsController < ApplicationController
 
   # Show a patient profile by id (Using views/patients/show.html.erb)
   def show
-    if params[:id].present?
       @patient = Patient.find(params[:id])
       @owner = @patient.owner
-    else
-      @patient = Patient.find(params[:id])
-      @owner = @patient.owner
-    end
+      @note = @patient.notes.build
+      @notes = @patient.notes.paginate(page: params[:page])
   end
 
   # Return a listing of all patients (Using views/patients/index.html.erb)
