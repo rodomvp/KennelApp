@@ -56,7 +56,7 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-    if @patient.update_attributes(user_params)
+    if @patient.update_attributes(patient_params)
       # Handle a successful update.
       flash[:success] = "Profile updated"
       redirect_to @patient
