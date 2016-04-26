@@ -1,0 +1,47 @@
+<%= form_for @ud do |f| %>
+  
+<h3 style="margin: 10px;">U/D Chart</h3>
+  <table style="color: #152736; margin: 10px;" >
+    <!-- TODO form_for -->
+    <!-- Reference: http://guides.rubyonrails.org/form_helpers.html#the-select-and-option-tags -->
+    <!-- <%= select(:UDEvent, :U1, [['Normal', 1], ['None', 2], ['Abnormal',3]]) %> -->
+    <tr>
+        <th style="visibility: hidden"></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+    </tr>
+    <tr>
+        <th>U</th>
+        <td>
+          <%= select(:ud, :u1, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.u1) %>
+        </td>
+        <td>
+          <%= select(:ud, :u2, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.u2) %>        </td>
+        <td>
+          <%= select(:ud, :u3, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.u3) %>
+        </td>
+        <td>
+          <%= select(:ud, :u4, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.u4) %>
+        </td>
+    </tr>
+    <tr>
+        <th>D</th>
+        <td>
+          <%= select(:ud, :d1, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.d1) %>
+        </td>
+        <td>
+          <%= select(:ud, :d2, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.d2) %>
+        </td>
+        <td>
+          <%= select(:ud, :d3, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.d3) %>
+        </td>
+        <td>
+          <%= select(:ud, :d4, [['',nil], ['Normal', 'Normal'], ['None', 'None'], ['Abnormal', 'Abnormal']], :selected => @ud.patient.uds.first.d4) %>
+        </td>
+    </tr>
+  </table>
+<%= f.submit "Save Changes", class: "btn btn-primary" %>
+
+<% end %>

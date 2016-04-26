@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         member do
           resources :notes
           resources :stays
+          resources :uds
         end
       end
     end

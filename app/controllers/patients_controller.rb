@@ -16,6 +16,7 @@ class PatientsController < ApplicationController
       @patient = Patient.find(params[:id])
       @owner = @patient.owner
       @note = @patient.notes.build
+      @ud = @patient.uds.build
       @notes = @patient.notes.paginate(page: params[:page])
   end
 
