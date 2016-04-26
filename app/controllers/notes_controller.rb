@@ -4,7 +4,7 @@ class NotesController < ApplicationController
     @patient = Patient.find(params[:id])
     @note = @patient.notes.build(note_params)
     if @note.save
-      flash[:success] = "UD Saved!"
+      flash[:success] = "Note Saved"
       redirect_to :back
     end
   end

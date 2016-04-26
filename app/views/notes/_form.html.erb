@@ -1,6 +1,6 @@
 <%= form_for @note do |f| %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new note..." %>
+  <div class="field", style="height: 150px; margin: 10px;">
+    <%= f.text_area :content, placeholder: "Click to add new note..." %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+  <%= f.submit "Add Note", class: "btn btn-primary" %>
 <% end %>

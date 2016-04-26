@@ -4,7 +4,7 @@ class UdsController < ApplicationController
 		@patient = Patient.find(params[:id])
    		@ud = @patient.uds.build(ud_params)
     	if @ud.save
-      		flash[:success] = "Note created!"
+      		flash[:success] = "U/D Saved"
       		redirect_to :back
    		end
 	end

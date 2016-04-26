@@ -87,16 +87,17 @@ p {
 
 #ward-view-link {
     text-transform: uppercase;
-    /*font-weight: bold;*/
-    /*font-size: 1.5em;*/
+    font-weight: bold;
+    color: #dae6f0;
+    font-size: 1.5em;
     /*float: left;*/
     /*margin-right: 10px;*/
     /*padding-top: 16px;*/
     /*color: white;*/
-    /*&:hover {*/
-        /*color: red;*/
-        /*text-decoration: none;*/
-    /*}*/
+    &:hover {
+        
+        text-decoration: none;
+    }
 }
 
 /* footer */

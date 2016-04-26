@@ -13,13 +13,13 @@
 
 <!-- Patient Profile Information -->
   <!-- Patient Picture -->
-  <table border="0" class="patient-container" style="width: 100%;">
-    <td>
+  <table border="0" class="patient-container" style="width: 100%; border-bottom: 1px solid #eee; border-collapse: separate;">
+    <td style="border: 1px solid #588ebb;">
         <%= image_tag @patient.image_url(:thumb).to_s,
             :style=>" float: left; margin: 20px;" %> 
             <%= f.file_field :image %>
     </td>
-    <td style="width: 75%"> 
+    <td style="width: 75%; border: 1px solid #588ebb;"> 
     <%= f.submit "Save changes", class: "btn btn-primary", style: "float: right; height: 40px; widht: 80px; margin-right: 100px; margin: 10px;" %>
     <%= f.label :weight %>
     <%= f.text_field :weight, class: 'form-control', style: 'width: 60px' %>
@@ -28,115 +28,12 @@
     <%= f.label :breed %>
     <%= f.text_field :breed, class: 'form-control', style: 'width: 200px' %>
     <!-- NPO checkbox -->
-    <%= f.label :npo, "NPO" %>
-    <%= f.check_box :npo, class: 'form-control' %>
-    
+    <% if @patient.has_current_stay? %>
+      <%= f.label :npo, "NPO" %>
+      <%= f.check_box :npo %>
+    <% end %>
     </td>
-  </table>
-  <!-- Stay -->
-  <% if @patient.stays.length > 0 %>
-  <!-- Run Link -->
-  <h5 style="margin-top:20px;"> Stay : <span class="label label-pill label-info" style="position: relative; background: #4682b4; left: 8px;"><%= link_to "#{@patient.current_stay.runn.ident}", @patient.current_stay.runn, :style=>"color: #eee; font-size: 9pt;" %></span></h5>
-  <h6 style="margin-top: 12px;">
-    Check in Time : 
-    <% t = @patient.current_stay.created_at %>
-    <%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y at %l:%M %p") %>
-  </h6>
-  <% end %>
+</table>
 </div>
-
-<!-- Checked in Patient Elements -->
-<% if @patient.has_current_stay? %>
-<br>
-<!-- U/D Chart -->
-<div class="patient-container" style="display: inline-block; float: left; width: 59%; height: 240px;">
-  <center>
-  <h3 style="margin: 10px;">U/D Chart</h3>
-  <table style="color: #152736; margin: 10px;" >
-    <!-- TODO form_for -->
-    <!-- Reference: http://guides.rubyonrails.org/form_helpers.html#the-select-and-option-tags -->
-    <!-- <%= select(:UDEvent, :U1, [['Normal', 1], ['None', 2], ['Abnormal',3]]) %> -->
-    <tr>
-        <th style="visibility: hidden"></th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-    </tr>
-    <tr>
-        <th>U</th>
-        <td><select name="U1">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-        <td><select name="U2">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-        <td><select name="U3">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-        <td><select name="U4">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-    </tr>
-    <tr>
-        <th>D</th>
-        <td><select name="D1">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-        <td><select name="D2">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-        <td><select name="D3">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-        <td><select name="D4">
-          <option value="">      </option>
-          <option value="normal">Normal</option>
-          <option value="none">None</option>
-          <option value="abnormal">Abnormal</option>
-          </select>
-        </td>
-    </tr>
-  </table>
-   <input TYPE="submit" VALUE="Save Changes">
-  </center>
-</div>
-<!-- Medical Notes -->
-<div class="patient-container" style="display: inline-block; float: right; width: 39%; margin: 1px; height: 240px;">
-  <center>
-  <h3 style="margin: 10px;">Medical Notes</h3>
-  <!-- TODO form_for -->
-</center>
-</div>
-<% end %>
-
 
 <% end %>

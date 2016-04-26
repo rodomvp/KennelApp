@@ -13,8 +13,9 @@
   <% end %>
 </h1>
 
-<!-- Check In and Check Out Buttons -->
+
 <div class="patient-container">
+  <!-- Check In and Check Out Buttons -->
   <div style="float: right">
     <% if @patient.has_current_stay? %>
       <%= link_to "Check Out", @patient.current_stay, method: :delete,
@@ -24,88 +25,85 @@
               :style=>"margin: 10px;" %>
     <% end %>
   </div>
-
-<!-- Edit Button -->
+  <!-- Edit Button -->
   <div style="float: right; position: relative;">
-      <%= link_to 'Edit <i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_patient_path, class: "btn btn-lg btn-primary", :style=>"margin: 10px;" %>
+      <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_patient_path, class: "btn btn-lg btn-primary", :style=>"margin: 10px;" %>
   </div>
-
-<!-- Patient Profile Information -->
-  <!-- Patient Picture -->
-  <% if @patient.image_url(:thumb).present? %>
-    <% patient_image_url = @patient.image_url(:thumb).to_s %>
-  <% else %>
-   <% patient_image_url = 'genericdoghead.png' %>
-  <% end %>
-  <%= image_tag patient_image_url, height: '150',
-            :style=>"margin: 10px; float: left;" %> 
-  <!-- Owner Link --> 
-  <h5>Belongs to 
-    <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %>
-  </h5>
-  <h6><%= "Weight : " "#{@patient.weight}" %></h6>
-  <h6><%= "Diet : " "#{@patient.diet}" %></h6>
-  <!-- Stay -->
-  <% if @patient.stays.length > 0 %>
-  <!-- Run Link -->
-  <h5 style="margin-top:20px;"> Stay : <span class="label label-pill label-info" style="position: relative; background: #4682b4; left: 8px;"><%= link_to "#{@patient.current_stay.runn.ident}", @patient.current_stay.runn, :style=>"color: #eee; font-size: 9pt;" %></span></h5>
-  <h6 style="margin-top: 12px;">
-    Check in Time : 
-    <% t = @patient.current_stay.created_at %>
-    <%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y at %l:%M %p") %>
-  </h6>
-  <!-- NPO checkbox -->
-  <% if @patient.npo? %>
-    <h6 style="color: red">NPO<h6>
-  <% end %>
-  <% end %>
+  <!-- Patient Profile Information -->
+    <!-- Patient Picture -->
+    <% if @patient.image_url(:thumb).present? %>
+      <% patient_image_url = @patient.image_url(:thumb).to_s %>
+    <% else %>
+     <% patient_image_url = 'genericdoghead.png' %>
+    <% end %>
+    <%= image_tag patient_image_url, height: '150',
+              :style=>"margin: 10px; float: left;" %> 
+    <!-- Owner Link --> 
+    <h5>Belongs to 
+      <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %>
+    </h5>
+    <h6><%= "Weight : " "#{@patient.weight}" %></h6>
+    <h6><%= "Diet : " "#{@patient.diet}" %></h6>
+    <!-- Stay -->
+    <% if @patient.stays.length > 0 %>
+    <!-- Run Id -->
+    <h5 style="margin-top:20px;"> Stay : <span class="label label-pill label-info" style="position: relative; background: #4682b4; left: 5px;"><%= "#{@patient.current_stay.runn.ident}" %></span></h5>
+    <h6 style="margin-top: 12px;">
+      Check in Time : 
+      <% t = @patient.current_stay.created_at %>
+      <%= t.in_time_zone('Central Time (US & Canada)').strftime("%B %d, %Y at %l:%M %p") %>
+    </h6>
+    <% if @patient.current_stay.belongings? %>
+    <h6 style="">
+      Belongings : 
+      <%= "#{@patient.current_stay.belongings}" %>
+    </h6>
+    <% end %>
+    <!-- NPO checkbox -->
+    <% if @patient.npo? %>
+      <h6 style="color: red">NPO<h6>
+    <% end %>
+    <% end %>
 </div>
-
-
 
 
 <!-- Checked in Patient Elements -->
 <% if @patient.has_current_stay? %>
 <br>
 <!-- U/D Chart -->
-<div class="patient-container" style="display: inline-block; width: 100%; height: 240px;">
+<div class="patient-container" style="display: inline-block; float: left; width: 59%; height: 260px;">
   <center>
   <%= render 'uds/form' %>
   </center>
 </div>
 <!-- Medical Notes -->
-<div class="patient-container" style="display: inline-block; width: 100%; margin: 1px;">
+<div class="patient-container" style="display: inline-block; float: right; width: 39%; margin: 1px; height: 260px; margin-left: 10px">
   <center>
-  <h3 style="margin: 10px;">Medical Notes</h3>
-  
-
+  <h3 style="margin: 10px;">New Note</h3>
       <section class="note_form">
         <%= render 'notes/form' %>
       </section>
- 
-
-<div class="row">
-  <div class="col-md-8">
-    <% if @patient.notes.any? %>
-      <h3>notes (<%= @patient.notes.count %>)</h3>
-      <ol class="notes">
-        <%= render @notes %>
-      </ol>
-      <%= will_paginate @notes %>
-    <% end %>
   </div>
 </div>
 </center>
 </div>
+
+<br>
+<% if @patient.notes.any? %>
+<div class="patient-container" style="position: relative; margin-left: 50px; margin-right: 50px;">
+  <h3 style="margin: 15px;">Past Notes (<%= @patient.notes.count %>)</h3>
+  <div class="row">
+  <div class="col-md-8">   
+      <ol class="notes">
+        <%= render @notes %>
+      </ol>
+      <%= will_paginate @notes %>
+  </div>
+  </div>
+</div>
 <% end %>
 
+<% end %>
 <!-- Extra Keybindings -->
 <%= link_to '', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>
 
-<!-- Debug -->
-<div style="float: bottom;">
-<p><i>## -- Some debugging info below ------------- ##</i></p>
-  <p>has_current_stay?: [<%= @patient.has_current_stay? %>]</p>
-  <p>current_stay: [<%= if @patient.current_stay then link_to "#{@patient.current_stay.id}", @patient.current_stay end %>]</p>
-  <p>current_runn: [<%= if @patient.current_stay then link_to "#{@patient.current_runn.ident}", @patient.current_runn end %>]</p>
-</div>
