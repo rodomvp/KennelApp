@@ -1,40 +1,36 @@
-<% provide(:title, "PATIENT: #{@patient.name} the #{@patient.breed}")  %>
+<%= form_for(@patient) do |f| %>
 
-<!-- Header with Keybindings -->
-<h1>
-  <%= link_to @patient.previous, data: { keybinding: '["h", "left"]' },
-          class: "btn" do %>
-      <i class="glyphicon glyphicon-menu-left"></i>
-  <% end %>
-  <%= "#{@patient.name} the #{@patient.breed}" %>
-  <%= link_to @patient.next, data: { keybinding: '["l", "right"]' },
-          class: "btn" do %>
-      <i class="glyphicon glyphicon-menu-right"></i>
-  <% end %>
-</h1>
+<% provide(:title, "EDIT PATIENT: #{@patient.name} the #{@patient.breed}")  %>
 
-<!-- Check In and Check Out Buttons -->
-<div class="patient-container">
-  <div style="float: right">
-    <% if @patient.has_current_stay? %>
-      <%= link_to "Check Out", @patient.current_stay, method: :delete,
-              class: "btn btn-lg btn-danger", :style=>"margin: 10px;" %>
-    <% else %>
-      <%= link_to "Check In", new_stay_path, class: "btn btn-lg btn-primary", 
-              :style=>"margin: 10px;" %>
-    <% end %>
-  </div>
+<!-- Header -->
+<h1>Edit Patient Profile<h1>
+
+<h2><center>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control', style: 'width: 210px' %>
+</center>
+</h2>
+
+
 
 <!-- Patient Profile Information -->
   <!-- Patient Picture -->
-  <%= image_tag @patient.image_url(:thumb).to_s,
-            :style=>"margin: 10px; float: left;" %> 
-  <!-- Owner Link --> 
-  <h5>Belongs to 
-    <%= link_to "#{@patient.owner.first_name} #{@patient.owner.last_name}", @patient.owner %>
-  </h5>
-  <h6><%= "Weight : " "#{@patient.weight}" %></h6>
-  <h6><%= "Diet : " "#{@patient.diet}" %></h6>
+  <table border="0" class="patient-container" style="width: 100%; border-collapse: collapse; border-color: #ecf2f7;">
+    <td>
+        <%= image_tag @patient.image_url(:thumb).to_s,
+            :style=>" float: left; margin: 20px;" %> 
+            <%= f.file_field :image %>
+    </td>
+    <td style="width: 75%"> 
+    <%= f.submit "Save changes", class: "btn btn-primary", style: "float: right; height: 40px; widht: 80px; margin-right: 100px; margin: 10px;" %>
+    <%= f.label :weight %>
+    <%= f.text_field :weight, class: 'form-control', style: 'width: 60px' %>
+    <%= f.label :diet %>
+    <%= f.text_field :diet, class: 'form-control', style: 'width: 200px' %>
+    <%= f.label :breed %>
+    <%= f.text_field :breed, class: 'form-control', style: 'width: 200px' %>
+    </td>
+  </table>
   <!-- Stay -->
   <% if @patient.stays.length > 0 %>
   <!-- Run Link -->
@@ -55,7 +51,7 @@
 <% if @patient.has_current_stay? %>
 <br>
 <!-- U/D Chart -->
-<div class="patient-container" style="display: inline-block; width: 100%; height: 240px;">
+<div class="patient-container" style="display: inline-block; float: left; width: 59%; height: 240px;">
   <center>
   <h3 style="margin: 10px;">U/D Chart</h3>
   <table style="color: #152736; margin: 10px;" >
@@ -136,7 +132,7 @@
   </center>
 </div>
 <!-- Medical Notes -->
-<div class="patient-container" style="display: inline-block; width: 100%; margin: 1px;">
+<div class="patient-container" style="display: inline-block; float: right; width: 39%; margin: 1px; height: 240px;">
   <center>
   <h3 style="margin: 10px;">Medical Notes</h3>
   <!-- TODO form_for -->
@@ -144,13 +140,5 @@
 </div>
 <% end %>
 
-<!-- Extra Keybindings -->
-<%= link_to '', all_patients_path, data: { keybinding: [ 'b', 'k', 'up' ]} %>
 
-<!-- Debug -->
-<div style="float: bottom;">
-<p><i>## -- Some debugging info below ------------- ##</i></p>
-  <p>has_current_stay?: [<%= @patient.has_current_stay? %>]</p>
-  <p>current_stay: [<%= if @patient.current_stay then link_to "#{@patient.current_stay.id}", @patient.current_stay end %>]</p>
-  <p>current_runn: [<%= if @patient.current_stay then link_to "#{@patient.current_runn.ident}", @patient.current_runn end %>]</p>
-</div>
+<% end %>
