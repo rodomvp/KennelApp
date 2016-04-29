@@ -18,7 +18,11 @@
 //= require_tree .
 
 /**
- * Defines a text field class 'select_all_text_on_focus'
+ * Defines a text field class 'select_all_text_on_focus'.
+ * by Roy Gullem
+ *
+ * Used thorughout the app, any text text field defined as this
+ * class ensures that all text is selected on focus.
  */
 jQuery(document).ready(function($) {
   $(".select_all_text_on_focus").focus(function() {
