@@ -1,28 +1,49 @@
+<!-- **********************************************
+## This defines the "ward view".
+#  Started by Roy Gullem, but heavily modified by 
+#  everyone. See git history.
+
+## This file uses the `_runn.html.erb` partial to define 
+#  each runn's panel.
+*************************************************** -->
+
+<!-- unfurls html <title>Ward N</title>, where N is the ward name -->
 <% provide(:title, @ward.ident) %>
 
+<!-- features available to admins only: managing wards and runns -->
 <% if current_user.admin? %>
   <%= link_to ' <i class="glyphicon glyphicon-th-list"></i> Manage Wards'.html_safe, wards_path, class: "btn btn-lg btn-primary", :style=>'margin-left: 20px; margin-top: 20px; float: left; z-index: -1' %>
   <%= link_to ' <i class="glyphicon glyphicon-cog"></i> Manage Runs'.html_safe, runns_path, class: "btn btn-lg btn-primary", :style=>'margin-right: 20px; margin-top: 20px; float: right; z-index: -1;' %>
 <% end %>
+
+<!-- h1 of the page... [link to 'previous'] [name of ward] [link to 'next'] -->
 <h1>
+  <!-- link to previous ward -->
   <%= link_to @ward.previous, data: { keybinding: '["h", "left"]' }, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-left"></i>
   <% end %>
 
+  <!-- the current ward's name -->
   <%= link_to @ward.ident, edit_ward_path(@ward) %>
 
+  <!-- link to the next ward -->
   <%= link_to @ward.next, data: { keybinding: '["l", "right"]' }, class: "btn" do %>
       <i class="glyphicon glyphicon-menu-right"></i>
   <% end %>
 </h1>
 
+<!-- begin rendering each of this ward's runns --> 
 <div class="row">
     <% @ward.runns.each do |runn| %>
+
+      <!-- a hack to bind keys to invisible link to first ward -->
       <%= 
       if runn == @ward.runns.first
         link_to "", runn, data: { keybinding: ['j', 'k'] }
       end 
       %>
+
+      <!-- render the _runn.html.erb partial for this ward -->
       <div class="col-md-4" id="ward-view-runn">
         <%= render runn %>
       </div>
