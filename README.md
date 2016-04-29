@@ -2,7 +2,24 @@
 
 Main repo for project work. This README is intended for developers.
 
-Master branch is staged at <http://kennelapp.herokuapp.com/>. To push to heroku, make sure you have the remote set up:
+Master branch is staged at <http://kennelapp.herokuapp.com/>. 
+
+To play with the app, log in with one of these username/password
+combos below. These are the same logins that are seeded in a local
+server.
+
+- Normal user: `george@internet.com` / `password`
+- Admin user: `admin@internet.com` / `cookies`
+
+If you break something, no big deal. Just reset the database by
+first logging in to Heroku (see next section), and then doing:
+
+    cd /the/directory/where/you/cloned/KennelApp
+    heroku run rake db:reset
+
+## Pushing to heroku
+
+To push to heroku, make sure you have the remote set up:
 
 ```
 heroku login
@@ -104,11 +121,17 @@ Run the setup script:
 
     $ ./bin/setup
 
-Update the bundle if necessary:
+And get the aws keys from any one of the devs (see [the logs]), and
+put it in your `config/application.yml`. For security reasons, it's
+not included in the repository.
+
+[the logs]: https://github.com/rodomvp/KennelApp/commits
+
+Then, update the bundle if necessary:
 
     $ bundle update
 
-Reset the database if necessary:
+Finally, reset the database if necessary:
 
     $ rake db:reset 
 
