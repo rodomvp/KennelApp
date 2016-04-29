@@ -4,6 +4,7 @@
 <%= form_tag '/owners', :method => 'get' do %>
   <%= render 'shared/search_an_index' %>
 <% end %>
+<%= 'No results found' if @owners.count == 0 %>
 <br>
 
 <!-- Add Owner button -->

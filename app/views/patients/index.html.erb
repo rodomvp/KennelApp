@@ -4,6 +4,7 @@
 <%= form_tag '/patients', :method => 'get' do %>
   <%= render 'shared/search_an_index' %>
 <% end %>
+<%= 'No results found' if @patients.count == 0 %>
 <% provide(:title, 'All patients') %>
 
 <!--Patient list pagination done by: Emily Ribando-Gros -->
