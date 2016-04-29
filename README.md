@@ -117,19 +117,25 @@ Now create a PostgreSQL user for this project
     $ sudo service postgresql restart # this is probably Ubuntu-specific
     $ sudo -u postgres createuser KennelApp -s
 
-Run the setup script:
+Install all the gems
+
+    $ bundle update
+    $ bundle
+
+Install figaro
+
+    $ figaro install
+
+And get the aws keys from any one of the devs (see [the git logs]),
+and put it in your `config/application.yml`. For security reasons,
+it's not included in the repository.
+
+[the git logs]: https://github.com/rodomvp/KennelApp/commits
+
+Then run the setup script:
 
     $ ./bin/setup
 
-And get the aws keys from any one of the devs (see [the logs]), and
-put it in your `config/application.yml`. For security reasons, it's
-not included in the repository.
-
-[the logs]: https://github.com/rodomvp/KennelApp/commits
-
-Then, update the bundle if necessary:
-
-    $ bundle update
 
 Finally, reset the database if necessary:
 
